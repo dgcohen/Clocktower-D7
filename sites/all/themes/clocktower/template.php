@@ -128,5 +128,16 @@ function clocktower_preprocess_block(&$variables, $hook) {
   //if ($variables['block_html_id'] == 'block-system-main') {
   //  $variables['theme_hook_suggestions'] = array_diff($variables['theme_hook_suggestions'], array('block__no_wrapper'));
   //}
+  function clocktower_reloaded_process_field(&$vars) {
+    $element = $vars['element'];
+    // Field type image
+    if ($element['#field_type'] == 'image') {
+      // Reduce number of images in teaser view mode to single image
+      if ($element['#view_mode'] == 'teaser') {
+        $item = reset($vars['items']);
+        $vars['items'] = array($item);
+      }
+    }
+  }
 }
 // */

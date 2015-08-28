@@ -20,3 +20,12 @@
 /* SMACSS theme rules */
 /* @import "theme-A.css"; */
 /* @import "theme-B.css"; */
+
+.field-label, p.submitted {
+  display: none;
+}
+
+.views-row {
+  width: 300px;
+  float: left;
+}
