@@ -48,6 +48,7 @@ base theme  = zen
 stylesheets[all][] = system.menus.css
 stylesheets[all][] = system.messages.css
 stylesheets[all][] = system.theme.css
+stylesheets[all][] = typography/FranklinGothic/stylesheet.css
 
 ; Then we add our own stylesheet.
 stylesheets[all][] = css/styles.css
@@ -66,7 +67,8 @@ stylesheets[all][] = css/styles.css
 
 ; Optionally add some JavaScripts to your theme.
 
-;scripts[] = js/script.js
+scripts[] = js/masonry.pkgd.min.js
+scripts[] = js/script.js
 
 
 

@@ -16,11 +16,13 @@
 // To understand behaviors, see https://drupal.org/node/756722#behaviors
 Drupal.behaviors.my_custom_behavior = {
   attach: function(context, settings) {
-
-    // Place your code here.
-
+    $(window).load(function() {
+      $('.view-content').masonry({
+        transitionDuration: 0,
+        itemSelector: 'article',
+        columnWidth: 25
+      });
+    });
   }
 };
-
-
 })(jQuery, Drupal, this, this.document);

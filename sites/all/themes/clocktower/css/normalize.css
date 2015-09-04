@@ -79,8 +79,6 @@ audio:not([controls]) {
  * used in any ruleset using a property like this:  font-family: Example, serif;
  */
 
-@import url(https://fonts.googleapis.com/css?family=Lato:400,300,100,100italic,300italic,700,700italic,900,900italic,400italic);
-
 
 /**
  * 1. Set default font family to sans-serif.
@@ -91,7 +89,6 @@ audio:not([controls]) {
  */
 
 html {
-  font-family: 'Lato', Helvetica, sans-serif; /* 1 */
   font-weight: 100;
 
   /* Delete all but one of the following font-size declarations: */

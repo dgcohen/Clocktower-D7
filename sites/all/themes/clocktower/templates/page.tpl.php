@@ -11,10 +11,7 @@
 <div id="page">
 
   <header class="header" id="header" role="banner">
-
-    <?php if ($logo): ?>
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
-    <?php endif; ?>
+    <?php print render($page['header']); ?>
 
     <?php if ($site_name || $site_slogan): ?>
       <div class="header__name-and-slogan" id="name-and-slogan">
@@ -45,9 +42,6 @@
         )); ?>
       </nav>
     <?php endif; ?>
-
-    <?php print render($page['header']); ?>
-
   </header>
 
   <div id="main">
@@ -72,7 +66,6 @@
     </div>
 
     <div id="navigation">
-
       <?php if ($main_menu): ?>
         <nav id="main-menu" role="navigation" tabindex="-1">
           <?php
@@ -93,9 +86,7 @@
           )); ?>
         </nav>
       <?php endif; ?>
-
       <?php print render($page['navigation']); ?>
-
     </div>
 
     <?php
@@ -106,6 +97,9 @@
 
     <?php if ($sidebar_first || $sidebar_second): ?>
       <aside class="sidebars">
+        <?php if ($logo): ?>
+          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
+        <?php endif; ?>
         <?php print $sidebar_first; ?>
         <?php print $sidebar_second; ?>
       </aside>

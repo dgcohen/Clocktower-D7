@@ -1,0 +1,33 @@
+
+@font-face {
+  font-family: 'MuseoSans500';
+  src: url('typography/museosans/museosans_500-webfont.eot');
+  src: local('☺'), url('typography/museosans/museosans_500-webfont.woff') format('woff'), url('typography/museosans/museosans_500-webfont.ttf') format('truetype'), url('typography/museosans/museosans_500-webfont.svg#webfontEbPuCxa4') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MuseoSans500Italic';
+  src: url('typography/museosans/museosans_500_italic-webfont.eot');
+  src: local('☺'), url('typography/museosans/museosans_500_italic-webfont.woff') format('woff'), url('typography/museosans/museosans_500_italic-webfont.ttf') format('truetype'), url('typography/museosans/museosans_500_italic-webfont.svg#webfontfmR8I0Nx') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.MuseoSans-500 {
+      font-weight: normal;
+      font-style: normal;
+      line-height:normal;
+      font-family: 'MuseoSans500', Helvetica, Arial, sans-serif;
+      font-size-adjust: 0.51;
+}
+
+.MuseoSans-500Italic {
+      font-weight: normal;
+      font-style: normal;
+      line-height:normal;
+      font-family: 'MuseoSans500Italic', Helvetica, Arial, sans-serif;
+      font-size-adjust: 0.51;
+}
+
