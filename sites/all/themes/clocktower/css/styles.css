@@ -77,12 +77,13 @@ h2 {
 }
 
 #logo {
+  display: block;
+  width: 200px;
   float: none;
 }
 
 #logo img {
   display: block;
-  width: 200px;
   margin-left: 20px;
 }
 
@@ -102,14 +103,34 @@ h2 {
   display: none;
 }
 
+#block-system-navigation > ul > li {
+  margin-top: 20px;
+}
+
+ul.menu {
+  padding-left: 10px;
+}
+
 ul.menu li {
   display: block;
+  line-height: 21px;
 }
 
 ul.menu li a {
+  font-size: 16px;
+  text-transform: uppercase;
   list-style: none;
   text-decoration: none;
   color: #000000;
+}
+
+ul.menu ul a {
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+ul.menu ul li:first-child {
+  margin-top: 2px;
 }
 
 ul.menu li a:hover {

@@ -1,0 +1,49 @@
+/*! responsive-nav.js 1.0.39 by @viljamis */
+
+#block-system-navigation ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+  list-style: none;
+}
+
+#block-system-navigation li {
+  width: 100%;
+  display: block;
+}
+
+.js #block-system-navigation {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  zoom: 1;
+}
+
+#block-system-navigation.opened {
+  max-height: 9999px;
+}
+
+.nav-toggle {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+@media screen and (min-width: 40em) {
+  .js #block-system-navigation {
+    position: relative;
+  }
+  .js #block-system-navigation.closed {
+    max-height: none;
+  }
+  .nav-toggle {
+    display: none;
+  }
+}
