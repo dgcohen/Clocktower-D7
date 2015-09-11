@@ -1,6 +1,6 @@
 /* Smartphones (portrait and landscape) ----------- */
 
-.mobile-nav {
+.mobile-nav  {
   display: none;
 }
 
@@ -8,6 +8,10 @@
 
   .mobile-nav {
     display: block;
+  }
+
+  aside.sidebars {
+    display: none;
   }
 
   #menu-btn {
