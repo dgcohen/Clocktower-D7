@@ -75,6 +75,10 @@ div.region-header {
   margin-top: 47px;
 }
 
+h1 {
+  font-size: 45px;
+}
+
 .view-content {
   padding-top: 20px;
 }
@@ -86,6 +90,11 @@ article {
 article img {
   width: 100%;
   height: auto;
+  border-bottom: 4px solid #fff;
+}
+
+article img:hover {
+  border-bottom: 4px solid red;
 }
 
 h2 {
@@ -199,14 +208,14 @@ ul.links {
   margin: 10px 0 20px 0;
 }
 
-@media screen and (max-width: 1095px) and (min-width: 960px) {
+@media screen and (max-width: 1095px) and (min-width: 800px) {
   article.node-teaser {
-    width: 40%;
+    width: 43%;
     margin: 10px;
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 800px) and (min-width: 540px) {
   article.node-teaser {
     width: 86%;
     margin: 10px 25px 10px 10px;
