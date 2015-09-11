@@ -75,8 +75,9 @@ div.region-header {
   margin-top: 47px;
 }
 
-h1 {
-  font-size: 45px;
+.page__title {
+  font-size: 42px;
+  margin-left: 12px;
 }
 
 .view-content {
@@ -223,6 +224,7 @@ ul.links {
 }
 
 @media screen and (max-width: 540px) {
+
   article.node-teaser {
     width: 86%;
     margin: 10px 25px 10px 10px;
