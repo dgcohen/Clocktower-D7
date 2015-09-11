@@ -1,49 +1,100 @@
-/*! responsive-nav.js 1.0.39 by @viljamis */
+/* Smartphones (portrait and landscape) ----------- */
 
-#block-system-navigation ul {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  display: block;
-  list-style: none;
+.mobile-nav {
+  display: none;
 }
 
-#block-system-navigation li {
-  width: 100%;
-  display: block;
-}
+@media screen and (max-width: 480px) {
 
-.js #block-system-navigation {
-  clip: rect(0 0 0 0);
-  max-height: 0;
-  position: absolute;
-  display: block;
-  overflow: hidden;
-  zoom: 1;
-}
-
-#block-system-navigation.opened {
-  max-height: 9999px;
-}
-
-.nav-toggle {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-
-@media screen and (min-width: 40em) {
-  .js #block-system-navigation {
-    position: relative;
+  .mobile-nav {
+    display: block;
   }
-  .js #block-system-navigation.closed {
-    max-height: none;
+
+  #menu-btn {
+    display: block;
+  	position: fixed;
+    right: 15px;
+    top: 15px;
+  	line-height: 1.2;
+  	font-weight: 200;
+    z-index: 1000;
   }
-  .nav-toggle {
+
+  #menu-btn a:focus, .menu-btn a:hover, .menu-btn a:active {
+    outline: 0;
+  }
+
+  #menu-btn span {
+  	display: block;
+  	width: 25px;
+  	height: 3px;
+  	margin: 5px 0;
+  	background: rgb(0,0,0);
+  	z-index: 99;
+    text-decoration: none;
+  }
+
+  #menu-btn.expand {
+    text-decoration: none;
+    font-size: 31px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    top: 12px;
+  }
+
+  #menu-btn.expand span {
     display: none;
+  }
+
+  #menu-btn.expand:after {
+    content: 'x';
+    text-transform: uppercase;
+    color: rgb(0,0,0);
+  }
+
+  #responsive-menu {
+    position: fixed;
+    width: 100%;
+    background: #ffffff;
+    font-family: 'Raleway', sans-serif;
+  	z-index: 999;
+    top: -450px;
+    -webkit-transition: top 500ms ease-out;
+    -moz-transition: top 500ms ease-out;
+    -o-transition: top 500ms ease-out;
+    transition: top 500ms ease-out;
+  }
+
+  #responsive-menu.expand {
+  	top: 0;
+    -webkit-transition: top 500ms ease-out;
+    -moz-transition: top 500ms ease-out;
+    -o-transition: top 500ms ease-out;
+    transition: top 500ms ease-out;
+  }
+
+  #responsive-menu ul li {
+    text-align: center;
+  }
+
+  #responsive-menu a {
+    display: block;
+    margin-top: 5px;
+    padding: 6px 0;
+    width: 100%;
+  }
+
+  #responsive-menu a:hover {
+    background: #eeeeee;
+    color: #000000;
+  }
+
+  #responsive-menu ul.menu {
+    padding: 0;
+  }
+
+  #responsive-menu ul.menu ul a {
+    margin: 0;
+    padding: 4px 0;
   }
 }

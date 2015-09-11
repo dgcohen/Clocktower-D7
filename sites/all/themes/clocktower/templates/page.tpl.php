@@ -10,6 +10,22 @@
 
 <div id="page">
 
+  <div class="mobile-nav">
+    <a href="#" class="menu-btn" id="menu-btn">
+    	  <span></span>
+    	  <span></span>
+    	  <span></span>
+    </a>
+
+    <div id="responsive-menu">
+      <?php $menu = menu_tree_all_data('navigation'); ?>
+      <?php if ($menu): ?>
+        <?php $main_nav = menu_tree_output($menu); ?>
+        <?php print drupal_render($main_nav); ?>
+      <?php endif; ?>
+    </div>
+  </div>
+
   <header class="header" id="header" role="banner">
     <?php print render($page['header']); ?>
 

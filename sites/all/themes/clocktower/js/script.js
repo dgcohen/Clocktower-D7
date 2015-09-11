@@ -23,6 +23,10 @@ Drupal.behaviors.my_custom_behavior = {
         columnWidth: 25
       });
     });
+    $( '#menu-btn' ).click(function(){
+      $('#responsive-menu').toggleClass('expand');
+      $('#menu-btn').toggleClass('expand');
+    })
   }
 };
 })(jQuery, Drupal, this, this.document);
