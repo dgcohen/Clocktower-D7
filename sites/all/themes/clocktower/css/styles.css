@@ -75,6 +75,10 @@ div.region-header {
   margin-top: 47px;
 }
 
+.view-content {
+  padding-top: 20px;
+}
+
 article {
   background: #fff;
 }
