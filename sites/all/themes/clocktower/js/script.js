@@ -27,7 +27,23 @@ Drupal.behaviors.my_custom_behavior = {
       event.preventDefault();
       $('#responsive-menu').toggleClass('expand');
       $('#menu-btn').toggleClass('expand');
-    })
+    });
+    setContentWidth();
+
+    $(window).resize(function() {
+      setContentWidth();
+    });
+
+    function setContentWidth() {
+      windowsize = $(window).width();
+      sidebarsize = $('#nav').outerWidth();
+      if (windowsize > 500) {
+          $('#content').css('width', (windowsize-sidebarsize));
+      } else {
+          $('#content').css('width', '100%');
+      };
+    };
+
   }
 };
 })(jQuery, Drupal, this, this.document);
