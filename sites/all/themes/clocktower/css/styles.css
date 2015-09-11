@@ -188,12 +188,12 @@ ul.links {
 @media screen and (max-width: 875px) {
 
   article.node-teaser {
-    width: 460px;
+    width: 420px;
     margin: 10px 25px 10px 10px;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 540px) {
   article.node-teaser {
     width: 85%;
     margin: 10px 25px 10px 10px;

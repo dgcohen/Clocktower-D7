@@ -4,7 +4,7 @@
   display: none;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 540px) {
 
   .mobile-nav {
     display: block;
