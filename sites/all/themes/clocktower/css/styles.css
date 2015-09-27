@@ -89,9 +89,29 @@ article {
 }
 
 article img {
-  width: 100%;
-  height: auto;
   border-bottom: 4px solid #fff;
+}
+
+#colorbox {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  background: #eeeeee;
+}
+
+#cboxTitle {
+  display: none !important;
+}
+
+#cboxContent, .cboxPhoto {
+  border-radius: 0;
+}
+
+#cboxCurrent {
+  border: 0;
+  font-family: Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 200;
+  bottom: -31px;
 }
 
 article img:hover {

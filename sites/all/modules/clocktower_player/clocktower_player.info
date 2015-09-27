@@ -1,0 +1,4 @@
+name = Clocktower Player
+description = Custom player for clocktower.org
+package = Clocktower Player
+core = 7.x

@@ -140,6 +140,12 @@ abstract class DrupalUserMigration extends DrupalMigration {
            ->description('By default, disable in favor of migrated paths')
            ->defaultValue(0);
     }
+    // Pass the old uid through
+    $this->addFieldMapping('uid', 'uid');
+    // Tell user_save to create a new account with the given uid (otherwise it sees the
+    // uid and assumes you're updating an account).
+    $this->addFieldMapping('is_new')
+         ->defaultvalue(1);
   }
 
   /**
