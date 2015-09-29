@@ -1,6 +1,6 @@
-<head>
-<link type="text/css" href="../skin/pink.flag/scss/jplayer.pink.flag.css" rel="stylesheet" />
-</head>
+<h2>Show: <?php print($title); ?></h2>
+<h2>Series: <?php print($series); ?></h2>
+
 <div id="jquery_jplayer_1" class="jp-jplayer"></div>
 <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
 	<div class="jp-type-single">
@@ -29,6 +29,10 @@
 				</div>
 			</div>
 		</div>
+    <button class="previous-node" role="button" tabindex="0">previous node</button>
+    <button class="previous-track" role="button" tabindex="0">previous track</button>
+    <button class="next-track" role="button" tabindex="0">next track</button>
+    <button class="next-node" role="button" tabindex="0">next node</button>
 		<div class="jp-details">
 			<div class="jp-title" aria-label="title">&nbsp;</div>
 		</div>

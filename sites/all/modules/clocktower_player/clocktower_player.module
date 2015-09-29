@@ -5,7 +5,8 @@
       'title' => 'Clocktower Player',
       'description' => 'Clocktower jPlayer',
       'page callback' => 'clocktower_player_page',
-      'page arguments' => array(2, 3),
+      'page arguments' => array(1, 2),
+      'type' => MENU_CALLBACK,
       'access arguments' => array('access content'),
     );
     return $items;
@@ -22,15 +23,103 @@
     );
   }
 
-  function clocktower_player_page($node, $shuffle) {
+  function clocktower_player_page($mode, $nid) {
+    if($mode == "channel") {
+      $show_data = get_channel_info($nid);
+    } elseif ($mode == "archive") {
+      $show_data = get_archive_info($nid);
+    }
     drupal_add_js(drupal_get_path('module', 'clocktower_player') . '/js/clocktower-player.js');
+    $settings = array(
+      'clocktowerplayer' => array(
+        'file_path' => $show_data['file_path'],
+        'title' => $node->title,
+      ),
+    );
+    drupal_add_js($settings, 'setting');
     drupal_add_js('sites/all/libraries/jplayer/jquery.jplayer.min.js');
-    drupal_add_js('sites/all/libraries/jplayer/jquery.jplayer.swf');
     drupal_add_css(drupal_get_path('module', 'clocktower_player') . '/css/jplayer.blue.monday.css');
     $page_elements = array(
-      'node' => $node,
-      'shuffle' => $shuffle,
+      'mode' => $mode,
+      'title' => $show_data['title'],
+      'series' => $show_data['series_title'],
     );
     return theme('clocktower_player', $page_elements);
+  }
+
+  function get_channel_info($nid) {
+    $node = node_load($nid);
+    return $node;
+  }
+
+  function get_archive_info($nid) {
+    $show_data = array();
+    $node = node_load($nid);
+
+    if ($node->type == "show") {
+      $show = $node;
+      $series = series($show);
+    } elseif ($node->type == "series") {
+      $series = node_load($nid);
+      $show = latest_show($series);
+    }
+    $show_data['previous_show_id'] = adjacent_shows($show)[0];
+    $show_data['next_show_id'] = adjacent_shows($show)[1];
+    $show_data['title'] = $show->title;
+    $show_data['series_title'] = $series->title;
+    return $show_data;
+  }
+
+  function adjacent_shows($show) {
+    $series = series($show);
+    $shows = included_shows($series);
+    $is_first_show = FALSE;
+    $is_last_show = FALSE;
+
+    foreach($shows as $index=>$show_id) {
+      if ($show_id['nid'] == $show->nid && $index == 0) {
+        $show_index = 0;
+        $is_first_show = TRUE;
+        break;
+      } elseif ($show_id['nid'] == $show->nid && $index == (count($shows) - 1)){
+        $show_index = $index;
+        $is_last_show = TRUE;
+        break;
+      } elseif ($show_id['nid'] == $show->nid) {
+        $show_index = $index;
+        break;
+      }
+    }
+
+    if($is_first_show) {
+      $next_show_id = $shows[$show_index + 1]['nid'];
+      $previous_show_id = 0;
+    } elseif ($is_last_show) {
+      $next_show_id = 0;
+      $previous_show_id = $shows[$show_index - 1]['nid'];
+    } else {
+      $next_show_id = $shows[$show_index + 1]['nid'];
+      $previous_show_id = $shows[$show_index - 1]['nid'];
+    }
+    return array($previous_show_id, $next_show_id);
+  }
+
+  function latest_show($series) {
+    return included_shows($series)[0];
+  }
+
+  function included_shows($series) {
+    $shows = $series->field_included_shows['und'];
+    // Sort show ids from newest to oldest
+    usort($shows, 'sortByNid');
+    return $shows;
+  }
+
+  function series($show) {
+    return node_load($show->field_series['und'][0]['nid']);
+  }
+
+  function sortByNid($a, $b) {
+      return $b['nid'] - $a['nid'];
   }
 ?>

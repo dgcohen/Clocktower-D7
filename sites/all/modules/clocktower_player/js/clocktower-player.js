@@ -1,23 +1,28 @@
 (function($) {
+  var clocktowerPlayer = {};
+  Drupal.behaviors.clocktowerplayer = {};
+  	Drupal.behaviors.clocktowerplayer.attach = function() {
+    if (Drupal.settings && Drupal.settings.clocktowerplayer ) {
+      var options = Drupal.settings.clocktowerplayer;
+      clocktowerPlayer.file_path = options.file_path;
+      clocktowerPlayer.title = options.title;
+  	}
+  }
   $( document ).ready(function() {
     $("#nav").hide();
     $("#header").hide();
     $("#page-title").hide();
-
   	$("#jquery_jplayer_1").jPlayer({
   		ready: function (event) {
   			$(this).jPlayer("setMedia", {
-  				title: "Bubble",
-  				m4a: "http://jplayer.org/audio/m4a/Miaow-07-Bubble.m4a",
-  				oga: "http://jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
+  				title: clocktowerPlayer.title,
+  				mp3: clocktowerPlayer.file_path,
   			});
   		},
   		swfPath: "../../../libraries/jplayer",
-  		supplied: "m4a, oga",
   		wmode: "window",
   		useStateClassSkin: true,
   		autoBlur: false,
-  		smoothPlayBar: true,
   		keyEnabled: true,
   		remainingDuration: true,
   		toggleDuration: true
