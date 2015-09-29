@@ -45,8 +45,24 @@
   }
 
   function get_channel_info($nid) {
+    $show_data = array();
     $node = node_load($nid);
-    return $node;
+
+    if ($node->type == "show") {
+      $show = $node;
+      $channel = channel($show);
+    } elseif ($node->type == "channel") {
+      $channel = node_load($nid);
+      $show = latest_show($channel);
+    }
+
+    $show_data['title'] = $show->title;
+    $show_data['channel_title'] = $channel->title;
+    $show_data['file_path'] = get_file_path($show);
+    $show_data['previous_show_id'] = adjacent_shows($show, 'channel')[0];
+    $show_data['next_show_id'] = adjacent_shows($show, 'channel')[1];
+
+    return $show_data;
   }
 
   function get_archive_info($nid) {
@@ -64,15 +80,20 @@
     $show_data['title'] = $show->title;
     $show_data['series_title'] = $series->title;
     $show_data['file_path'] = get_file_path($show);
-    $show_data['previous_show_id'] = adjacent_shows($show)[0];
-    $show_data['next_show_id'] = adjacent_shows($show)[1];
+    $show_data['previous_show_id'] = adjacent_shows($show, 'series')[0];
+    $show_data['next_show_id'] = adjacent_shows($show, 'series')[1];
 
     return $show_data;
   }
 
-  function adjacent_shows($show) {
-    $series = series($show);
-    $shows = included_shows($series);
+  function adjacent_shows($show, $mode) {
+    if ($mode == 'series') {
+      $series = series($show);
+      $shows = included_shows($series);
+    } else if ($mode == 'channel') {
+      $channel = channel($show);
+      $shows = included_shows($channel);
+    }
     $is_first_show = FALSE;
     $is_last_show = FALSE;
 
@@ -104,12 +125,13 @@
     return array($previous_show_id, $next_show_id);
   }
 
-  function latest_show($series) {
-    return included_shows($series)[0];
+  function latest_show($category) {
+    $latest_show = node_load(included_shows($category)[0]['nid']);
+    return $latest_show;
   }
 
-  function included_shows($series) {
-    $shows = $series->field_included_shows['und'];
+  function included_shows($category) {
+    $shows = $category->field_included_shows['und'];
     // Sort show ids from newest to oldest
     usort($shows, 'sortByNid');
     return $shows;
@@ -117,6 +139,10 @@
 
   function series($show) {
     return node_load($show->field_series['und'][0]['nid']);
+  }
+
+  function channel($show) {
+    return node_load($show->field_channel['und'][0]['nid']);
   }
 
   function get_file_path($node) {
