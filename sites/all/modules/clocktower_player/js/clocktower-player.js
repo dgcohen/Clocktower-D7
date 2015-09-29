@@ -9,6 +9,7 @@
   	}
   }
   $( document ).ready(function() {
+    console.log(clocktowerPlayer.file_path);
     $("#nav").hide();
     $("#header").hide();
     $("#page-title").hide();

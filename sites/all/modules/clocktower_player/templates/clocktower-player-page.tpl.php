@@ -29,10 +29,19 @@
 				</div>
 			</div>
 		</div>
-    <button class="previous-node" role="button" tabindex="0">previous node</button>
-    <button class="previous-track" role="button" tabindex="0">previous track</button>
-    <button class="next-track" role="button" tabindex="0">next track</button>
-    <button class="next-node" role="button" tabindex="0">next node</button>
+    <?php if ($previous_show_id) { ?>
+      <a class="previous-node" href="/player/<?php print($mode . '/' . $previous_show_id) ?>">previous node</a>
+    <?php } else { ?>
+      <p class="previous-node">previous node</p>
+    <?php } ?>
+
+    <a class="previous-track" href="">previous track</a>
+    <a class="next-track" href="">next track</a>
+    <?php if ($next_show_id) { ?>
+      <a class="next-node" href="/player/<?php print($mode . '/' . $next_show_id) ?>">next node</a>
+    <?php } else { ?>
+      <p class="previous-node">next node</p>
+    <?php } ?>
 		<div class="jp-details">
 			<div class="jp-title" aria-label="title">&nbsp;</div>
 		</div>

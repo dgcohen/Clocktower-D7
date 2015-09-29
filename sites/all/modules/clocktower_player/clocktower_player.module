@@ -30,12 +30,7 @@
       $show_data = get_archive_info($nid);
     }
     drupal_add_js(drupal_get_path('module', 'clocktower_player') . '/js/clocktower-player.js');
-    $settings = array(
-      'clocktowerplayer' => array(
-        'file_path' => $show_data['file_path'],
-        'title' => $node->title,
-      ),
-    );
+    $settings = array('clocktowerplayer' => array('file_path' => $show_data['file_path']));
     drupal_add_js($settings, 'setting');
     drupal_add_js('sites/all/libraries/jplayer/jquery.jplayer.min.js');
     drupal_add_css(drupal_get_path('module', 'clocktower_player') . '/css/jplayer.blue.monday.css');
@@ -43,6 +38,8 @@
       'mode' => $mode,
       'title' => $show_data['title'],
       'series' => $show_data['series_title'],
+      'previous_show_id' => $show_data['previous_show_id'],
+      'next_show_id' => $show_data['next_show_id'],
     );
     return theme('clocktower_player', $page_elements);
   }
@@ -63,10 +60,13 @@
       $series = node_load($nid);
       $show = latest_show($series);
     }
-    $show_data['previous_show_id'] = adjacent_shows($show)[0];
-    $show_data['next_show_id'] = adjacent_shows($show)[1];
+
     $show_data['title'] = $show->title;
     $show_data['series_title'] = $series->title;
+    $show_data['file_path'] = get_file_path($show);
+    $show_data['previous_show_id'] = adjacent_shows($show)[0];
+    $show_data['next_show_id'] = adjacent_shows($show)[1];
+
     return $show_data;
   }
 
@@ -117,6 +117,12 @@
 
   function series($show) {
     return node_load($show->field_series['und'][0]['nid']);
+  }
+
+  function get_file_path($node) {
+    $file_name = $node->field_audio_path['und'][0]['value'];
+    $path = '/sites/default/files/audio/' . $file_name;
+    return $path;
   }
 
   function sortByNid($a, $b) {
