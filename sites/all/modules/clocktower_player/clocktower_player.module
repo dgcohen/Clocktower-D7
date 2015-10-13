@@ -1,5 +1,4 @@
 <?php
-
   function clocktower_player_menu() {
     $items['player/%/%'] = array(
       'title' => 'Clocktower Player',
@@ -12,9 +11,6 @@
     return $items;
   }
 
-  /**
-   * Implements hook_theme().
-   */
   function clocktower_player_theme($existing, $type, $theme, $path) {
     return array(
       'clocktower_player' => array(
@@ -68,6 +64,10 @@
   function get_archive_info($nid) {
     $show_data = array();
     $node = node_load($nid);
+    $file = $node->field_audio_path['und'][0]['value'];
+    $path = 'sites/default/files/audio/' . $file;
+    $path = drupal_realpath($path);
+    dpm($node);
 
     if ($node->type == "show") {
       $show = $node;
