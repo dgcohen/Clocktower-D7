@@ -17,12 +17,6 @@
 Drupal.behaviors.my_custom_behavior = {
   attach: function(context, settings) {
     $(window).load(function() {
-      $('.view-content').masonry({
-        transitionDuration: 0,
-        itemSelector: 'article',
-        columnWidth: 25
-      });
-    });
     $( '#menu-btn' ).click(function(event){
       event.preventDefault();
       $('#responsive-menu').toggleClass('expand');
