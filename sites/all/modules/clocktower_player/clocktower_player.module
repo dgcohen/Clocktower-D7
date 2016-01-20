@@ -66,8 +66,9 @@
     $node = node_load($nid);
     $file = $node->field_audio_path['und'][0]['value'];
     $path = 'sites/default/files/audio/' . $file;
-    $path = drupal_realpath($path);
-    dpm($node);
+    $realfile = file_uri_to_object($path);
+    $data = getid3_analyze_file($realfile);
+    dpm($_SERVER['HTTP_HOST']);
 
     if ($node->type == "show") {
       $show = $node;
