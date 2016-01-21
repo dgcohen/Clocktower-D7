@@ -8,3 +8,4 @@ sites/*/private
 .DS_Store
 sites/.DS_Store
 sites/default/.DS_Store
+sites/all/themes/*/.sass-cache/*
