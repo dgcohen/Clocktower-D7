@@ -35,16 +35,6 @@
    *   modifications made by the Ajax callback that also produced 'context'.
    */
 
-   Drupal.behaviors.setupBreakpoints = {
-    attach: function (context, settings) {
-      $('body', context).once('setupBreakpoints', function () {
-        $.mediaquery({
-          minWidth: [320, 580, 960, 1140]
-        });
-      });
-    }
-  };
-
   Drupal.behaviors.addIE10 = {
     attach: function (context, settings) {
 

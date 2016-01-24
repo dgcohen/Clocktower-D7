@@ -9,3 +9,6 @@ sites/*/private
 sites/.DS_Store
 sites/default/.DS_Store
 sites/all/themes/*/.sass-cache/*
+/sites/all/themes/clocktower/css/*
+/sites/all/themes/clocktower/js/clocktower.behaviors.min.js
+/sites/all/themes/clocktower/images/generated/*

@@ -11,13 +11,8 @@
 <div id="page">
 
   <div class="mobile-nav">
-    <a href="#" class="menu-btn" id="menu-btn">
-    	  <span></span>
-    	  <span></span>
-    	  <span></span>
-    </a>
-
-    <div id="responsive-menu">
+    <div class="menu-btn"></div>
+    <div class="responsive-menu">
       <?php $menu = menu_tree_all_data('navigation'); ?>
       <?php if ($menu): ?>
         <?php $main_nav = menu_tree_output($menu); ?>

@@ -7,11 +7,35 @@ SCSS variables are information about icon's compiled state, stored under its ori
 
 At the bottom of this section, we provide information about the spritesheet itself
 */
+$hamburger-closed: (
+  name: 'hamburger-closed',
+  x: 0px,
+  y: 0px,
+  offset-x: 0px,
+  offset-y: 0px,
+  width: 128px,
+  height: 128px,
+  total-width: 276px,
+  total-height: 128px,
+  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-b16220d5a656766df03f63dc6b4ac68e.png'
+);
+$hamburger-open: (
+  name: 'hamburger-open',
+  x: 148px,
+  y: 0px,
+  offset-x: -148px,
+  offset-y: 0px,
+  width: 128px,
+  height: 128px,
+  total-width: 276px,
+  total-height: 128px,
+  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-b16220d5a656766df03f63dc6b4ac68e.png'
+);
 $spritesheet: (
-  width: 0px,
-  height: 0px,
-  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-d41d8cd98f00b204e9800998ecf8427e.png',
-  sprites: ()
+  width: 276px,
+  height: 128px,
+  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-b16220d5a656766df03f63dc6b4ac68e.png',
+  sprites: ($hamburger-closed, $hamburger-open, )
 );
 
 /*
