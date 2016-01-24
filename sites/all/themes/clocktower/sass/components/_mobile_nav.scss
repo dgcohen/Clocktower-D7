@@ -1,0 +1,5 @@
+#responsive-menu {
+  @include breakpoint($bp960) {
+    display: none;
+  }
+}

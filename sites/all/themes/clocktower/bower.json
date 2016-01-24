@@ -1,0 +1,11 @@
+{
+  "name": "clocktower",
+  "version": "1.0.0",
+  "description": "front-end dependencies for stratford theme",
+  "dependencies": {
+    "breakpoint-sass": "~2.5.0",
+    "compass-mixins": "~1.0.2",
+    "modernizr": "~2.8.3",
+    "normalize-scss": "~3.0.3"
+  }
+}
