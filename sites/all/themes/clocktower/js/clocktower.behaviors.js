@@ -47,4 +47,12 @@
     }
   };
 
+  Drupal.behaviors.mobileMenu = {
+    attach: function (context, settings) {
+      $('.menu-btn').click(function() {
+        $('.responsive-menu').toggle();
+      });
+    }
+  };
+
 })(jQuery);
