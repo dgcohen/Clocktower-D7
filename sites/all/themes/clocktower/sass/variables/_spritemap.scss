@@ -15,9 +15,9 @@ $hamburger-closed: (
   offset-y: 0px,
   width: 128px,
   height: 128px,
-  total-width: 276px,
-  total-height: 128px,
-  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-b16220d5a656766df03f63dc6b4ac68e.png'
+  total-width: 456px,
+  total-height: 192px,
+  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-80342fdf28de0740b21752fa8d0b5ad4.png'
 );
 $hamburger-open: (
   name: 'hamburger-open',
@@ -27,15 +27,27 @@ $hamburger-open: (
   offset-y: 0px,
   width: 128px,
   height: 128px,
-  total-width: 276px,
-  total-height: 128px,
-  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-b16220d5a656766df03f63dc6b4ac68e.png'
+  total-width: 456px,
+  total-height: 192px,
+  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-80342fdf28de0740b21752fa8d0b5ad4.png'
+);
+$triangle-white: (
+  name: 'triangle-white',
+  x: 296px,
+  y: 0px,
+  offset-x: -296px,
+  offset-y: 0px,
+  width: 160px,
+  height: 192px,
+  total-width: 456px,
+  total-height: 192px,
+  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-80342fdf28de0740b21752fa8d0b5ad4.png'
 );
 $spritesheet: (
-  width: 276px,
-  height: 128px,
-  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-b16220d5a656766df03f63dc6b4ac68e.png',
-  sprites: ($hamburger-closed, $hamburger-open, )
+  width: 456px,
+  height: 192px,
+  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-80342fdf28de0740b21752fa8d0b5ad4.png',
+  sprites: ($hamburger-closed, $hamburger-open, $triangle-white, )
 );
 
 /*

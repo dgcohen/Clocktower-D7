@@ -1,0 +1,7 @@
+body {
+  background: $gray;
+  font-family: sans-serif;
+}
+#main {
+  @include container;
+}

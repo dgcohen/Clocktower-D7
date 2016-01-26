@@ -5,3 +5,8 @@
     clear: both;
   }
 }
+
+@mixin container {
+  max-width: 1140px;
+  margin: auto;
+}

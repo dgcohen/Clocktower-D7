@@ -1,13 +1,17 @@
 .mobile-nav {
   display: block;
   font-family: $fg;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: gray;
   @include breakpoint($bp960) {
-    display: none;
+    display: none !important;
   }
   .responsive-menu {
     display: none;
-    .is-open {
-    }
   }
   .menu-btn {
     background: url('../images/icons2x/hamburger-open.png');

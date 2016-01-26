@@ -1,0 +1,41 @@
+#header {
+  @include clearfix;
+  @include container;
+  .site-logo {
+    display: block;
+    width: 200px;
+    height: auto;
+    float: left;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  .header-links {
+    @include clearfix;
+    float: right;
+    .nav-buttons {
+      float: left;
+      margin-top: 40px;
+      .play-button {
+        width: 70px;
+        height: 70px;
+        background: $white url('../images/icons2x/triangle-white.png') no-repeat 68% 50%;
+        background-size: 56%;
+        border-radius: 50%;
+        border: 2px solid $black;
+        &:hover {
+          background: $blue url('../images/icons2x/triangle-white.png') no-repeat 68% 50%;
+          background-size: 56%;
+          border-radius: 50%;
+        }
+      }
+    }
+    .region-header {
+      float: left;
+      margin-top: 100px;
+      #block-search-form {
+      }
+    }
+  }
+}
