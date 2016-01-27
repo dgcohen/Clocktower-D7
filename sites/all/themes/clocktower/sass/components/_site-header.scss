@@ -1,6 +1,7 @@
 #header {
   @include clearfix;
   @include container;
+  margin-top: 80px;
   .site-logo {
     display: block;
     width: 200px;
@@ -15,8 +16,12 @@
     @include clearfix;
     float: right;
     .nav-buttons {
+      @include clearfix;
       float: left;
       margin-top: 40px;
+      a {
+        float: left;
+      }
       .play-button {
         width: 70px;
         height: 70px;

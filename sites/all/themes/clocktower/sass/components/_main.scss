@@ -1,6 +1,6 @@
 body {
   background: $gray;
-  font-family: sans-serif;
+  font-family: $fb;
 }
 #main {
   @include container;
