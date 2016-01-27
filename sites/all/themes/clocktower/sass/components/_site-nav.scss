@@ -1,0 +1,48 @@
+#block-system-navigation {
+  @include clearfix;
+  .menu {
+    margin: 0 12%;
+    > .menu__item {
+      position: relative;
+      float: left;
+      font-size: 20px;
+      text-transform: uppercase;
+      margin-right: 33%;
+      padding-bottom: 30px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        .menu {
+          display: block;
+        }
+      }
+      .menu {
+      display: none;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      background: $dark-gray;
+      width: 200px;
+      margin: 0;
+      > .menu__item {
+        float: none;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        a {
+          display: block;
+          color: $white;
+          font-size: 16px;
+          text-transform: none;
+          padding: 12px 17px;
+          border-bottom: 1px solid $medium-gray;
+        }
+        &:hover {
+          background: $medium-gray;
+        }
+      }
+    }
+    }
+  }
+}
