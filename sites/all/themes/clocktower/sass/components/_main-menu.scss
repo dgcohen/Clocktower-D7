@@ -1,7 +1,7 @@
-#block-system-navigation {
+#main-menu {
   @include clearfix;
   .menu {
-    margin: 0 12%;
+    margin: 0 6%;
     > .menu__item {
       position: relative;
       float: left;

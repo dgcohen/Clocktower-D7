@@ -13,7 +13,7 @@
   <div class="mobile-nav">
     <div class="menu-btn"></div>
     <div class="responsive-menu">
-      <?php $menu = menu_tree_all_data('navigation'); ?>
+      <?php $menu = menu_tree_all_data('main-menu'); ?>
       <?php if ($menu): ?>
         <?php $main_nav = menu_tree_output($menu); ?>
         <?php print drupal_render($main_nav); ?>
@@ -36,20 +36,9 @@
   </header>
 
   <div id="main">
-    <?php
-      // Render the sidebars to see if there's anything in them.
-      $sidebar_first  = render($page['sidebar_first']);
-      $sidebar_second = render($page['sidebar_second']);
-    ?>
-
-    <?php if ($sidebar_first || $sidebar_second): ?>
-      <div id="nav">
-        <aside class="sidebars">
-          <?php print $sidebar_first; ?>
-          <?php print $sidebar_second; ?>
-        </aside>
-      </div>
-    <?php endif; ?>
+    <div id="main-menu">
+      <?php print render($main_nav); ?>
+    </div>
 
     <div id="content" class="column" role="main">
       <a id="main-content"></a>
