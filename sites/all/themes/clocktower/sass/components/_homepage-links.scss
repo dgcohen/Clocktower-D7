@@ -1,0 +1,60 @@
+.bean-homepage-links {
+  margin: 84px auto;
+  width: 870px;
+  .content {
+    @include clearfix;
+  }
+  a {
+    display: block;
+    position: relative;
+    width: 400px;
+    height: 284px;
+    float: left;
+    margin-bottom: 70px;
+    margin-right: 70px;
+    &:nth-child(even) {
+      margin-right: 0;
+    }
+    background-repeat: no-repeat;
+    background-size: cover;
+    &:hover {
+      .title {
+        display: none;
+      }
+      .description {
+        display: block;
+      }
+    }
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: $black;
+       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+      filter: alpha(opacity=30);
+      -moz-opacity: 0.3;
+      -khtml-opacity: 0.3;
+      opacity: 0.3;
+      z-index: 100;
+    }
+    div {
+      position: absolute;
+      text-transform: uppercase;
+      width: 100%;
+      text-align: center;
+      color: $white;
+      z-index: 200;
+    }
+    .title {
+      font-size: 34px;
+      top: 128px;
+    }
+    .description {
+      display: none;
+      font-size: 24px;
+      padding: 40px;
+      top: 85px;
+      line-height: 30px;
+    }
+  }
+}

@@ -50,7 +50,8 @@
             'href' => $url,
             'style' => 'background-image: url(' . $image_url . ')',
             ),
-          '#value' => '<div class="title">' . $title . '</div><div class="description">' . $desc . '</div>',
+          '#value' => '<span class="overlay"></span><div class="title">' . $title . 
+                      '</div><div class="description">' . $desc . '</div>',
           ),
         ));
       }

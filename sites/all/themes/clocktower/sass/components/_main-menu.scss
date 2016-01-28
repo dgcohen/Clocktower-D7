@@ -1,13 +1,13 @@
 #main-menu {
   @include clearfix;
   .menu {
-    margin: 0 6%;
+    margin: 0 5%;
     > .menu__item {
       position: relative;
       float: left;
       font-size: 20px;
       text-transform: uppercase;
-      margin-right: 33%;
+      margin-right: 36%;
       padding: 30px 0;
       &:last-child {
         margin-right: 0;
@@ -23,8 +23,9 @@
       top: 60px;
       left: 0;
       background: $dark-gray;
-      width: 240px;
+      width: 200px;
       margin: 0;
+      z-index: 1000;
       > .menu__item {
         float: none;
         width: 100%;
