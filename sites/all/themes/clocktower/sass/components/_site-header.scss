@@ -20,13 +20,12 @@
     .nav-buttons {
       @include clearfix;
       float: left;
-      margin-top: 40px;
-      a {
-        float: left;
-      }
+      margin-top: 110px;
+      margin-right: 15px;
       .play-button {
         width: 70px;
         height: 70px;
+        float: left;
         background: $white url('../images/icons2x/triangle-white.png') no-repeat 68% 50%;
         background-size: 56%;
         border-radius: 50%;
@@ -37,11 +36,39 @@
           border-radius: 50%;
         }
       }
+      .donate-subscribe {
+          margin: 6px 30px 0;
+          float: left;
+          a {
+            text-transform: uppercase;
+            font-size: 21px;
+            margin-bottom: 18px;
+          }
+        }
     }
     .region-header {
       float: left;
-      margin-top: 100px;
+      margin-top: 130px;
+      margin-right: 40px;
       #block-search-form {
+        .form-item {
+          margin: 0;
+          float: left;
+          display: block;
+        }
+        input[type=text] {
+          border: 1px solid $light-gray;
+          padding: 2px 15px;
+          height: 34px;
+        }
+        input[type=submit] {
+          height: 40px;
+          background: $dark-gray;
+          color: $white;
+          font-size: 12px;
+          text-transform: uppercase;
+          padding: 10px;
+        }
       }
     }
   }

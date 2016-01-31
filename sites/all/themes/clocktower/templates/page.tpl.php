@@ -28,8 +28,10 @@
     <div class="header-links">
       <div class="nav-buttons">
         <a href="#" class="play-button"></a>
-        <a href='#' class="donate-button">Donate</a>
-        <a href='# ' class="donate-button">Subscribe</a>
+        <div class="donate-subscribe">
+          <a href='#' class="donate-button">Donate</a>
+          <a href='#' class="donate-button">Subscribe</a>
+        </div>
       </div>
       <?php print render($page['header']); ?>
     </div>
