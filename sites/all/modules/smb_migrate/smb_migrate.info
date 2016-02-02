@@ -1,0 +1,20 @@
+name = "SMB migration"
+package = "Migration"
+core = 7.x
+
+dependencies[] = migrate
+dependencies[] = migrate_d2d
+
+files[] = user.inc
+files[] = file.inc
+files[] = node.inc
+files[] = blog.inc
+files[] = partner.inc
+files[] = page.inc
+files[] = residency.inc
+files[] = series.inc
+files[] = person.inc
+files[] = event.inc
+files[] = exhibition.inc
+files[] = show.inc
+files[] = smb_migrate.migrate.inc
