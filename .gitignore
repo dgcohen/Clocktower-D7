@@ -5,4 +5,4 @@ sites/*/settings*.php
 sites/*/files
 sites/*/private
 sites/all/themes/clocktower/css/*
-*/DS_STORE
+*/.DS_STORE
