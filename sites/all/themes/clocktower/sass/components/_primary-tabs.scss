@@ -1,0 +1,11 @@
+.tabs-primary {
+  @include clearfix;
+  margin: 10px 0;
+  a {
+    color: blue;
+    text-decoration: underline;
+    float: left;
+    margin-right: 10px;
+    font-size: 13px;
+  }
+}
