@@ -9,6 +9,7 @@ core        = 7.x
 ; Stylesheets
 ; ========================================
 stylesheets[all][] = css/clocktower.normalize.css
+stylesheets[all][] = libraries/magnific-popup/magnific-popup.css
 stylesheets[all][] = css/clocktower.styles.css
 stylesheets[all][] = css/clocktower.no-query.css
 
@@ -16,6 +17,7 @@ stylesheets[all][] = css/clocktower.no-query.css
 ; Scripts
 ; ========================================
 scripts[] = libraries/modernizr/modernizr.js
+scripts[] = libraries/magnific-popup/jquery.magnific-popup.js
 scripts[] = js/clocktower.behaviors.min.js
 
 ; ========================================
