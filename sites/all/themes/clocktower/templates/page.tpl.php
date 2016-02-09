@@ -7,9 +7,7 @@
  * @see https://drupal.org/node/1728148
  */
 ?>
-
 <div id="page">
-
   <div class="mobile-nav">
     <div class="menu-btn"></div>
     <div class="responsive-menu">
@@ -22,6 +20,7 @@
   </div>
 
   <header class="header" id="header" role="banner">
+    <?php print $messages; ?>
     <?php if ($logo): ?>
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo site-logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
     <?php endif; ?>
@@ -43,13 +42,6 @@
     </div>
 
     <div id="content" class="column" role="main">
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-      <?php print $messages; ?>
       <?php print render($tabs); ?>
       <?php print render($page['help']); ?>
       <?php if ($action_links): ?>

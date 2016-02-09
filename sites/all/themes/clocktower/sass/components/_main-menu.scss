@@ -1,5 +1,7 @@
 #main-menu {
   @include clearfix;
+  border-bottom: 1px solid $black;
+  border-top: 1px solid $black;
   .menu {
     margin: 0 5%;
     > .menu__item {
@@ -8,7 +10,7 @@
       font-size: 20px;
       text-transform: uppercase;
       margin-right: 36%;
-      padding: 30px 0;
+      padding: 10px 0;
       &:last-child {
         margin-right: 0;
       }
