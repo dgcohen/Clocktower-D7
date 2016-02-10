@@ -9,45 +9,69 @@ At the bottom of this section, we provide information about the spritesheet itse
 */
 $hamburger-closed: (
   name: 'hamburger-closed',
+  x: 150px,
+  y: 0px,
+  offset-x: -150px,
+  offset-y: 0px,
+  width: 128px,
+  height: 128px,
+  total-width: 606px,
+  total-height: 192px,
+  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-406386f29e4b58196c076aff8e03bc70.png'
+);
+$hamburger-open: (
+  name: 'hamburger-open',
+  x: 298px,
+  y: 0px,
+  offset-x: -298px,
+  offset-y: 0px,
+  width: 128px,
+  height: 128px,
+  total-width: 606px,
+  total-height: 192px,
+  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-406386f29e4b58196c076aff8e03bc70.png'
+);
+$icon-facebook: (
+  name: 'icon-facebook',
   x: 0px,
   y: 0px,
   offset-x: 0px,
   offset-y: 0px,
-  width: 128px,
-  height: 128px,
-  total-width: 456px,
+  width: 50px,
+  height: 50px,
+  total-width: 606px,
   total-height: 192px,
-  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-80342fdf28de0740b21752fa8d0b5ad4.png'
+  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-406386f29e4b58196c076aff8e03bc70.png'
 );
-$hamburger-open: (
-  name: 'hamburger-open',
-  x: 148px,
+$icon-twitter: (
+  name: 'icon-twitter',
+  x: 70px,
   y: 0px,
-  offset-x: -148px,
+  offset-x: -70px,
   offset-y: 0px,
-  width: 128px,
-  height: 128px,
-  total-width: 456px,
+  width: 60px,
+  height: 49px,
+  total-width: 606px,
   total-height: 192px,
-  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-80342fdf28de0740b21752fa8d0b5ad4.png'
+  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-406386f29e4b58196c076aff8e03bc70.png'
 );
 $triangle-white: (
   name: 'triangle-white',
-  x: 296px,
+  x: 446px,
   y: 0px,
-  offset-x: -296px,
+  offset-x: -446px,
   offset-y: 0px,
   width: 160px,
   height: 192px,
-  total-width: 456px,
+  total-width: 606px,
   total-height: 192px,
-  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-80342fdf28de0740b21752fa8d0b5ad4.png'
+  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-406386f29e4b58196c076aff8e03bc70.png'
 );
 $spritesheet: (
-  width: 456px,
+  width: 606px,
   height: 192px,
-  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-80342fdf28de0740b21752fa8d0b5ad4.png',
-  sprites: ($hamburger-closed, $hamburger-open, $triangle-white, )
+  image: '/sites/all/themes/custom/clocktower/images/generated/sprite-406386f29e4b58196c076aff8e03bc70.png',
+  sprites: ($hamburger-closed, $hamburger-open, $icon-facebook, $icon-twitter, $triangle-white, )
 );
 
 /*

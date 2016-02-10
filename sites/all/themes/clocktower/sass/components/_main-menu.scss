@@ -2,6 +2,7 @@
   @include clearfix;
   border-bottom: 1px solid $black;
   border-top: 1px solid $black;
+  background: $white;
   .menu {
     margin: 0 5%;
     > .menu__item {
@@ -22,9 +23,9 @@
       .menu {
       display: none;
       position: absolute;
-      top: 60px;
-      left: 0;
-      background: $dark-gray;
+      top: 40px;
+      left: -20px;
+      background: $medium-gray;
       width: 200px;
       margin: 0;
       z-index: 1000;
@@ -39,10 +40,10 @@
           font-size: 16px;
           text-transform: none;
           padding: 12px 17px;
-          border-bottom: 1px solid $medium-gray;
+          border-bottom: 1px solid $light-gray;
         }
         &:hover {
-          background: $medium-gray;
+          background: $dark-gray;
         }
       }
     }

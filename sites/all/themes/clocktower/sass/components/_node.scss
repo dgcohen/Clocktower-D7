@@ -4,10 +4,11 @@
   .col-left {
     @include clearfix;
     float: left;
-    width: 48%;
+    width: 40%;
+    margin-left: 2%;
     .node-header {
       @include clearfix;
-      padding: 8px 2%;
+      padding: 8px 0;
       margin-bottom: 8px;
       border-bottom: 1px solid $black;
       .node-type {
@@ -30,14 +31,14 @@
       padding-left: 4%;
       h2 {
         font-family: $fc;
-        font-size: 28px;
+        font-size: 30px;
         padding: 11px 0;
         margin: 20px 0 14px;
       }
       .content {
         font-size: 14px;
-        line-height: 26px;
-        margin-right: 50px;
+        line-height: 27px;
+        margin-right: 30px;
         p {
           margin-bottom: 16px;
         }
@@ -50,7 +51,7 @@
   .col-right {
     @include clearfix;
     float: right;
-    width: 48%;
+    width: 56%;
     padding: 40px 1%;
     .field-name-field-image {
       margin-top: 70px;

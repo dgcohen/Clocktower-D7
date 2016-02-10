@@ -65,6 +65,10 @@
         <?php endif; ?>
         <div class="content"<?php print $content_attributes; ?>>
           <?php dpm(get_defined_vars()); ?>
+          <div class="social-links">
+            <a class="facebook" href="facebook.com"></a>
+            <a class="twitter" href="twitter.com"></a>
+          </div>
           <?php print render($content['body']); ?>
         </div>
       </div>
