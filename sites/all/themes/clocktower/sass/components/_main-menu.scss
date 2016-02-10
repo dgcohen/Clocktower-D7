@@ -10,6 +10,7 @@
       float: left;
       font-size: 20px;
       text-transform: uppercase;
+      font-family: $fc;
       margin-right: 36%;
       padding: 10px 0;
       &:last-child {
@@ -38,6 +39,7 @@
           display: block;
           color: $white;
           font-size: 16px;
+          font-family: $fb;
           text-transform: none;
           padding: 12px 17px;
           border-bottom: 1px solid $light-gray;

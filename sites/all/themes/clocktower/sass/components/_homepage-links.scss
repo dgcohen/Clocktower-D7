@@ -12,6 +12,8 @@
     float: left;
     margin-bottom: 70px;
     margin-right: 70px;
+    font-family: $fb;
+    letter-spacing: -.4px;
     &:nth-child(even) {
       margin-right: 0;
     }
