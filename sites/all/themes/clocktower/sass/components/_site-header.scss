@@ -1,13 +1,14 @@
 #header {
   @include clearfix;
   @include container;
-  margin-top: 80px;
-  padding-bottom: 30px;
+  margin-top: 40px;
+  padding-bottom: 20px;
   .site-logo {
     display: block;
     width: 200px;
     height: auto;
     float: left;
+    margin-left: 2%;
     img {
       display: block;
       width: 100%;

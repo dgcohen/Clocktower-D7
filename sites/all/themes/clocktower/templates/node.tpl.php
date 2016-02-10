@@ -46,7 +46,15 @@
 <?php else: ?>
   <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
     <div class="col-left">
-      <div>
+      <div class="node-header">
+        <a class="node-type <?php print $type; ?>" href="/<?php print $type; ?>">
+          <?php print strtoupper(node_type_get_name($type)); ?>
+        </a>
+        <?php if($type == 'event'): ?>
+          <div class="event-dates"><?php print render($content['field_event_date']); ?></div>
+        <?php endif; ?>
+      </div>
+      <div class="node-content">
         <?php print render($title_prefix); ?>
         <?php if ($title): ?>
           <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
@@ -56,7 +64,7 @@
           <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
         <?php endif; ?>
         <div class="content"<?php print $content_attributes; ?>>
-          <?php dpm($content); ?>
+          <?php dpm(get_defined_vars()); ?>
           <?php print render($content['body']); ?>
         </div>
       </div>
