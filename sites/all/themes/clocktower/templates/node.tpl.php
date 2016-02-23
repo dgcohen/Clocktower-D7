@@ -45,36 +45,54 @@
   </article>
 <?php else: ?>
   <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-    <div class="col-left">
-      <div class="node-header">
-        <a class="node-type <?php print $type; ?>" href="/<?php print $type; ?>">
-          <?php print strtoupper(node_type_get_name($type)); ?>
-        </a>
-        <?php if($type == 'event'): ?>
-          <div class="event-dates"><?php print render($content['field_event_date']); ?></div>
-        <?php endif; ?>
-      </div>
-      <div class="node-content">
-        <?php print render($title_prefix); ?>
-        <?php if ($title): ?>
-          <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-        <?php endif; ?>
-        <?php print render($title_suffix); ?>
-        <?php if ($unpublished): ?>
-          <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
-        <?php endif; ?>
-        <div class="content"<?php print $content_attributes; ?>>
-          <?php dpm(get_defined_vars()); ?>
-          <div class="social-links">
-            <a class="facebook" href="facebook.com"></a>
-            <a class="twitter" href="twitter.com"></a>
+    <div class="node-content">
+      <div class="col-left">
+        <div class="node-header">
+          <a class="node-type <?php print $type; ?>" href="/<?php print $type; ?>">
+            <?php print strtoupper(node_type_get_name($type)); ?>
+          </a>
+          <?php if($type == 'event'): ?>
+            <div class="event-dates"><?php print render($content['field_event_date']); ?></div>
+          <?php endif; ?>
+        </div>
+        <div class="node-content">
+          <?php print render($title_prefix); ?>
+          <?php if ($title): ?>
+            <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+          <?php endif; ?>
+          <?php print render($title_suffix); ?>
+          <?php if ($unpublished): ?>
+            <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
+          <?php endif; ?>
+          <div class="content"<?php print $content_attributes; ?>>
+            <?php dpm(get_defined_vars()); ?>
+            <div class="social-links">
+              <a class="facebook" href="facebook.com"></a>
+              <a class="twitter" href="twitter.com"></a>
+            </div>
+            <?php print render($content['body']); ?>
           </div>
-          <?php print render($content['body']); ?>
         </div>
       </div>
+      <div class="col-right">
+        <?php print render($content['field_image']); ?>
+      </div>
     </div>
-    <div class="col-right">
-      <?php print render($content['field_image']); ?>
+    <div class="node-related">
+      <?php dpm($field_series); ?>
+      <?php dpm($field_series); ?>
+        <?php if($node->type == "show" && $field_series) { ?>
+
+          <div class="also-list">
+            <div class="title item">
+              <h6>Other Episodes From</h6>
+              <h1></h1>
+              <div class="series-contents">
+              <?php print views_embed_view('also_in_this_series', 'default', $field_series[0]['nid'], $node->nid); ?>
+              </div>
+            </div>
+          </div>
+          <?php }; ?>
     </div>
   </article>
 
