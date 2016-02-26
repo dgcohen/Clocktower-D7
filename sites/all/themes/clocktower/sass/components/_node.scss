@@ -6,18 +6,18 @@
   }
   .node-body {
     @include clearfix;
-    border-bottom: 1px solid $black;
+    border-bottom: 1px solid $medium-gray;
     padding-bottom: 25px;
     .col-left {
       @include clearfix;
       float: left;
-      width: 45%;
+      width: 48%;
       margin-left: 2%;
       .node-header {
         @include clearfix;
         padding: 8px 0;
         margin-bottom: 8px;
-        border-bottom: 1px solid $black;
+        border-bottom: 1px solid $medium-gray;
         .node-type {
           float: left;
           background: $white;
@@ -38,15 +38,16 @@
         padding-left: 4%;
         h2 {
           font-family: $fc;
-          font-size: 30px;
+          font-size: 32px;
           padding: 11px 0;
           margin: 20px 0 14px;
           line-height: 39px;
         }
         .content {
-          font-size: 14px;
-          line-height: 27px;
-          margin-right: 30px;
+          font-size: 15px;
+          line-height: 30px;
+          margin-right: 10px;
+          letter-spacing: -.01em;
           p {
             margin-bottom: 16px;
           }
@@ -59,8 +60,8 @@
     .col-right {
       @include clearfix;
       float: right;
-      width: 53%;
-      padding: 40px 3.5%;
+      width: 50%;
+      padding: 80px 2.5%;
       .field-name-field-image {
         margin-top: 70px;
         .field-item {
@@ -112,8 +113,8 @@
         }
         h3 {
           font-family: $fc;
-          font-size: 32px;
-          margin: 8px 0 30px;
+          font-size: 35px;
+          margin: 13px 0 30px;
         }
       }
     }

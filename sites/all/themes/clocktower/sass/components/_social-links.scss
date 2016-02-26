@@ -1,14 +1,29 @@
 .social-links {
   float: left;
-  margin: 5px 30px 10px 0;
+  margin: 5px 28px 10px 0;
   margin-bottom: 10px;
   a {
     display: block;
-    width: 60px;
-    height: 50px;
-    margin-bottom: 15px;
+    width: 70px;
+    height: 60px;
+    margin: 10px auto 15px;
     &:last-child {
       margin-bottom: 0;
+    }
+    &.play-button {
+      width: 70px;
+      height: 70px;
+      background: $white url('../images/icons2x/triangle-white.png') no-repeat 68% 50%;
+      background-size: 56%;
+      border-radius: 50%;
+      border: 2px solid $medium-gray;
+      margin-top: 0;
+      margin-bottom: 29px;
+      &:hover {
+        background: $blue url('../images/icons2x/triangle-white.png') no-repeat 68% 50%;
+        background-size: 56%;
+        border-radius: 50%;
+      }
     }
     &.facebook {
       background-color: $facebook-blue;
