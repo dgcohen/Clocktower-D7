@@ -12,7 +12,12 @@
 
     <?php if ($title_prefix || $title_suffix || $display_submitted || $unpublished || !$page && $title): ?>
       <header>
-        <?php print render($content['field_image']); ?>
+        <?php $image_display = field_info_instance('node', 'field_image', $node->type)['display']; ?>
+        <?php $image_style = $image_display['teaser']['settings']['image_style']; ?>
+        <?php $image_path = $field_image[0]['uri']; ?>
+        <?php $image_url = image_style_url($image_style, $image_path); ?>
+        <?php $alias = drupal_get_path_alias('node/' . $node->nid); ?>
+        <?php print('<a href="/' . $alias . '" style="background: url(' . $image_url . ') no-repeat" class="teaser-image"></a>'); ?>
         <?php print render($title_prefix); ?>
         <?php if (!$page && $title): ?>
           <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
@@ -37,7 +42,7 @@
       hide($content['comments']);
       hide($content['links']);
     ?>
-    <?php print render($content['body']); ?>
+    <?php print truncate_utf8(render($content['body']), 350, TRUE, TRUE); ?>
     <?php print render($content['links']); ?>
 
     <?php print render($content['comments']); ?>
@@ -45,7 +50,7 @@
   </article>
 <?php else: ?>
   <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-    <div class="node-content">
+    <div class="node-body">
       <div class="col-left">
         <div class="node-header">
           <a class="node-type <?php print $type; ?>" href="/<?php print $type; ?>">
@@ -65,7 +70,6 @@
             <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
           <?php endif; ?>
           <div class="content"<?php print $content_attributes; ?>>
-            <?php dpm(get_defined_vars()); ?>
             <div class="social-links">
               <a class="facebook" href="facebook.com"></a>
               <a class="twitter" href="twitter.com"></a>
@@ -79,20 +83,18 @@
       </div>
     </div>
     <div class="node-related">
-      <?php dpm($field_series); ?>
-      <?php dpm($field_series); ?>
         <?php if($node->type == "show" && $field_series) { ?>
 
-          <div class="also-list">
-            <div class="title item">
-              <h6>Other Episodes From</h6>
-              <h1></h1>
-              <div class="series-contents">
-              <?php print views_embed_view('also_in_this_series', 'default', $field_series[0]['nid'], $node->nid); ?>
-              </div>
+        <div class="also-list">
+          <div class="title item">
+            <p>Other Episodes From</p>
+            <h3><?php print $field_series[0]['node']->title ?></h3>
+            <div class="series-contents">
+            <?php print views_embed_view('also_in_this_series', 'default', $field_series[0]['nid'], $node->nid); ?>
             </div>
           </div>
-          <?php }; ?>
+        </div>
+        <?php }; ?>
     </div>
   </article>
 
