@@ -1,6 +1,7 @@
 #main-menu {
   @include clearfix;
-  background: $white;
+  border-bottom: 1px solid $medium-gray;
+  margin-bottom: 10px;
   .menu {
     margin: 0 5%;
     > .menu__item {

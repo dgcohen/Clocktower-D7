@@ -48,15 +48,24 @@
     <div class="node-body">
       <div class="col-left">
         <div class="node-header">
-          <a class="node-type <?php print $type; ?>" href="/<?php print $type; ?>">
-            <?php print strtoupper(node_type_get_name($type)); ?>
-          </a>
-          <?php if($type == 'event'): ?>
-            <div class="event-dates"><?php print render($content['field_event_date']); ?></div>
-          <?php endif; ?>
-          <?php if($type == 'show'): ?>
-            <div class="show-series"><?php print render($content['field_series'][0]); ?></div>
-          <?php endif; ?>
+          <div class="node-type">
+            <?php if($node->type == "show"): ?>
+              <a href="/radio">Radio Show</a>
+            <?php elseif($node->type == "event"): ?>
+              <a href="/events">Event</a>
+            <?php elseif($node->type == "blog"): ?>
+              <a href="/news">News</a>
+            <?php endif; ?>
+          </div>
+          <div class="node-header-info">
+            <?php if($type == 'event'): ?>
+              <?php print render($content['field_event_date']); ?>
+            <?php elseif($type == 'show'): ?>
+              <?php print render($content['field_series'][0]); ?>
+            <?php elseif($type == 'blog'): ?>
+              <?php print render($content['field_blog_categories']); ?>
+            <?php endif; ?>
+          </div>
         </div>
         <div class="node-content">
           <?php print render($title_prefix); ?>
@@ -92,6 +101,31 @@
               <a class="twitter" href="twitter.com"></a>
             </div>
             <?php print render($content['body']); ?>
+            <?php if ($submitted): ?>
+              <div class="date-in-parts">
+                <span class="label">Posted</span>
+                <span class="month"><?php echo date("F", $node->created); ?></span>
+                <span class="day"><?php  echo date("j", $node->created); ?></span>
+                <span class="year"><?php echo date("Y", $node->created); ?></span>
+              </div>   
+            <?php endif; ?>
+            <div class="tags">
+              <?php if(array_key_exists('field_artist', $content)): ?>
+                <?php print render($content['field_artist']); ?>
+              <?php endif; ?>
+              <?php if(array_key_exists('field_blog_categories', $content)): ?>
+                <?php print render($content['field_blog_categories']); ?>
+              <?php endif; ?>
+              <?php if(array_key_exists('field_category', $content)): ?>
+                <?php print render($content['field_category']); ?>
+              <?php endif; ?>
+              <?php if(array_key_exists('field_radio_tags', $content)): ?>
+                <?php print render($content['field_radio_tags']); ?>
+              <?php endif; ?>
+              <?php if(array_key_exists('field_tags', $content)): ?>
+                <?php print render($content['field_tags']); ?>
+              <?php endif; ?>
+            </div>
           </div>
         </div>
       </div>
@@ -100,18 +134,18 @@
       </div>
     </div>
     <div class="node-related">
-        <?php if($node->type == "show" && $field_series): ?>
-
-        <div class="also-list">
-          <div class="title item">
-            <p>Other Episodes From</p>
-            <?php print render($content['field_series'][0]); ?>
-            <div class="series-contents">
-            <?php print views_embed_view('also_in_this_series', 'default', $field_series[0]['nid'], $node->nid); ?>
-            </div>
-          </div>
+      <?php if($node->type == "show" && $field_series): ?>
+        <div class="title item">
+          <p>Other Episodes From</p>
+          <?php print render($content['field_series'][0]); ?>
+          <?php print views_embed_view('also_in_this_series', 'default', $field_series[0]['nid'], $node->nid); ?>
         </div>
-        <?php endif; ?>
+      <?php elseif($node->type == "blog" && $field_related_to): ?>
+        <div class="title item related">
+          <p>Related</p>
+          <?php print views_embed_view('related_to', 'default', $node->nid); ?>
+        </div>
+      <?php endif; ?>
     </div>
   </article>
 
