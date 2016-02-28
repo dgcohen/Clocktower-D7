@@ -1,28 +1,75 @@
+.player-container {
+  position: absolute;
+  background-size: cover !important;
+  background-position: 30% 50% !important;
+  height: 100%;
+  width: 100%;
+  .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: $black;
+    opacity: .45;
+    z-index: 20;
+  }
+  .text-overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 350px;
+    background: url('../images/player-overlay.png') no-repeat;
+    background-size: cover;
+    opacity: .8;
+  }
+}
 .page-player {
   .player-header {
+    position: absolute;
+    z-index: 40;
+    width: 100%;
+    padding-top: 8px;
     @include clearfix;
     .logo {
-      width: 100px;
-      height: auto;
+      display: block;
+      width: 120px;
+      height: 120px;
       float: left;
       margin-left: 2%;
+      text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      background: url("../images/player-logo.png") no-repeat;
+      background-size: cover;
       @include breakpoint($bp580) {
-        width: 150px;
+        width: 180px;
+        height: 186px;
       }
     }
     .show-details {
       width: 160px;
       float: right;
-      margin-right: 10%;
+      margin-right: 6%;
+      margin-top: 15px;
       @include breakpoint($bp580) {
-        width: 400px;
-        margin: auto;
+        width: 290px;
+        float: left;
+        margin-left: 10%;
       }
       h2 {
         font-family: $fc;
         font-size: 17px;
+        margin-bottom: 5px;
+        color: $white;
         @include breakpoint($bp580) {
-          font-size: 24px;
+          font-size: 25px;
+        }
+        span {
+          font-weight: bold;
+          margin-right: 6px;
+          color: $white;
+          @include breakpoint($bp580) {
+            margin-right: 15px;
+          }
         }
       }
     }
@@ -39,6 +86,7 @@
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 1000;
   }
   .jp-audio {
     .jp-volume-controls {
@@ -54,35 +102,37 @@
         margin-left: 7px;
       }
       .jp-volume-bar {
-        background: $light-gray;
-        border: 1px solid $black;
+        background: $black;
+        border: 1px solid $white;
         height: 7px;
         width: 65px;
         margin-top: 4px;
         .jp-volume-bar-value {
           height: 7px;
-          background: $black;
+          background: $white;
         }
       }
       .jp-mute {
-        background: $white url('../images/icons2x/player-icons.png') no-repeat;
+        background: url('../images/icons2x/player-icons.png') no-repeat;
         background-size: 58px;
         background-position: -4px -79px;
       }
       .jp-volume-max {
         width: 22px;
-        background: $white url('../images/icons2x/player-icons.png') no-repeat;
+        background: url('../images/icons2x/player-icons.png') no-repeat;
         background-size: 58px;
         background-position: -34px -79px;
       }
     }
     .jp-progress {
       height: 25px;
+      border-top: 1px solid $black;
+      border-bottom: 1px solid $black;
       .jp-seek-bar {
         background: $light-gray;
       }
       .jp-play-bar {
-        background: $black;
+        background: $blue;
       }
     }
     .jp-time-holder {
@@ -95,6 +145,7 @@
       }
       div {
         width: auto;
+        color: $white;
       }
       .jp-duration {
         &:before {
@@ -105,9 +156,8 @@
     }
   }
   .player-controls {
-    padding: 25px 0;
-    border-top: 1px solid $dark-gray;
-    background: $white;
+    padding: 20px 0;
+    background: $light-gray;
   }
   .player-buttons {
     width: 262px;
@@ -123,7 +173,7 @@
       width: 81px;
       height: 76px;
       border: 1px solid $black;
-      background: $white url('../images/icons2x/player-icons.png') no-repeat;
+      background: $light-gray url('../images/icons2x/player-icons.png') no-repeat;
       border-radius: 50%;
       margin-right: 12px;
     }
@@ -165,7 +215,7 @@
   .jp-audio-stream,
   .jp-video,
   .jp-interface {
-    background-color: $white;
+    background-color: transparent;
     border: 0;
     height: auto;
     position: static;

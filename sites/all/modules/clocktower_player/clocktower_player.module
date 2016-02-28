@@ -39,6 +39,7 @@
       'channel' => $channel_title,
       'previous_show_id' => $show_data['previous_show_id'],
       'next_show_id' => $show_data['next_show_id'],
+      'background_image_src' => $show_data['background_image_src'],
     );
     return theme('clocktower_player', $page_elements);
   }
@@ -62,6 +63,10 @@
     $show_data['file_path'] = get_file_path($show);
     $show_data['previous_show_id'] = adjacent_shows($show, 'channel')[0];
     $show_data['next_show_id'] = adjacent_shows($show, 'channel')[1];
+    $image_display = field_info_instance('node', 'field_image', 'show')['display'];
+    $image_style = $image_display['teaser']['settings']['image_style'];
+    $image_path = $image_path = $show->field_image['und'][0]['uri'];
+    $show_data['background_image_src'] = image_style_url($image_style, $image_path);
 
     return $show_data;
   }
