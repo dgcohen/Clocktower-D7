@@ -1,0 +1,183 @@
+.page-player {
+  .player-header {
+    @include clearfix;
+    .logo {
+      width: 100px;
+      height: auto;
+      float: left;
+      margin-left: 2%;
+      @include breakpoint($bp580) {
+        width: 150px;
+      }
+    }
+    .show-details {
+      width: 160px;
+      float: right;
+      margin-right: 10%;
+      @include breakpoint($bp580) {
+        width: 400px;
+        margin: auto;
+      }
+      h2 {
+        font-family: $fc;
+        font-size: 17px;
+        @include breakpoint($bp580) {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  .jp-audio {
+    &.jp-state-playing {
+      .play-button {
+        background-position: 127% -2%;
+      }
+    }
+  }
+  .controls-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .jp-audio {
+    .jp-volume-controls {
+    right: 2%;
+    top: 2px;
+    left: auto;
+    width: auto;
+      button,
+      .jp-volume-bar {
+        margin: 0;
+        position: static;
+        float: left;
+        margin-left: 7px;
+      }
+      .jp-volume-bar {
+        background: $light-gray;
+        border: 1px solid $black;
+        height: 7px;
+        width: 65px;
+        margin-top: 4px;
+        .jp-volume-bar-value {
+          height: 7px;
+          background: $black;
+        }
+      }
+      .jp-mute {
+        background: $white url('../images/icons2x/player-icons.png') no-repeat;
+        background-size: 58px;
+        background-position: -4px -79px;
+      }
+      .jp-volume-max {
+        width: 22px;
+        background: $white url('../images/icons2x/player-icons.png') no-repeat;
+        background-size: 58px;
+        background-position: -34px -79px;
+      }
+    }
+    .jp-progress {
+      height: 25px;
+      .jp-seek-bar {
+        background: $light-gray;
+      }
+      .jp-play-bar {
+        background: $black;
+      }
+    }
+    .jp-time-holder {
+      margin: 0 0 0 2%;
+      width: 100px !important;
+      font-size: 26px;
+      font-family: $fc;
+      @include breakpoint($bp580) {
+        margin: auto !important;
+      }
+      div {
+        width: auto;
+      }
+      .jp-duration {
+        &:before {
+          content: "/";
+          margin-right: 3px;
+        }
+      }
+    }
+  }
+  .player-controls {
+    padding: 25px 0;
+    border-top: 1px solid $dark-gray;
+    background: $white;
+  }
+  .player-buttons {
+    width: 262px;
+    margin: auto;
+    @include clearfix;
+    a,
+    p {
+      display: block;
+      float: left;
+      text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 81px;
+      height: 76px;
+      border: 1px solid $black;
+      background: $white url('../images/icons2x/player-icons.png') no-repeat;
+      border-radius: 50%;
+      margin-right: 12px;
+    }
+    a {
+      &:hover {
+        background-color: $blue;
+      }
+    }
+    p {
+      background: url('../images/icons2x/player-icons-gray.png') no-repeat;
+      background-color: $gray;
+    }
+    .play-button {
+      background-size: 145%;
+      background-position: -43% -2%;
+    }
+    .previous-node,
+    .next-node {
+      width: 72px;
+      height: 68px;
+      margin-top: 5px;
+      background-size: 145%;
+    }
+    .previous-node {
+      background-position: 139% 50%;
+    }
+    .next-node {
+      background-position: -39% 50%;
+    }
+  }
+  .jp-progress {
+    width: 100% !important;
+  }
+  .jp-progress,
+  .jp-time-holder {
+    position: static;
+  }
+  .jp-audio,
+  .jp-audio-stream,
+  .jp-video,
+  .jp-interface {
+    background-color: $white;
+    border: 0;
+    height: auto;
+    position: static;
+    margin: 0;
+    width: auto !important;
+  }
+  .jp-details,
+  .jp-stop,
+  .jp-repeat,
+  .previous-track,
+  .next-track,
+  .jp-controls {
+    display: none !important;
+  }
+}

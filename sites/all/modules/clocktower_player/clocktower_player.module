@@ -30,10 +30,13 @@
     drupal_add_js($settings, 'setting');
     drupal_add_js('sites/all/libraries/jplayer/jquery.jplayer.min.js');
     drupal_add_css(drupal_get_path('module', 'clocktower_player') . '/css/jplayer.blue.monday.css');
+    $series_title = array_key_exists('series_title', $show_data) ? $show_data['series_title'] : '';
+    $channel_title = array_key_exists('channel_title', $show_data) ? $show_data['channel_title'] : '';
     $page_elements = array(
       'mode' => $mode,
       'title' => $show_data['title'],
-      'series' => $show_data['series_title'],
+      'series' => $series_title,
+      'channel' => $channel_title,
       'previous_show_id' => $show_data['previous_show_id'],
       'next_show_id' => $show_data['next_show_id'],
     );
@@ -51,9 +54,11 @@
       $channel = node_load($nid);
       $show = latest_show($channel);
     }
+    $series = series($show);
 
     $show_data['title'] = $show->title;
     $show_data['channel_title'] = $channel->title;
+    $show_data['series_title'] = $series->title;
     $show_data['file_path'] = get_file_path($show);
     $show_data['previous_show_id'] = adjacent_shows($show, 'channel')[0];
     $show_data['next_show_id'] = adjacent_shows($show, 'channel')[1];
@@ -95,35 +100,38 @@
       $channel = channel($show);
       $shows = included_shows($channel);
     }
-    $is_first_show = FALSE;
-    $is_last_show = FALSE;
+    if(count($shows) > 1) {
+      $is_first_show = FALSE;
+      $is_last_show = FALSE;
 
-    foreach($shows as $index=>$show_id) {
-      if ($show_id['nid'] == $show->nid && $index == 0) {
-        $show_index = 0;
-        $is_first_show = TRUE;
-        break;
-      } elseif ($show_id['nid'] == $show->nid && $index == (count($shows) - 1)){
-        $show_index = $index;
-        $is_last_show = TRUE;
-        break;
-      } elseif ($show_id['nid'] == $show->nid) {
-        $show_index = $index;
-        break;
+      foreach($shows as $index=>$show_id) {
+        if ($show_id['nid'] == $show->nid && $index == 0) {
+          $show_index = 0;
+          $is_first_show = TRUE;
+          break;
+        } elseif ($show_id['nid'] == $show->nid && $index == (count($shows) - 1)){
+          $show_index = $index;
+          $is_last_show = TRUE;
+          break;
+        } elseif ($show_id['nid'] == $show->nid) {
+          $show_index = $index;
+          break;
+        }
       }
-    }
-
-    if($is_first_show) {
-      $next_show_id = $shows[$show_index + 1]['nid'];
-      $previous_show_id = 0;
-    } elseif ($is_last_show) {
-      $next_show_id = 0;
-      $previous_show_id = $shows[$show_index - 1]['nid'];
+      if($is_first_show) {
+        $next_show_id = $shows[$show_index + 1]['nid'];
+        $previous_show_id = 0;
+      } elseif ($is_last_show) {
+        $next_show_id = 0;
+        $previous_show_id = $shows[$show_index - 1]['nid'];
+      } else {
+        $next_show_id = $shows[$show_index + 1]['nid'];
+        $previous_show_id = $shows[$show_index - 1]['nid'];
+      }
+      return array($previous_show_id, $next_show_id);
     } else {
-      $next_show_id = $shows[$show_index + 1]['nid'];
-      $previous_show_id = $shows[$show_index - 1]['nid'];
+      return false;
     }
-    return array($previous_show_id, $next_show_id);
   }
 
   function latest_show($category) {
