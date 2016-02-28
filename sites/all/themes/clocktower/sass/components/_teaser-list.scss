@@ -3,18 +3,25 @@
   .views-row {
     position: relative;
     float: left;
-    width: 32.3%;
+    width: 32.66%;
     height: 535px;
-    margin-right: 1.5%;
+    margin-right: 1%;
     margin-bottom: 20px;
-    border: 1px solid $light-gray;
-    background: $white;
+    border: 1px solid $medium-gray;
+    background: $gray;
     .node {
       margin-top: 0;
       position: static;
     }
     .node-unpublished {
       background: $white;
+    }
+    .teaser-image-container {
+      padding-bottom: 6px;
+      &:hover {
+        border-bottom: 6px solid $blue;
+        padding-bottom: 0;
+      }
     }
     .teaser-image {
       display: block;
@@ -29,7 +36,7 @@
     .node-title {
       font-family: $fc;
       font-size: 26px;
-      margin: 22px 5% 13px;
+      margin: 17px 5% 13px;
       line-height: 29px;
     }
     .field-name-body {
@@ -55,10 +62,15 @@
         width: 110px;
         font-family: $fc;
         font-size: 18px;
-        border: 1px solid $medium-gray;
+        border: 1px solid $dark-gray;
+        background: $white;
+        color: $black;
         padding: 8px 0 4px;
         text-transform: uppercase;
         text-align: center;
+        &:hover {
+          background: $blue;
+        }
       }
     }
   }

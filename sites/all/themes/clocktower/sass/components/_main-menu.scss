@@ -1,7 +1,5 @@
 #main-menu {
   @include clearfix;
-  border-bottom: 1px solid $black;
-  border-top: 1px solid $black;
   background: $white;
   .menu {
     margin: 0 5%;

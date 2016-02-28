@@ -1,11 +1,11 @@
 #header {
   @include clearfix;
-  @include container;
   margin-top: 40px;
   padding-bottom: 15px;
+  border-bottom: 1px solid $medium-gray;
   .site-logo {
     display: block;
-    width: 200px;
+    width: 185px;
     height: auto;
     float: left;
     margin-left: 2%;
@@ -20,7 +20,7 @@
     .nav-buttons {
       @include clearfix;
       float: left;
-      margin-top: 110px;
+      margin-top: 70px;
       margin-right: 15px;
       font-family: $fc;
       .play-button {
@@ -50,7 +50,7 @@
     }
     .region-header {
       float: left;
-      margin-top: 130px;
+      margin-top: 92px;
       margin-right: 40px;
       #block-search-form {
         .form-item {

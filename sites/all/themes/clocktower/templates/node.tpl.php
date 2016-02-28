@@ -17,19 +17,14 @@
         <?php $image_path = $field_image[0]['uri']; ?>
         <?php $image_url = image_style_url($image_style, $image_path); ?>
         <?php $alias = drupal_get_path_alias('node/' . $node->nid); ?>
-        <?php print('<a href="/' . $alias . '" style="background: url(' . $image_url . ') no-repeat" class="teaser-image"></a>'); ?>
+        <div class="teaser-image-container">
+          <?php print('<a href="/' . $alias . '" style="background: url(' . $image_url . ') no-repeat" class="teaser-image"></a>'); ?>
+        </div>
         <?php print render($title_prefix); ?>
         <?php if (!$page && $title): ?>
           <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
         <?php endif; ?>
         <?php print render($title_suffix); ?>
-
-        <?php if ($display_submitted): ?>
-          <p class="submitted">
-            <?php print $user_picture; ?>
-            <?php print $submitted; ?>
-          </p>
-        <?php endif; ?>
 
         <?php if ($unpublished): ?>
           <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
@@ -51,6 +46,13 @@
 <?php else: ?>
   <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
     <div class="node-body">
+      <?php $image_display = field_info_instance('node', 'field_image', $node->type)['display']; ?>
+      <?php $image_style = $image_display['teaser']['settings']['image_style']; ?>
+      <?php $image_path = $field_image[0]['uri']; ?>
+      <?php $image_url = image_style_url($image_style, $image_path); ?>
+      <div class="feature-area" style="background: url('<?php print $image_url; ?>') no-repeat;">
+        
+      </div>
       <div class="col-left">
         <div class="node-header">
           <a class="node-type <?php print $type; ?>" href="/<?php print $type; ?>">
@@ -58,6 +60,9 @@
           </a>
           <?php if($type == 'event'): ?>
             <div class="event-dates"><?php print render($content['field_event_date']); ?></div>
+          <?php endif; ?>
+          <?php if($type == 'show'): ?>
+            <div class="show-series"><?php print render($content['field_series'][0]); ?></div>
           <?php endif; ?>
         </div>
         <div class="node-content">
@@ -69,6 +74,22 @@
           <?php if ($unpublished): ?>
             <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
           <?php endif; ?>
+
+          <div class="credits">
+            <?php if($node->type == "show" && $field_host): ?>
+              <div class="credit">
+                <h4>Hosted by</h4>
+                <?php print render($content['field_host']); ?>
+              </div>
+            <?php endif; ?>
+            <?php if($node->type == "show" && $field_producer): ?>
+              <div class="credit">
+                <h4>Produced by</h4>
+                <?php print render($content['field_producer']); ?>
+              </div>
+            <?php endif; ?>
+          </div>
+          
           <div class="content"<?php print $content_attributes; ?>>
             <div class="social-links">
               <?php if($node->type == "show"): ?>
@@ -86,18 +107,18 @@
       </div>
     </div>
     <div class="node-related">
-        <?php if($node->type == "show" && $field_series) { ?>
+        <?php if($node->type == "show" && $field_series): ?>
 
         <div class="also-list">
           <div class="title item">
             <p>Other Episodes From</p>
-            <h3><?php print $field_series[0]['node']->title ?></h3>
+            <?php print render($content['field_series'][0]); ?>
             <div class="series-contents">
             <?php print views_embed_view('also_in_this_series', 'default', $field_series[0]['nid'], $node->nid); ?>
             </div>
           </div>
         </div>
-        <?php }; ?>
+        <?php endif; ?>
     </div>
   </article>
 

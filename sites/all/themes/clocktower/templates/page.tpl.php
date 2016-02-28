@@ -20,6 +20,9 @@
   </div>
 
   <header class="header" id="header" role="banner">
+    <div id="main-menu">
+      <?php print render($main_nav); ?>
+    </div>
     <?php print $messages; ?>
     <?php if ($logo): ?>
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo site-logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
@@ -37,10 +40,6 @@
   </header>
 
   <div id="main">
-    <div id="main-menu">
-      <?php print render($main_nav); ?>
-    </div>
-
     <div id="content" class="column" role="main">
       <?php print render($tabs); ?>
       <?php print render($page['help']); ?>
