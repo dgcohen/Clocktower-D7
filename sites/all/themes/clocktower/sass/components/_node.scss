@@ -7,7 +7,6 @@
   .node-body {
     @include clearfix;
     border-bottom: 1px solid $medium-gray;
-    padding-bottom: 25px;
     .col-left {
       @include clearfix;
       float: left;
@@ -112,7 +111,7 @@
       @include clearfix;
       float: right;
       width: 50%;
-      padding: 80px 2.5%;
+      padding: 35px 1.5% 25px;
       .field-name-field-image {
         margin-top: 70px;
         .field-item {

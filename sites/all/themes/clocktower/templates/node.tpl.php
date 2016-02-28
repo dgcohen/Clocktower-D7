@@ -46,13 +46,6 @@
 <?php else: ?>
   <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
     <div class="node-body">
-      <?php $image_display = field_info_instance('node', 'field_image', $node->type)['display']; ?>
-      <?php $image_style = $image_display['teaser']['settings']['image_style']; ?>
-      <?php $image_path = $field_image[0]['uri']; ?>
-      <?php $image_url = image_style_url($image_style, $image_path); ?>
-      <div class="feature-area" style="background: url('<?php print $image_url; ?>') no-repeat;">
-        
-      </div>
       <div class="col-left">
         <div class="node-header">
           <a class="node-type <?php print $type; ?>" href="/<?php print $type; ?>">
