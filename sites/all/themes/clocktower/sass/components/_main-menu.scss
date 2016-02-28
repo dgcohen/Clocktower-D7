@@ -24,7 +24,7 @@
       display: none;
       position: absolute;
       top: 40px;
-      left: -20px;
+      left: -53px;
       background: $medium-gray;
       width: 200px;
       margin: 0;
@@ -36,12 +36,12 @@
         padding: 0;
         a {
           display: block;
-          color: $white;
+          color: $light-gray;
           font-size: 16px;
           font-family: $fb;
           text-transform: none;
           padding: 12px 17px;
-          border-bottom: 1px solid $light-gray;
+          border-bottom: 1px solid $medium-gray;
         }
         &:hover {
           background: $dark-gray;
