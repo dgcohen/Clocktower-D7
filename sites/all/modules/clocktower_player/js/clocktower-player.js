@@ -15,6 +15,7 @@
   				title: clocktowerPlayer.title,
   				mp3: clocktowerPlayer.file_path,
   			});
+        $('.jp-play').click();
         $('.play-button').on('click', function() {
           $('.jp-play').click();
         })

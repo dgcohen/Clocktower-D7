@@ -95,7 +95,7 @@
           <div class="content"<?php print $content_attributes; ?>>
             <div class="social-links">
               <?php if($node->type == "show"): ?>
-                <a class="play-button" href="#"></a>
+                <a class="play-button" href="#" onclick="window.open('/player/archive/<?php print $node->nid ?>', 'newwindow', 'width=647, height=551'); return false;"></a>
               <?php endif; ?>
               <a class="facebook" href="facebook.com"></a>
               <a class="twitter" href="twitter.com"></a>

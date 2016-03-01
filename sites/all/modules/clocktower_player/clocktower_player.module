@@ -78,7 +78,6 @@
     $path = 'sites/default/files/audio/' . $file;
     $realfile = file_uri_to_object($path);
     $data = getid3_analyze_file($realfile);
-    dpm($_SERVER['HTTP_HOST']);
 
     if ($node->type == "show") {
       $show = $node;
@@ -93,6 +92,10 @@
     $show_data['file_path'] = get_file_path($show);
     $show_data['previous_show_id'] = adjacent_shows($show, 'series')[0];
     $show_data['next_show_id'] = adjacent_shows($show, 'series')[1];
+    $image_display = field_info_instance('node', 'field_image', 'show')['display'];
+    $image_style = $image_display['teaser']['settings']['image_style'];
+    $image_path = $image_path = $show->field_image['und'][0]['uri'];
+    $show_data['background_image_src'] = image_style_url($image_style, $image_path);
 
     return $show_data;
   }
