@@ -55,6 +55,8 @@
               <a href="/events">Event</a>
             <?php elseif($node->type == "blog"): ?>
               <a href="/news">News</a>
+            <?php elseif($node->type == "series"): ?>
+              <a href="/radio">Radio Series</a>
             <?php endif; ?>
           </div>
           <div class="node-header-info">
@@ -64,6 +66,8 @@
               <?php print render($content['field_series'][0]); ?>
             <?php elseif($type == 'blog'): ?>
               <?php print render($content['field_blog_categories']); ?>
+            <?php elseif($type == 'series'): ?>
+              <?php print count($content['field_included_shows']); ?> Episodes
             <?php endif; ?>
           </div>
         </div>
@@ -94,7 +98,7 @@
           
           <div class="content"<?php print $content_attributes; ?>>
             <div class="social-links">
-              <?php if($node->type == "show"): ?>
+              <?php if($node->type == "show" || $node->type == "series" || $node->type == "channel"): ?>
                 <a class="play-button" href="#" onclick="window.open('/player/archive/<?php print $node->nid ?>', 'newwindow', 'width=647, height=551'); return false;"></a>
               <?php endif; ?>
               <a class="facebook" href="facebook.com"></a>

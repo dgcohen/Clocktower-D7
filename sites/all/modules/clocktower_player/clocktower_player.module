@@ -74,10 +74,6 @@
   function get_archive_info($nid) {
     $show_data = array();
     $node = node_load($nid);
-    $file = $node->field_audio_path['und'][0]['value'];
-    $path = 'sites/default/files/audio/' . $file;
-    $realfile = file_uri_to_object($path);
-    $data = getid3_analyze_file($realfile);
 
     if ($node->type == "show") {
       $show = $node;
@@ -86,6 +82,11 @@
       $series = node_load($nid);
       $show = latest_show($series);
     }
+
+    $file = $show->field_audio_path['und'][0]['value'];
+    $path = 'sites/default/files/audio/' . $file;
+    $realfile = file_uri_to_object($path);
+    $data = getid3_analyze_file($realfile);
 
     $show_data['title'] = $show->title;
     $show_data['series_title'] = $series->title;
