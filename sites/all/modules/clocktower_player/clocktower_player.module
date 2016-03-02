@@ -19,11 +19,14 @@
     );
   }
 
-  function clocktower_player_page($mode, $nid) {
-    if($mode == "channel") {
-      $show_data = get_channel_info($nid);
-    } elseif ($mode == "archive") {
-      $show_data = get_archive_info($nid);
+  function clocktower_player_page($station_id, $show_id = 0) {
+    $station = node_load($station_id);
+    $show = node_load($show_id);
+
+    if($station->type == "channel") {
+      $show_data = get_channel_info($station, $show);
+    } elseif ($station->type == "series") {
+      $show_data = get_archive_info($station, $show);
     }
     drupal_add_js(drupal_get_path('module', 'clocktower_player') . '/js/clocktower-player.js');
     $settings = array('clocktowerplayer' => array('file_path' => $show_data['file_path']));
@@ -33,10 +36,10 @@
     $series_title = array_key_exists('series_title', $show_data) ? $show_data['series_title'] : '';
     $channel_title = array_key_exists('channel_title', $show_data) ? $show_data['channel_title'] : '';
     $page_elements = array(
-      'mode' => $mode,
       'title' => $show_data['title'],
       'series' => $series_title,
       'channel' => $channel_title,
+      'station_id' => $station_id,
       'previous_show_id' => $show_data['previous_show_id'],
       'next_show_id' => $show_data['next_show_id'],
       'background_image_src' => $show_data['background_image_src'],
@@ -44,17 +47,13 @@
     return theme('clocktower_player', $page_elements);
   }
 
-  function get_channel_info($nid) {
+  function get_channel_info($channel, $show) {
     $show_data = array();
-    $node = node_load($nid);
 
-    if ($node->type == "show") {
-      $show = $node;
-      $channel = channel($show);
-    } elseif ($node->type == "channel") {
-      $channel = node_load($nid);
+    if (!$show) {
       $show = latest_show($channel);
     }
+
     $series = series($show);
 
     $show_data['title'] = $show->title;
@@ -71,15 +70,10 @@
     return $show_data;
   }
 
-  function get_archive_info($nid) {
+  function get_archive_info($series, $show) {
     $show_data = array();
-    $node = node_load($nid);
 
-    if ($node->type == "show") {
-      $show = $node;
-      $series = series($show);
-    } elseif ($node->type == "series") {
-      $series = node_load($nid);
+    if (!$show) {
       $show = latest_show($series);
     }
 

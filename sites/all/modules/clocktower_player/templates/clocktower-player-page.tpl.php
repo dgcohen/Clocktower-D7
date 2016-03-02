@@ -44,7 +44,7 @@
         <div class="player-controls">
           <div class="player-buttons">
             <?php if ($previous_show_id) { ?>
-              <a class="previous-node" href="/player/<?php print($mode . '/' . $previous_show_id) ?>">previous node</a>
+              <a class="previous-node" href="/player/<?php print($station_id . '/' . $previous_show_id) ?>">previous node</a>
             <?php } else { ?>
               <p class="previous-node">previous node</p>
             <?php } ?>
@@ -53,7 +53,7 @@
             <a class="play-button" href="#">play</a>
             <a class="next-track" href="#">next track</a>
             <?php if ($next_show_id) { ?>
-              <a class="next-node" href="/player/<?php print($mode . '/' . $next_show_id) ?>">next node</a>
+              <a class="next-node" href="/player/<?php print($station_id . '/' . $next_show_id) ?>">next node</a>
             <?php } else { ?>
               <p class="next-node">next node</p>
             <?php } ?>
