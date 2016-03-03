@@ -81,7 +81,7 @@
   .jp-audio {
     &.jp-state-playing {
       .play-button {
-        background-position: 127% -2%;
+        background-position: 142% -4%;
       }
     }
   }
@@ -160,11 +160,11 @@
     }
   }
   .player-controls {
-    padding: 20px 0;
+    padding: 7px 0;
     background: $light-gray;
   }
   .player-buttons {
-    width: 262px;
+    width: 209px;
     margin: auto;
     @include clearfix;
     a,
@@ -174,12 +174,12 @@
       text-indent: 100%;
       white-space: nowrap;
       overflow: hidden;
-      width: 81px;
-      height: 76px;
-      border: 1px solid $black;
+      width: 58px;
+      height: 54px;
+      border: 1px solid $medium-gray;
       background: $light-gray url('../images/icons2x/player-icons.png') no-repeat;
       border-radius: 50%;
-      margin-right: 12px;
+      margin-right: 10px;
     }
     a {
       &:hover {
@@ -191,21 +191,21 @@
       background-color: $gray;
     }
     .play-button {
-      background-size: 145%;
-      background-position: -43% -2%;
+      background-size: 134%;
+      background-position: -62% -4%;
     }
     .previous-node,
     .next-node {
-      width: 72px;
-      height: 68px;
-      margin-top: 5px;
-      background-size: 145%;
+      width: 58px;
+      height: 54px;
+      background-size: 130%;
     }
     .previous-node {
-      background-position: 139% 50%;
+      background-position: 168% 50%;
     }
     .next-node {
-      background-position: -39% 50%;
+      background-position: -72% 50%;
+      margin-right: 0;
     }
   }
   .jp-progress {

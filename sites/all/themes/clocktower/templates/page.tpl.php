@@ -26,7 +26,7 @@
     <?php endif; ?>
     <div class="header-links">
       <div class="nav-buttons">
-        <a class="play-button" href="#" onclick="window.open('/player/channel/12771', 'newwindow', 'width=647, height=551'); return false;"></a>
+        <a class="play-button" href="#" onclick="window.open('/player/12771/0', 'newwindow', 'width=460, height=510'); return false;"></a>
         <div class="donate-subscribe">
           <a href='#' class="donate-button">Donate</a>
           <a href='#' class="donate-button">Subscribe</a>

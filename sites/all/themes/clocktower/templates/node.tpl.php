@@ -99,9 +99,9 @@
           <div class="content"<?php print $content_attributes; ?>>
             <div class="social-links">
               <?php if($node->type == "show"): ?>
-                <a class="play-button" href="#" onclick="window.open('/player/<?php print $field_series[0]['nid'] ?>/<?php print $node->nid ?>', 'newwindow', 'width=647, height=551'); return false;"></a>
+                <a class="play-button" href="#" onclick="window.open('/player/<?php print $field_series[0]['nid'] ?>/<?php print $node->nid ?>', 'newwindow', 'width=460, height=510'); return false;"></a>
               <?php elseif($node->type == "series" || $node->type == "channel"): ?>
-                <a class="play-button" href="#" onclick="window.open('/player/<?php print $node->nid ?>/0', 'newwindow', 'width=647, height=551'); return false;"></a>
+                <a class="play-button" href="#" onclick="window.open('/player/<?php print $node->nid ?>/0', 'newwindow', 'width=460, height=510'); return false;"></a>
               <?php endif; ?>
               <a class="facebook" href="facebook.com"></a>
               <a class="twitter" href="twitter.com"></a>
