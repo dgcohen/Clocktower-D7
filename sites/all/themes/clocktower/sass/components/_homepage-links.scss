@@ -2,24 +2,30 @@
   width: 98%;
   margin: auto;
   .content {
-    margin: 44px auto 700px;
+    margin: 24px auto 400px;
     @include clearfix;
   }
   a {
     display: block;
     position: relative;
-    width: 49.5%;
+    float: none;
+    width: 98%;
+    margin: auto;
     height: 284px;
-    float: left;
-    margin-bottom: 10px;
-    margin-right: 1%;
+    margin-bottom: 2px;
     font-family: $fb;
     letter-spacing: -.4px;
-    &:nth-child(even) {
-      margin-right: 0;
-    }
     background-repeat: no-repeat;
     background-size: cover;
+    @include breakpoint($bp960) {
+      float: left;
+      width: 49.8%;
+      margin-right: 0.4%;
+      margin-left: 0;
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+    }
     &:hover {
       .title {
         display: none;
