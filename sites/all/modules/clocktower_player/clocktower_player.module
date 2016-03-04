@@ -133,7 +133,7 @@
       }
       return array($previous_show_id, $next_show_id);
     } else {
-      return false;
+      return array();
     }
   }
 
