@@ -60,7 +60,6 @@
     $show_data['channel_title'] = $channel->title;
     $show_data['series_title'] = $series->title;
     $show_data['file_path'] = get_file_path($show);
-
     $show_data['previous_show_id'] = adjacent_shows($show, 'channel')[0];
     $show_data['next_show_id'] = adjacent_shows($show, 'channel')[1];
     $image_display = field_info_instance('node', 'field_image', 'show')['display'];
