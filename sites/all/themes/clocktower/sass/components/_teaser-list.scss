@@ -76,14 +76,13 @@
   }
 }
 .item-list {
+  margin: 40px auto 80px;
+  @include clearfix;
   .pager {
-    margin: 40px auto;
-    clear: none;
     li {
       font-family: $fb;
-      border: 1px solid $medium-gray;
-      margin-left: 4px;
-      padding: 6px 8px 5px;
+      margin-left: 2px;
+      padding: 6px 2px 5px;
       color: $dark-gray;
     }
   }
