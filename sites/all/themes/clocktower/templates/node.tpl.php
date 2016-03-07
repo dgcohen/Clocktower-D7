@@ -45,32 +45,41 @@
   </article>
 <?php else: ?>
   <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+    <div class="node-header">
+      <div class="node-type">
+        <?php if($node->type == "show"): ?>
+          <a href="/radio">Radio Show</a>
+        <?php elseif($node->type == "event"): ?>
+          <a href="/events">Event</a>
+        <?php elseif($node->type == "blog"): ?>
+          <a href="/news">News</a>
+        <?php elseif($node->type == "series"): ?>
+          <a href="/radio">Radio Series</a>
+        <?php elseif($node->type == "exhibition"): ?>
+          <a href="/radio">Exhibition</a>  
+        <?php elseif($node->type == "partner"): ?>
+          <a href="/radio">Institutional Partner</a> 
+        <?php endif; ?>
+      </div>
+      <div class="node-header-info">
+        <?php if($type == 'event' && $field_event_date): ?>
+          <?php print render($content['field_event_date']); ?>
+        <?php elseif($type == 'exhibition' && $field_dates): ?>
+          <?php print render($content['field_dates']); ?>
+        <?php elseif($type == 'show' && $field_series): ?>
+          <?php print render($content['field_series'][0]); ?>
+        <?php elseif($type == 'blog' && $field_blog_categories): ?>
+          <?php print render($content['field_blog_categories']); ?>
+        <?php elseif($type == 'series' && $field_included_shows): ?>
+          <?php print count($content['field_included_shows']); ?> Episodes
+        <?php endif; ?>
+      </div>
+    </div>
     <div class="node-body">
-      <div class="col-left">
-        <div class="node-header">
-          <div class="node-type">
-            <?php if($node->type == "show"): ?>
-              <a href="/radio">Radio Show</a>
-            <?php elseif($node->type == "event"): ?>
-              <a href="/events">Event</a>
-            <?php elseif($node->type == "blog"): ?>
-              <a href="/news">News</a>
-            <?php elseif($node->type == "series"): ?>
-              <a href="/radio">Radio Series</a>
-            <?php endif; ?>
-          </div>
-          <div class="node-header-info">
-            <?php if($type == 'event'): ?>
-              <?php print render($content['field_event_date']); ?>
-            <?php elseif($type == 'show'): ?>
-              <?php print render($content['field_series'][0]); ?>
-            <?php elseif($type == 'blog'): ?>
-              <?php print render($content['field_blog_categories']); ?>
-            <?php elseif($type == 'series'): ?>
-              <?php print count($content['field_included_shows']); ?> Episodes
-            <?php endif; ?>
-          </div>
-        </div>
+      <div class="node-image">
+        <?php print render($content['field_image']); ?>
+      </div>
+      <div class="node-text">
         <div class="node-content">
           <?php print render($title_prefix); ?>
           <?php if ($title): ?>
@@ -82,18 +91,34 @@
           <?php endif; ?>
 
           <div class="credits">
-            <?php if($node->type == "show" && $field_host): ?>
+            <?php if(isset($field_host)): ?>
               <div class="credit">
                 <h4>Hosted by</h4>
                 <?php print render($content['field_host']); ?>
               </div>
             <?php endif; ?>
-            <?php if($node->type == "show" && $field_producer): ?>
+            <?php if(isset($field_producer)): ?>
               <div class="credit">
                 <h4>Produced by</h4>
                 <?php print render($content['field_producer']); ?>
               </div>
             <?php endif; ?>
+            <?php if(isset($field_partner_venue)): ?>
+              <div class="credit partner-venue">
+                <?php print render($content['field_partner_venue']); ?>
+              </div>
+            <?php endif ?>
+            <?php if(isset($field_venue)): ?>
+              <div class="credit venue">
+                <?php print render($content['field_venue']); ?>
+              </div>
+            <?php endif; ?>
+            <?php if (isset($field_curators)): ?>
+              <div class="credit curator">
+                <h4>Curated by</h4>
+                <?php print render($content['field_curators']); ?>
+              </div>
+            <?php endif ?>
           </div>
           
           <div class="content"<?php print $content_attributes; ?>>
@@ -122,8 +147,8 @@
               <?php if(array_key_exists('field_blog_categories', $content)): ?>
                 <?php print render($content['field_blog_categories']); ?>
               <?php endif; ?>
-              <?php if(array_key_exists('field_category', $content)): ?>
-                <?php print render($content['field_category']); ?>
+              <?php if(array_key_exists('field_categories', $content)): ?>
+                <?php print render($content['field_categories']); ?>
               <?php endif; ?>
               <?php if(array_key_exists('field_radio_tags', $content)): ?>
                 <?php print render($content['field_radio_tags']); ?>
@@ -135,9 +160,6 @@
           </div>
         </div>
       </div>
-      <div class="col-right">
-        <?php print render($content['field_image']); ?>
-      </div>
     </div>
     <div class="node-related">
       <?php if($node->type == "show" && $field_series): ?>
@@ -146,12 +168,18 @@
           <?php print render($content['field_series'][0]); ?>
           <?php print views_embed_view('also_in_this_series', 'default', $field_series[0]['nid'], $node->nid); ?>
         </div>
-      <?php elseif($node->type == "blog" && $field_related_to): ?>
+      <?php elseif($node->type == "series" && $field_included_shows): ?>
+        <div class="title item related">
+          <p>Also in this Series</p>
+          <?php print views_embed_view('included_shows', 'default', $node->nid); ?>
+        </div>
+      <?php elseif($field_related_to): ?>
         <div class="title item related">
           <p>Related</p>
           <?php print views_embed_view('related_to', 'default', $node->nid); ?>
         </div>
       <?php endif; ?>
+
     </div>
   </article>
 

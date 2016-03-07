@@ -57,7 +57,7 @@
 
   Drupal.behaviors.imageGalleries = {
     attach: function (context, settings) {
-      $('.col-right .field-name-field-image').magnificPopup({
+      $('.node-image .field-name-field-image').magnificPopup({
         delegate: 'a',
         type: 'image',
         gallery:{enabled:true}

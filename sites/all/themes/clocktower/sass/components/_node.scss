@@ -4,69 +4,73 @@
   .unpublished {
     text-transform: uppercase;
   }
-  .node-body {
+  &.node-unpublished {
+    background: $white;
+  }
+  .node-header {
     @include clearfix;
+    padding: 2px 2%;
+    margin: 0 2%;
     border-bottom: 1px solid $medium-gray;
-    padding-bottom: 20px;
-    .col-left {
-      @include clearfix;
-      float: left;
-      width: 48%;
-      margin-left: 2%;
-      .node-header {
-        @include clearfix;
-        margin-bottom: 8px;
-        border-bottom: 1px solid $medium-gray;
-        .node-type {
-          a {
-            float: left;
-            background: $white;
-            font-size: 18px;
-            border: 1px solid black;
-            padding: 10px 8px 7px;
-            margin-bottom: 7px;
-            text-transform: uppercase;
-            &.show {
-              &:hover {
-                background: $blue;
-              }
-            }
-          }
-        }
-        .node-header-info {
-          float: left;
-          margin: 8px 5%;
-          a {
-            display: inline-block;
-            font-size: 20px;
-            font-family: $fc;
-            border-bottom: 1px solid $medium-gray;
-            padding-bottom: 2px;
-            margin-bottom: 10px;
-            &:hover {
-              color: $blue;
-              border-bottom: 1px solid $blue;
-            }
-          }
-          .field-type-taxonomy-term-reference {
-            a {
-              border: 0;
-              text-transform: uppercase;
-            }
+    .node-type {
+      a {
+        float: left;
+        background: $white;
+        font-size: 18px;
+        border: 1px solid black;
+        padding: 10px 8px 7px;
+        margin-bottom: 7px;
+        text-transform: uppercase;
+        &.show {
+          &:hover {
+            background: $blue;
           }
         }
       }
+    }
+    .node-header-info {
+      float: left;
+      margin: 7px 3% 9px;
+      font-size: 18px;
+      line-height: 24px;
+      a {
+        display: inline-block;
+        font-family: $fc;
+        border-bottom: 1px solid $medium-gray;
+        padding-bottom: 2px;
+        margin-bottom: 12px;
+        &:hover {
+          color: $blue;
+          border-bottom: 1px solid $blue;
+        }
+      }
+      .field-type-taxonomy-term-reference {
+        a {
+          border: 0;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  .node-body {
+    border-bottom: 1px solid $medium-gray;
+    padding-bottom: 20px;
+    .node-text {
+      @include clearfix;
+      margin-left: 2%;
       .node-content {
-        padding-left: 1%;
+        padding: 1.5%;
         h2 {
           font-family: $fc;
-          font-size: 34px;
+          font-size: 36px;
           padding: 11px 0;
           margin: 20px 0 0;
           line-height: 39px;
         }
         .credits {
           margin: 10px 0 17px;
+          @include clearfix;
+          float: left;
           .credit {
             @include clearfix;
             margin-bottom: 10px;
@@ -75,6 +79,7 @@
               margin-right: 5px;
               font-family: $fc;
               font-size: 19px;
+              text-transform: uppercase;
             }
             .field {
               float: left;
@@ -82,23 +87,28 @@
                 float: left;
                 margin-right: 5px;
               }
-              a {
+              a,
+              p {
                 display: inline-block;
                 font-family: $fc;
                 font-size: 19px;
                 margin-bottom: 5px;
+                text-transform: uppercase;
+              }
+              a {
                 border-bottom: 1px solid $medium-gray;
               }
             }
           }
         }
         .content {
+          clear: left;
           font-size: 15px;
-          line-height: 27px;
+          line-height: 25px;
           letter-spacing: -.01em;
           margin-top: 18px;
           p {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
           }
           a {
             text-decoration: underline;
@@ -136,13 +146,20 @@
             }
           }
         }
+        mark.unpublished {
+          display: inline-block;
+          font-size: 28px;
+          padding: 15px 35px;
+          font-family: $fc;
+        }
       }
     }
-    .col-right {
+    .node-image {
       @include clearfix;
       float: right;
       width: 50%;
       padding: 35px 1.5% 25px;
+      margin-left: 5%;
       .field-name-field-image {
         margin-top: 70px;
         .field-item {
