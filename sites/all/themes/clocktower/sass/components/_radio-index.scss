@@ -1,0 +1,71 @@
+#block-bean-radio-index {
+  @include clearfix;
+  padding: 20px 0;
+  .radio-index-header {
+    width: 800px;
+    margin: 0 auto;
+    h2 {
+      display: block;
+      color: $white;
+      background: $black;
+      padding: 10px 12px;
+      font-family: $fc;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 18px;
+      width: 100px;
+      margin-bottom: 16px;
+    }
+    p {
+      display: block;
+      font-family: $fb;
+      color: $medium-gray;
+      font-size: 15px;
+      width: 80%;
+      line-height: 1.5;
+      margin-bottom: 25px;
+    }
+  }
+  .channel-index {
+    border-bottom: 1px solid $medium-gray;
+    margin: 0 5%;
+    .view-channels {
+      width: 800px;
+      margin: 0 auto;
+      .views-row {
+        width: 30%;
+        height: 427px;
+        margin-right: 3.2%;
+        border: 0;
+        header {
+          border: 1px solid $medium-gray;
+
+          .teaser-image {
+            height: 185px;
+          }
+          .node-title {
+            position: relative;
+            height: 45px;
+            text-transform: uppercase;
+            a {
+              display: block;
+              position: absolute;
+              top: 50%;
+              -ms-transform: translateY(-50%);
+              -webkit-transform: translateY(-50%);
+              -moz-transform: translateY(-50%);
+              -o-transform: translateY(-50%);
+              transform: translateY(-50%);
+            }
+          }
+        }
+
+        .field-name-body {
+          font-size: 15px;
+          font-family: $fc;
+          margin: 17px 2px;
+        }
+      }
+    }
+  }
+}

@@ -1,186 +1,112 @@
 <?php
+
 /**
  * @file
- * Returns the HTML for a node.
+ * Default theme implementation to display a node.
  *
- * Complete documentation for this file is available online.
- * @see https://drupal.org/node/1728164
+ * Available variables:
+ * - $title: the (sanitized) title of the node.
+ * - $content: An array of node items. Use render($content) to print them all,
+ *   or print a subset such as render($content['field_example']). Use
+ *   hide($content['field_example']) to temporarily suppress the printing of a
+ *   given element.
+ * - $user_picture: The node author's picture from user-picture.tpl.php.
+ * - $date: Formatted creation date. Preprocess functions can reformat it by
+ *   calling format_date() with the desired parameters on the $created variable.
+ * - $name: Themed username of node author output from theme_username().
+ * - $node_url: Direct URL of the current node.
+ * - $display_submitted: Whether submission information should be displayed.
+ * - $submitted: Submission information created from $name and $date during
+ *   template_preprocess_node().
+ * - $classes: String of classes that can be used to style contextually through
+ *   CSS. It can be manipulated through the variable $classes_array from
+ *   preprocess functions. The default values can be one or more of the
+ *   following:
+ *   - node: The current template type; for example, "theming hook".
+ *   - node-[type]: The current node type. For example, if the node is a
+ *     "Blog entry" it would result in "node-blog". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node-teaser: Nodes in teaser form.
+ *   - node-preview: Nodes in preview mode.
+ *   The following are controlled through the node publishing options.
+ *   - node-promoted: Nodes promoted to the front page.
+ *   - node-sticky: Nodes ordered above other non-sticky nodes in teaser
+ *     listings.
+ *   - node-unpublished: Unpublished nodes visible only to administrators.
+ * - $title_prefix (array): An array containing additional output populated by
+ *   modules, intended to be displayed in front of the main title tag that
+ *   appears in the template.
+ * - $title_suffix (array): An array containing additional output populated by
+ *   modules, intended to be displayed after the main title tag that appears in
+ *   the template.
+ *
+ * Other variables:
+ * - $node: Full node object. Contains data that may not be safe.
+ * - $type: Node type; for example, story, page, blog, etc.
+ * - $comment_count: Number of comments attached to the node.
+ * - $uid: User ID of the node author.
+ * - $created: Time the node was published formatted in Unix timestamp.
+ * - $classes_array: Array of html class attribute values. It is flattened
+ *   into a string within the variable $classes.
+ * - $zebra: Outputs either "even" or "odd". Useful for zebra striping in
+ *   teaser listings.
+ * - $id: Position of the node. Increments each time it's output.
+ *
+ * Node status variables:
+ * - $view_mode: View mode; for example, "full", "teaser".
+ * - $teaser: Flag for the teaser state (shortcut for $view_mode == 'teaser').
+ * - $page: Flag for the full page state.
+ * - $promote: Flag for front page promotion state.
+ * - $sticky: Flags for sticky post setting.
+ * - $status: Flag for published status.
+ * - $comment: State of comment settings for the node.
+ * - $readmore: Flags true if the teaser content of the node cannot hold the
+ *   main body content.
+ * - $is_front: Flags true when presented in the front page.
+ * - $logged_in: Flags true when the current user is a logged-in member.
+ * - $is_admin: Flags true when the current user is an administrator.
+ *
+ * Field variables: for each field instance attached to the node a corresponding
+ * variable is defined; for example, $node->body becomes $body. When needing to
+ * access a field's raw values, developers/themers are strongly encouraged to
+ * use these variables. Otherwise they will have to explicitly specify the
+ * desired field language; for example, $node->body['en'], thus overriding any
+ * language negotiation rule that was previously applied.
+ *
+ * @see template_preprocess()
+ * @see template_preprocess_node()
+ * @see template_process()
+ *
+ * @ingroup themeable
  */
 ?>
-<?php if ($teaser): ?>
-  <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-    <?php if ($title_prefix || $title_suffix || $display_submitted || $unpublished || !$page && $title): ?>
-      <header>
-        <?php $image_display = field_info_instance('node', 'field_image', $node->type)['display']; ?>
-        <?php $image_style = $image_display['teaser']['settings']['image_style']; ?>
-        <?php $image_path = $field_image[0]['uri']; ?>
-        <?php $image_url = image_style_url($image_style, $image_path); ?>
-        <?php $alias = drupal_get_path_alias('node/' . $node->nid); ?>
-        <div class="teaser-image-container">
-          <?php print('<a href="/' . $alias . '" style="background: url(' . $image_url . ') no-repeat" class="teaser-image"></a>'); ?>
-        </div>
-        <?php print render($title_prefix); ?>
-        <?php if (!$page && $title): ?>
-          <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-        <?php endif; ?>
-        <?php print render($title_suffix); ?>
+  <?php print $user_picture; ?>
 
-        <?php if ($unpublished): ?>
-          <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
-        <?php endif; ?>
-      </header>
-    <?php endif; ?>
+  <?php print render($title_prefix); ?>
+  <?php if (!$page): ?>
+    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+  <?php endif; ?>
+  <?php print render($title_suffix); ?>
 
+  <?php if ($display_submitted): ?>
+    <div class="submitted">
+      <?php print $submitted; ?>
+    </div>
+  <?php endif; ?>
+
+  <div class="content"<?php print $content_attributes; ?>>
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
       hide($content['links']);
+      print render($content);
     ?>
-    <?php print truncate_utf8(render($content['body']), 350, TRUE, TRUE); ?>
-    <?php print render($content['links']); ?>
+  </div>
 
-    <?php print render($content['comments']); ?>
+  <?php print render($content['links']); ?>
 
-  </article>
-<?php else: ?>
-  <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-    <div class="node-header">
-      <div class="node-type">
-        <?php if($node->type == "show"): ?>
-          <a href="/radio">Radio Show</a>
-        <?php elseif($node->type == "event"): ?>
-          <a href="/events">Event</a>
-        <?php elseif($node->type == "blog"): ?>
-          <a href="/news">News</a>
-        <?php elseif($node->type == "series"): ?>
-          <a href="/radio">Radio Series</a>
-        <?php elseif($node->type == "exhibition"): ?>
-          <a href="/radio">Exhibition</a>  
-        <?php elseif($node->type == "partner"): ?>
-          <a href="/radio">Institutional Partner</a> 
-        <?php endif; ?>
-      </div>
-      <div class="node-header-info">
-        <?php if($type == 'event' && $field_event_date): ?>
-          <?php print render($content['field_event_date']); ?>
-        <?php elseif($type == 'exhibition' && $field_dates): ?>
-          <?php print render($content['field_dates']); ?>
-        <?php elseif($type == 'show' && $field_series): ?>
-          <?php print render($content['field_series'][0]); ?>
-        <?php elseif($type == 'blog' && $field_blog_categories): ?>
-          <?php print render($content['field_blog_categories']); ?>
-        <?php elseif($type == 'series' && $field_included_shows): ?>
-          <?php print count($content['field_included_shows']); ?> Episodes
-        <?php endif; ?>
-      </div>
-    </div>
-    <div class="node-body">
-      <div class="node-image">
-        <?php print render($content['field_image']); ?>
-      </div>
-      <div class="node-text">
-        <div class="node-content">
-          <?php print render($title_prefix); ?>
-          <?php if ($title): ?>
-            <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-          <?php endif; ?>
-          <?php print render($title_suffix); ?>
-          <?php if ($unpublished): ?>
-            <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
-          <?php endif; ?>
+  <?php print render($content['comments']); ?>
 
-          <div class="credits">
-            <?php if(isset($field_host)): ?>
-              <div class="credit">
-                <h4>Hosted by</h4>
-                <?php print render($content['field_host']); ?>
-              </div>
-            <?php endif; ?>
-            <?php if(isset($field_producer)): ?>
-              <div class="credit">
-                <h4>Produced by</h4>
-                <?php print render($content['field_producer']); ?>
-              </div>
-            <?php endif; ?>
-            <?php if(isset($field_partner_venue)): ?>
-              <div class="credit partner-venue">
-                <?php print render($content['field_partner_venue']); ?>
-              </div>
-            <?php endif ?>
-            <?php if(isset($field_venue)): ?>
-              <div class="credit venue">
-                <?php print render($content['field_venue']); ?>
-              </div>
-            <?php endif; ?>
-            <?php if (isset($field_curators)): ?>
-              <div class="credit curator">
-                <h4>Curated by</h4>
-                <?php print render($content['field_curators']); ?>
-              </div>
-            <?php endif ?>
-          </div>
-          
-          <div class="content"<?php print $content_attributes; ?>>
-            <div class="social-links">
-              <?php if($node->type == "show"): ?>
-                <a class="play-button" href="#" onclick="window.open('/player/<?php print $field_series[0]['nid'] ?>/<?php print $node->nid ?>', 'newwindow', 'width=460, height=510'); return false;"></a>
-              <?php elseif($node->type == "series" || $node->type == "channel"): ?>
-                <a class="play-button" href="#" onclick="window.open('/player/<?php print $node->nid ?>/0', 'newwindow', 'width=460, height=510'); return false;"></a>
-              <?php endif; ?>
-              <a class="facebook" href="facebook.com"></a>
-              <a class="twitter" href="twitter.com"></a>
-            </div>
-            <?php print render($content['body']); ?>
-            <?php if ($submitted): ?>
-              <div class="date-in-parts">
-                <span class="label">Posted</span>
-                <span class="month"><?php echo date("F", $node->created); ?></span>
-                <span class="day"><?php  echo date("j", $node->created); ?></span>
-                <span class="year"><?php echo date("Y", $node->created); ?></span>
-              </div>   
-            <?php endif; ?>
-            <div class="tags">
-              <?php if(array_key_exists('field_artist', $content)): ?>
-                <?php print render($content['field_artist']); ?>
-              <?php endif; ?>
-              <?php if(array_key_exists('field_blog_categories', $content)): ?>
-                <?php print render($content['field_blog_categories']); ?>
-              <?php endif; ?>
-              <?php if(array_key_exists('field_categories', $content)): ?>
-                <?php print render($content['field_categories']); ?>
-              <?php endif; ?>
-              <?php if(array_key_exists('field_radio_tags', $content)): ?>
-                <?php print render($content['field_radio_tags']); ?>
-              <?php endif; ?>
-              <?php if(array_key_exists('field_tags', $content)): ?>
-                <?php print render($content['field_tags']); ?>
-              <?php endif; ?>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="node-related">
-      <?php if($node->type == "show" && $field_series): ?>
-        <div class="title item">
-          <p>Other Episodes From</p>
-          <?php print render($content['field_series'][0]); ?>
-          <?php print views_embed_view('also_in_this_series', 'default', $field_series[0]['nid'], $node->nid); ?>
-        </div>
-      <?php elseif($node->type == "series" && $field_included_shows): ?>
-        <div class="title item related">
-          <p>Also in this Series</p>
-          <?php print views_embed_view('included_shows', 'default', $node->nid); ?>
-        </div>
-      <?php elseif($field_related_to): ?>
-        <div class="title item related">
-          <p>Related</p>
-          <?php print views_embed_view('related_to', 'default', $node->nid); ?>
-        </div>
-      <?php endif; ?>
-
-    </div>
-  </article>
-
-<?php endif; ?>
+</div>
