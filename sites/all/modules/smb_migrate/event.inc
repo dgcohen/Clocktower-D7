@@ -27,7 +27,9 @@ class EventMigration extends SMBNodeMigration {
      $this->addFieldMapping('field_image:preserve_files')
           ->defaultValue('MigrateFileFid');
 
-    $this->addFieldMapping('field_media_embed', 'field_media_embed')
+    $this->addFieldMapping('field_media_embed', 'field_media_embed');
+    $this->addFieldMapping('field_media_embed:value', 'field_media_embed:value');
+    $this->addFieldMapping('field_media_embed:format', 'field_media_embed:format')
          ->callbacks(array($this, 'mapFormat'));
 
     $this->addFieldMapping('field_event_date', 'field_event_date');
@@ -47,14 +49,14 @@ class EventMigration extends SMBNodeMigration {
         ->callbacks(array($this, 'mapFormat'));
 
     $this->addFieldMapping('field_support', 'field_support');
-    $this->addFieldMapping('field_support:format', 'field_support:format')
+    $this->addFieldMapping('field_support:value', 'field_support:value')
          ->callbacks(array($this, 'mapFormat'));
 
-    $this->addFieldMapping('field_map_link', 'field_map_link')
-         ->callbacks(array($this, 'mapFormat'));
+    $this->addFieldMapping('body:summary', 'field_summary');
+    $this->addFieldMapping('body:summary:format', 'field_summary:format');
 
-    $this->addFieldMapping('field_event_description', 'field_summary');
-    $this->addFieldMapping('field_event_description:value', 'field_summary:value')
+    $this->addFieldMapping('field_map_link', 'field_map_link');
+    $this->addFieldMapping('field_map_link:value', 'field_map_link:value')
          ->callbacks(array($this, 'mapFormat'));
 
     $this->addFieldMapping('field_tags', 2)

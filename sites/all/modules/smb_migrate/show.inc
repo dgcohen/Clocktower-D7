@@ -28,7 +28,9 @@ class ShowMigration extends SMBNodeMigration {
     $this->addFieldMapping('field_news', 'field_news')
          ->callbacks(array($this, 'mapFormat'));
 
-    $this->addFieldMapping('field_media_embed', 'field_media_embed')
+    $this->addFieldMapping('field_media_embed', 'field_media_embed');
+    $this->addFieldMapping('field_media_embed:value', 'field_media_embed:value');
+    $this->addFieldMapping('field_media_embed:format', 'field_media_embed:format')
          ->callbacks(array($this, 'mapFormat'));
 
     $this->addFieldMapping('field_audio_path', 'field_audio_path');
@@ -47,9 +49,12 @@ class ShowMigration extends SMBNodeMigration {
     $this->addFieldMapping('field_series', 'field_series');
     $this->addFieldMapping('field_series:field_series_nid', 'field_series:field_series_nid');
 
-    $this->addFieldMapping('field_support', 'field_support')
+    $this->addFieldMapping('field_support', 'field_support');
+    $this->addFieldMapping('field_support:value', 'field_support:value')
          ->callbacks(array($this, 'mapFormat'));
 
+    $this->addFieldMapping('body:summary', 'field_summary');
+    $this->addFieldMapping('body:summary:format', 'field_summary:format');
 
      $this->addFieldMapping('field_tags', 2)
           ->sourceMigration('Tags');

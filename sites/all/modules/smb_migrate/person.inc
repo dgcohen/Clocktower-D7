@@ -29,6 +29,13 @@ class PersonMigration extends SMBNodeMigration {
     $this->addFieldMapping('field_included_shows', 'field_included_shows');
     $this->addFieldMapping('field_included_shows:field_included_shows_nid', 'field_included_shows:field_included_shows_nid');
 
+    $this->addFieldMapping('field_support', 'field_support');
+    $this->addFieldMapping('field_support:value', 'field_support:value')
+         ->callbacks(array($this, 'mapFormat'));
+
+    $this->addFieldMapping('body:summary', 'field_summary');
+    $this->addFieldMapping('body:summary:format', 'field_summary:format');
+
    $this->addFieldMapping('field_host_type', 'field_host_type');
    $this->addFieldMapping('field_host_type:entity_id', 'field_host_type:nid');
    $this->addFieldMapping('field_host_type:delta', 'field_host_type:delta');

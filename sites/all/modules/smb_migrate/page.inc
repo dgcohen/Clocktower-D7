@@ -15,12 +15,6 @@ class PageMigration extends SMBNodeMigration {
     $this->addFieldMapping('field_entityref_taxonomy', 3)
          ->sourceMigration('Tags3');
 
-      $this->addFieldMapping('body','body')
-      ->arguments(array('format' => 'full_html'));
-
-      $this->addFieldMapping('summary','summary')
-      ->arguments(array('format' => 'full_html'));
-
      $this->addFieldMapping('field_image', 'field_image')
           ->sourceMigration('File');
      $this->addFieldMapping('field_image:file_class')
@@ -31,6 +25,13 @@ class PageMigration extends SMBNodeMigration {
           ->defaultValue('MigrateFileFid');
     $this->addFieldMapping('field_image:preserve_files')
          ->defaultValue('MigrateFileFid');
+
+    $this->addFieldMapping('field_support', 'field_support');
+    $this->addFieldMapping('field_support:value', 'field_support:value')
+         ->callbacks(array($this, 'mapFormat'));
+
+    $this->addFieldMapping('body:summary', 'field_summary');
+    $this->addFieldMapping('body:summary:format', 'field_summary:format');
 
 
     $this->addFieldMapping('field_logo', 'field_logo');

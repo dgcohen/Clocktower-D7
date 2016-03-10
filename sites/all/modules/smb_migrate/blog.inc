@@ -25,8 +25,9 @@ class BlogMigration extends SMBNodeMigration {
 
    $this->addFieldMapping('field_related_to', 'field_reference_event');
    $this->addFieldMapping('field_related_to:field_related_to_nid', 'field_reference_event:field_reference_event_nid');
-
+   
     $this->addFieldMapping('field_media_embed', 'field_media_embed');
+    $this->addFieldMapping('field_media_embed:value', 'field_media_embed:value');
     $this->addFieldMapping('field_media_embed:format', 'field_media_embed:format')
          ->callbacks(array($this, 'mapFormat'));
 
@@ -38,6 +39,13 @@ class BlogMigration extends SMBNodeMigration {
        ->defaultValue('tid');
    $this->addFieldMapping('field_artist:ignore_case')
         ->defaultValue('tid');
+
+    $this->addFieldMapping('field_support', 'field_support');
+    $this->addFieldMapping('field_support:value', 'field_support:value')
+         ->callbacks(array($this, 'mapFormat'));
+
+    $this->addFieldMapping('body:summary', 'field_summary');
+    $this->addFieldMapping('body:summary:format', 'field_summary:format');
 
     $this->addFieldMapping('field_blog_categories', 108)
          ->sourceMigration('BlogCategories');

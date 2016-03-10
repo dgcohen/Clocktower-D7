@@ -47,7 +47,12 @@
   <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
     <div class="node-header">
       <div class="node-type">
-        <a href="/radio">Channel</a>
+        <a href="/radio">Exhibition</a> 
+      </div>
+      <div class="node-header-info">
+        <?php if(isset($field_dates)): ?>
+          <?php print render($content['field_dates']); ?>
+        <?php endif; ?>
       </div>
     </div>
     <div class="node-body">
@@ -65,9 +70,27 @@
             <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
           <?php endif; ?>
 
+          <div class="credits">
+            <?php if(isset($field_partner_venue) && !empty($field_partner_venue)): ?>
+              <div class="credit partner-venue">
+                <?php print render($content['field_partner_venue']); ?>
+              </div>
+            <?php endif ?>
+            <?php if(isset($field_venue) && !empty($field_venue)): ?>
+              <div class="credit venue">
+                <?php print render($content['field_venue']); ?>
+              </div>
+            <?php endif; ?>
+            <?php if (isset($field_curators) && !empty($field_curators)): ?>
+              <div class="credit curator">
+                <h4>Curated by</h4>
+                <?php print render($content['field_curators']); ?>
+              </div>
+            <?php endif ?>
+          </div>
+          
           <div class="content"<?php print $content_attributes; ?>>
             <div class="social-links">
-              <a class="play-button" href="#" onclick="window.open('/player/<?php print $node->nid ?>/0', 'newwindow', 'width=460, height=510'); return false;"></a>
               <a class="facebook" href="facebook.com"></a>
               <a class="twitter" href="twitter.com"></a>
             </div>
@@ -101,8 +124,14 @@
         </div>
       </div>
     </div>
-    <div class="node-related">
-    </div>
+    <?php if(isset($field_related_to) && !empty($field_related_to)): ?>
+      <div class="node-related">
+        <div class="title item related">
+          <p>Related</p>
+          <?php print views_embed_view('related_to', 'default', $node->nid); ?>
+        </div>
+      </div>
+    <?php endif; ?>
   </article>
 
 <?php endif; ?>
