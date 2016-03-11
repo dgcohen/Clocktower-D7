@@ -4,18 +4,7 @@
   .radio-index-header {
     width: 800px;
     margin: 0 auto;
-    h2 {
-      display: block;
-      color: $white;
-      background: $black;
-      padding: 10px 12px;
-      font-family: $fc;
-      text-align: center;
-      text-transform: uppercase;
-      font-size: 18px;
-      width: 100px;
-      margin-bottom: 16px;
-    }
+    
     p {
       display: block;
       font-family: $fb;
@@ -68,16 +57,49 @@
       }
     }
   }
-  .series-list,
-  .hosts-list {
-    width: 50%;
-    .view-content {
-      margin: 0 25%;
-      .views-row {
-        height: auto;
-        width: auto;
-        border: 0;
-        margin-right: 3%;
+  .series-hosts-container {
+    @include clearfix;
+    padding-top: 35px;
+    width: 90%;
+    margin: auto;
+
+    .series-list,
+    .hosts-list {
+      width: 50%;
+      float: left;
+      .label {
+        margin-bottom: 50px;
+      }
+
+      .view {
+        margin: 0;
+      }
+
+      .view-content {
+        margin: 0;
+        @include clearfix;
+
+        .col-left,
+        .col-right {
+          width: 50%;
+          float: left;
+          padding-right: 15%;
+        }
+
+        .views-row {
+          margin: 0 0 12px 0;
+          height: auto;
+          width: auto;
+          border: 0;
+          float: none;
+
+          a {
+            line-height: 1.6;
+            &:hover {
+              color: $blue;
+            }
+          }
+        }
       }
     }
   }
