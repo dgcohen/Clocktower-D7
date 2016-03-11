@@ -8,9 +8,12 @@
   }
   .menu {
     width: 800px;
+    padding: 0;
     margin: auto;
+    @include clearfix;
     > .menu__item {
       position: relative;
+      list-style: none;
       float: left;
       width: 116px;
       text-align: center;
