@@ -21,11 +21,13 @@
     .view-channels {
       width: 800px;
       margin: 0 auto;
-      .views-row {
+      @include clearfix;
+      .node-teaser {
         width: 30%;
         height: 427px;
         margin-right: 3.2%;
         border: 0;
+
         header {
           border: 1px solid $medium-gray;
 

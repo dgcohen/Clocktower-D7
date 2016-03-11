@@ -1,80 +1,78 @@
-.view-content {
-  @include clearfix;
-  .views-row {
-    position: relative;
-    float: left;
-    width: 32.66%;
-    height: 535px;
-    margin-right: 1%;
-    margin-bottom: 20px;
-    border: 1px solid $medium-gray;
+.node-teaser {
+  position: relative;
+  float: left;
+  width: 32.66%;
+  height: 535px;
+  margin-right: 1%;
+  margin-bottom: 20px;
+  border: 1px solid $medium-gray;
+  background: $white;
+  .node {
+    margin-top: 0;
+    position: static;
+  }
+  .node-unpublished {
     background: $white;
-    .node {
-      margin-top: 0;
-      position: static;
+  }
+  .teaser-image-container {
+    padding-bottom: 6px;
+    &:hover {
+      border-bottom: 6px solid $blue;
+      padding-bottom: 0;
     }
-    .node-unpublished {
-      background: $white;
-    }
-    .teaser-image-container {
-      padding-bottom: 6px;
-      &:hover {
-        border-bottom: 6px solid $blue;
-        padding-bottom: 0;
-      }
-    }
-    .teaser-image {
+  }
+  .teaser-image {
+    display: block;
+    width: 100%;
+    height: 220px;
+    background-size: cover !important;
+    background-position: 50% 30% !important;
+  }
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+  .node-title {
+    font-family: $fc;
+    font-size: 26px;
+    margin: 17px 5% 13px;
+    line-height: 29px;
+  }
+  .field-name-body {
+    margin: 0 5% 7px;
+    font-family: $fb;
+    font-size: 16px;
+    line-height: 23px;
+    text-transform: none;
+  }
+  .unpublished {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    padding: 5px 3%;
+  }
+  .node-readmore {
+    a {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
       display: block;
-      width: 100%;
-      height: 220px;
-      background-size: cover !important;
-      background-position: 50% 30% !important;
-    }
-    &:nth-child(3n) {
-      margin-right: 0;
-    }
-    .node-title {
+      width: 110px;
       font-family: $fc;
-      font-size: 26px;
-      margin: 17px 5% 13px;
-      line-height: 29px;
-    }
-    .field-name-body {
-      margin: 0 5% 7px;
-      font-family: $fb;
-      font-size: 16px;
-      line-height: 23px;
-      text-transform: none;
-    }
-    .unpublished {
-      display: block;
-      width: 100%;
+      font-size: 18px;
+      border: 1px solid $dark-gray;
+      background: $white;
+      color: $black;
+      padding: 8px 0 4px;
+      text-transform: uppercase;
       text-align: center;
-      font-size: 20px;
-      padding: 5px 3%;
-    }
-    .node-readmore {
-      a {
-        position: absolute;
-        bottom: 15px;
-        right: 15px;
-        display: block;
-        width: 110px;
-        font-family: $fc;
-        font-size: 18px;
-        border: 1px solid $dark-gray;
-        background: $white;
-        color: $black;
-        padding: 8px 0 4px;
-        text-transform: uppercase;
-        text-align: center;
-        &:hover {
-          background: $blue;
-        }
+      &:hover {
+        background: $blue;
       }
     }
   }
 }
+
 .item-list {
   margin: 40px auto 80px;
   @include clearfix;

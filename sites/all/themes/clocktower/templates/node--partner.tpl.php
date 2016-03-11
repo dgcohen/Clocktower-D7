@@ -47,19 +47,7 @@
   <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
     <div class="node-header">
       <div class="node-type">
-        <?php if($node->type == "show"): ?>
-          <a href="/radio">Radio Show</a>
-        <?php elseif($node->type == "event"): ?>
-          <a href="/events">Event</a>
-        <?php elseif($node->type == "blog"): ?>
-          <a href="/news">News</a>
-        <?php elseif($node->type == "series"): ?>
-          <a href="/radio">Radio Series</a>
-        <?php elseif($node->type == "exhibition"): ?>
-          <a href="/radio">Exhibition</a>  
-        <?php elseif($node->type == "partner"): ?>
-          <a href="/radio">Institutional Partner</a> 
-        <?php endif; ?>
+        <a href="/radio" class="label">Institutional Partner</a> 
       </div>
       <div class="node-header-info">
         <?php if($type == 'event' && $field_event_date): ?>

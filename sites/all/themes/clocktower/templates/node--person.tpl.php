@@ -47,7 +47,7 @@
   <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
     <div class="node-header">
       <div class="node-type">
-        <a href="/people">Person</a> 
+        <a href="/people" class="label">Person</a> 
       </div>
       <div class="node-header-info">
         <?php if($type == 'event' && $field_event_date): ?>
