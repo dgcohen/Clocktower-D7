@@ -6,3 +6,9 @@
 <div class="channel-index">
   <?php print views_embed_view('channels', 'default'); ?>
 </div>
+<div class="series-list">
+  <?php print views_embed_view('series_list', 'default'); ?>
+</div>
+<div class="hosts-list">
+  <?php print views_embed_view('hosts_list', 'default'); ?>
+</div>

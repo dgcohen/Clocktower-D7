@@ -68,4 +68,17 @@
       }
     }
   }
+  .series-list,
+  .hosts-list {
+    width: 50%;
+    .view-content {
+      margin: 0 25%;
+      .views-row {
+        height: auto;
+        width: auto;
+        border: 0;
+        margin-right: 3%;
+      }
+    }
+  }
 }
