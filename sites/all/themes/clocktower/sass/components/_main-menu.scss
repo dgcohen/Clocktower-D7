@@ -1,13 +1,14 @@
 #main-menu {
   display: none;
   @include clearfix;
+  @include container;
   border-bottom: 1px solid $medium-gray;
   margin-bottom: 10px;
   @include breakpoint($bp960) {
     display: block;
   }
   .menu {
-    width: 800px;
+    width: 870px;
     padding: 0;
     margin: auto;
     @include clearfix;
@@ -15,12 +16,12 @@
       position: relative;
       list-style: none;
       float: left;
-      width: 116px;
+      width: 240px;
       text-align: center;
       font-size: 20px;
       text-transform: uppercase;
       font-family: $fc;
-      margin-right: 225px;
+      margin-right: 75px;
       padding: 10px 0;
       &:last-child {
         margin-right: 0;
@@ -34,9 +35,9 @@
       display: none;
       position: absolute;
       top: 40px;
-      left: -53px;
+      left: 0;
       background: $medium-gray;
-      width: 200px;
+      width: 240px;
       margin: 0;
       z-index: 1000;
       > .menu__item {
@@ -46,14 +47,23 @@
         padding: 0;
         a {
           display: block;
-          font-size: 17px;
+          font-size: 18px;
           font-family: $fc;
           color: $light-gray;
           text-transform: none;
-          padding: 12px 17px;
+          padding: 14px 0;
+          text-align: center;
+          text-transform: uppercase;
+          letter-spacing: .01em;
+          border-bottom: 1px solid $black;
         }
         &:hover {
           background: $black;
+        }
+        &:last-child {
+          a {
+            border-bottom: 0;
+          }
         }
       }
     }

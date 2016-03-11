@@ -51,9 +51,6 @@
       </div>
     </div>
     <div class="node-body">
-      <div class="node-image">
-        <?php print render($content['field_image']); ?>
-      </div>
       <div class="node-text">
         <div class="node-content">
           <?php print render($title_prefix); ?>
@@ -66,6 +63,9 @@
           <?php endif; ?>
 
           <div class="content"<?php print $content_attributes; ?>>
+            <div class="node-image">
+              <?php print render($content['field_image']); ?>
+            </div>
             <div class="social-links">
               <a class="play-button" href="#" onclick="window.open('/player/<?php print $node->nid ?>/0', 'newwindow', 'width=460, height=510'); return false;"></a>
               <a class="facebook" href="facebook.com"></a>

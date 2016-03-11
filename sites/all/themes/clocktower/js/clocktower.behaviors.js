@@ -39,22 +39,51 @@
 
         splitIntoColumns($seriesList);
         splitIntoColumns($hostsList);
+      }
 
-        function splitIntoColumns(container) {
-          var $items = container.find('.views-row');
-          container.prepend('<div class="col-left"></div><div class="col-right"></div>');
-          var $colLeft = container.find('.col-left');
-          var $colRight = container.find('.col-right');
-          var half = $items.length / 2;
-          $items.each(function(index) {
-            if (index < half) {
-              $(this).appendTo($colLeft);
-            } else {
-              $(this).appendTo($colRight);
-            }
-          });
+      function splitIntoColumns(container) {
+        var $items = container.find('.views-row');
+        container.prepend('<div class="col-left"></div><div class="col-right"></div>');
+        var $colLeft = container.find('.col-left');
+        var $colRight = container.find('.col-right');
+        var half = $items.length / 2;
+        $items.each(function(index) {
+          if (index < half) {
+            $(this).appendTo($colLeft);
+          } else {
+            $(this).appendTo($colRight);
+          }
+        });
 
-        }
+      }
+    }
+  };
+
+  Drupal.behaviors.artistsIndexLists = {
+    attach: function (context, settings) {
+
+      if($('.view-artists')) {
+        var $artistsList = $('.view-artists .view-content');
+        artistColumns($artistsList);
+      }
+
+      function artistColumns(container) {
+        var $items = container.find('.views-row');
+        container.prepend('<div class="col-1"></div><div class="col-2"></div><div class="col-3"></div><div class="col-4"></div>');
+
+        var quarter = $items.length / 4;
+        var divider = quarter;
+        var indexCounter = 1;
+        $items.each(function(index) {
+          if (index < divider) {
+            $(this).appendTo($('.col-' + indexCounter.toString()));
+          } else {
+            indexCounter += 1;
+            divider += quarter;
+            $(this).appendTo($('.col-' + indexCounter.toString()));
+          }
+        });
+
       }
     }
   };

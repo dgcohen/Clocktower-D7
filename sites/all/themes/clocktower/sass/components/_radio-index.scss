@@ -2,7 +2,7 @@
   @include clearfix;
   padding: 20px 0;
   .radio-index-header {
-    width: 800px;
+    width: 900px;
     margin: 0 auto;
     
     p {
@@ -10,7 +10,6 @@
       font-family: $fb;
       color: $medium-gray;
       font-size: 15px;
-      width: 80%;
       line-height: 1.5;
       margin-bottom: 25px;
     }
@@ -19,7 +18,7 @@
     border-bottom: 1px solid $medium-gray;
     margin: 0 5%;
     .view-channels {
-      width: 800px;
+      width: 900px;
       margin: 0 auto;
       @include clearfix;
       .node-teaser {
@@ -27,9 +26,12 @@
         height: 427px;
         margin-right: 3.2%;
         border: 0;
+        box-shadow: none;
+        background: transparent;
 
         header {
           border: 1px solid $medium-gray;
+          background: $white;
 
           .teaser-image {
             height: 185px;
@@ -89,16 +91,20 @@
         }
 
         .views-row {
-          margin: 0 0 12px 0;
+          margin: 0 0 6px 0;
           height: auto;
           width: auto;
           border: 0;
           float: none;
 
           a {
-            line-height: 1.6;
+            display: inline-block;
+            line-height: 1.4;
+            padding: 5px 12px;
+            font-family: $fc;
+            font-size: 17px;
             &:hover {
-              color: $blue;
+              background: $blue;
             }
           }
         }

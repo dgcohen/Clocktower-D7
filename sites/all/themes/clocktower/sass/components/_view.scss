@@ -1,10 +1,13 @@
 .view {
   margin: 0;
   .view-title {
+    display: inline-block;
     font-family: $fc;
-    font-size: 50px;
-    padding: 30px 0 35px;
-    margin: 20px 0 0;
+    color: $white;
+    background: $black;
+    font-size: 45px;
+    padding: 27px 40px 23px;
+    margin: 40px 0 30px;
     line-height: 39px;
     text-align: center;
     text-transform: uppercase;

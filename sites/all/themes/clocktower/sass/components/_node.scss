@@ -4,14 +4,10 @@
   .unpublished {
     text-transform: uppercase;
   }
-  &.node-unpublished {
-    background: $white;
-  }
   .node-header {
     @include clearfix;
-    padding: 2px 2% 2px 0;
-    margin: 0 2%;
-    border-bottom: 1px solid $medium-gray;
+    padding: 5px 1.5%;
+    margin: 0;
     .node-type {
       a {
         float: left;
@@ -52,15 +48,14 @@
     padding-bottom: 20px;
     .node-text {
       @include clearfix;
-      margin-left: 2%;
       .node-content {
         padding: 1.5%;
         h2 {
           font-family: $fc;
-          font-size: 36px;
+          font-size: 42px;
           padding: 11px 0;
-          margin: 20px 0 0;
-          line-height: 39px;
+          line-height: 1.2;
+          width: 43%;
         }
         .credits {
           margin: 10px 0 17px;
@@ -98,12 +93,12 @@
         }
         .content {
           clear: left;
-          font-size: 15px;
-          line-height: 25px;
+          font-size: 16px;
+          line-height: 1.5;
           letter-spacing: -.01em;
-          margin-top: 18px;
+          margin-top: 15px;
           p {
-            margin-bottom: 12px;
+            margin-bottom: 20px;
           }
           a {
             text-decoration: underline;
@@ -140,50 +135,49 @@
               font-size: 19px;
             }
           }
-        }
-      }
-    }
-    .node-image {
-      @include clearfix;
-      float: right;
-      width: 50%;
-      padding: 35px 1.5% 25px;
-      margin-left: 5%;
-      .field-name-field-image {
-        margin-top: 70px;
-        .field-item {
-          position: relative;
-          width: 32%;
-          height: 118px;
-          overflow: hidden;
-          margin-bottom: 14px;
-          margin-right: 2%;
-          float: left;
-          a {
-            img {
-              width: 150%;
-              height: auto;
-              position: absolute;
-              top: 0;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              margin: auto;
+          .node-image {
+            @include clearfix;
+            float: right;
+            width: 55%;
+            padding: 0 1.5% 25px;
+            margin: 0 3%;
+            .field-name-field-image {
+              .field-item {
+                position: relative;
+                width: 32%;
+                height: 118px;
+                overflow: hidden;
+                margin-bottom: 14px;
+                margin-right: 2%;
+                float: left;
+                a {
+                  img {
+                    width: 150%;
+                    height: auto;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                  }
+                }
+                &:first-child {
+                  width: 100%;
+                  height: auto;
+                  float: none;
+                  margin-right: 0;
+                  img {
+                    width: 100%;
+                    height: auto;
+                    position: static;
+                  }
+                }
+                &:nth-child(3n+1) {
+                  margin-right: 0;
+                }
+              }
             }
-          }
-          &:first-child {
-            width: 100%;
-            height: auto;
-            float: none;
-            margin-right: 0;
-            img {
-              width: 100%;
-              height: auto;
-              position: static;
-            }
-          }
-          &:nth-child(3n+1) {
-            margin-right: 0;
           }
         }
       }
@@ -194,13 +188,13 @@
     padding: 28px 2%;
     .title {
       > p {
-        font-size: 19px;
+        font-size: 22px;
         text-transform: uppercase;
       }
       > a {
         display: inline-block;
         font-family: $fc;
-        font-size: 35px;
+        font-size: 44px;
         margin: 13px 0 30px;
         padding-bottom: 2px;
         border-bottom: 1px solid $medium-gray;
@@ -211,13 +205,6 @@
           font-size: 35px;
           margin: 13px 0 30px;
           padding-bottom: 2px;
-        }
-      }
-    }
-    .views-row {
-      &:nth-child(3n) {
-        .node-teaser {
-          margin-right: 0;
         }
       }
     }

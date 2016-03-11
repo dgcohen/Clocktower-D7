@@ -47,7 +47,6 @@
       <?php endif; ?>
       <?php if (in_array('page__taxonomy__term', $theme_hook_suggestions) && $title): ?><h2 class="label" id="page-title">#<?php print $title; ?></h2><?php endif; ?>
       <?php print render($page['content']); ?>
-      <?php print $feed_icons; ?>
     </div>
 
   </div>

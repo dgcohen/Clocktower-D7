@@ -7,6 +7,7 @@
   margin-bottom: 20px;
   border: 1px solid $medium-gray;
   background: $white;
+  box-shadow: -3px 2px 12px -6px;
   .node {
     margin-top: 0;
     position: static;
@@ -73,8 +74,16 @@
   }
 }
 
+.views-row {
+  &:nth-child(3n) {
+    .node-teaser {
+      margin-right: 0;
+    }
+  }
+}
+
 .item-list {
-  margin: 40px auto 80px;
+  margin: 17px auto 80px;
   @include clearfix;
   .pager {
     li {

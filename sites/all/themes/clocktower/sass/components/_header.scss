@@ -1,8 +1,9 @@
 #header {
   @include clearfix;
+  @include container;
   margin-top: 10px;
   padding-bottom: 15px;
-  background: $white;
+  background: $gray;
   border-bottom: 1px solid $medium-gray;
   .site-logo {
     display: block;

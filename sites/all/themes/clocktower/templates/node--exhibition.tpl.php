@@ -56,9 +56,6 @@
       </div>
     </div>
     <div class="node-body">
-      <div class="node-image">
-        <?php print render($content['field_image']); ?>
-      </div>
       <div class="node-text">
         <div class="node-content">
           <?php print render($title_prefix); ?>
@@ -90,6 +87,9 @@
           </div>
           
           <div class="content"<?php print $content_attributes; ?>>
+            <div class="node-image">
+              <?php print render($content['field_image']); ?>
+            </div>
             <div class="social-links">
               <a class="facebook" href="facebook.com"></a>
               <a class="twitter" href="twitter.com"></a>

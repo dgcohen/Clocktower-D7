@@ -1,10 +1,31 @@
 .view-artists {
+  padding: 35px 2%;
+
   .view-content {
+    @include clearfix;
+    [class^="col"] {
+      float: left;
+      width: 25%;
+      padding-right: 10%;
+    }
     .views-row {
       height: auto;
       width: auto;
       border: 0;
       float: none;
+      list-style: none;
+      line-height: 1.5;
+      margin-bottom: 5px;
+
+      a {
+        font-family: $fc;
+        display: inline-block;
+        padding: 5px 12px;
+        font-size: 17px;
+        &:hover {
+          background: $blue;
+        }
+      }
     }
   }
 }

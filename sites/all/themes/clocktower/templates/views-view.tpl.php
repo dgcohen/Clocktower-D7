@@ -31,6 +31,8 @@
   <?php print render($title_prefix); ?>
   <?php if($name == "events"): ?>
     <h2 class="view-title">Events</h2>
+  <?php elseif($name == "exhibitions"): ?>
+    <h2 class="view-title">Exhibitions</h2>
   <?php endif; ?>
   <?php if ($title): ?>
     <?php print $title; ?>

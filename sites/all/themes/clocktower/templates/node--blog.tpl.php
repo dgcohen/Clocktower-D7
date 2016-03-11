@@ -56,9 +56,6 @@
       </div>
     </div>
     <div class="node-body">
-      <div class="node-image">
-        <?php print render($content['field_image']); ?>
-      </div>
       <div class="node-text">
         <div class="node-content">
           <?php print render($title_prefix); ?>
@@ -71,6 +68,9 @@
           <?php endif; ?>
 
           <div class="content"<?php print $content_attributes; ?>>
+            <div class="node-image">
+              <?php print render($content['field_image']); ?>
+            </div>
             <div class="social-links">
               <?php if($node->type == "show"): ?>
                 <a class="play-button" href="#" onclick="window.open('/player/<?php print $field_series[0]['nid'] ?>/<?php print $node->nid ?>', 'newwindow', 'width=460, height=510'); return false;"></a>
