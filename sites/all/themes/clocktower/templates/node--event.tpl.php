@@ -50,7 +50,7 @@
         <a href="/events" class="label">Event</a>
       </div>
       <div class="node-header-info">
-        <?php if(isset($field_event_date)): ?>
+        <?php if(isset($field_event_date) && !empty($field_event_date)): ?>
           <?php print render($content['field_event_date']); ?>
         <?php endif; ?>
       </div>
@@ -68,13 +68,13 @@
           <?php endif; ?>
 
           <div class="credits">
-            <?php if(isset($field_host)): ?>
+            <?php if(isset($field_host) && !empty($field_host)): ?>
               <div class="credit">
                 <h4>Hosted by</h4>
                 <?php print render($content['field_host']); ?>
               </div>
             <?php endif; ?>
-            <?php if(isset($field_producer)): ?>
+            <?php if(isset($field_producer) && !empty($field_producer)): ?>
               <div class="credit">
                 <h4>Produced by</h4>
                 <?php print render($content['field_producer']); ?>
@@ -121,7 +121,7 @@
       </div>
     </div>
     <div class="node-related">
-      <?php if(isset($field_related_to)): ?>
+      <?php if(isset($field_related_to) && !empty($field_related_to)): ?>
         <div class="title item related">
           <p>Related</p>
           <?php print views_embed_view('related_to', 'default', $node->nid); ?>

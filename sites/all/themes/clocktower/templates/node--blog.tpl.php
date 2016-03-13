@@ -110,7 +110,7 @@
         </div>
       </div>
     </div>
-      <?php if(isset($field_related_to)): ?>
+      <?php if(isset($field_related_to) && !empty($field_related_to)): ?>
         <div class="title item related">
           <p>Related</p>
           <?php print views_embed_view('related_to', 'default', $node->nid); ?>
