@@ -1,0 +1,4 @@
+name = Clocktower Popup
+description = Custom popup script for clocktower.org
+package = Clocktower Popup
+core = 7.x

@@ -88,5 +88,25 @@
     }
   };
 
+  Drupal.behaviors.clocktowerPopup = {
+    attach: function (context, settings) {
+
+      $(window).load(function() {
+
+        $('.open-popup-link').magnificPopup({
+          type:'inline',
+          midClick: true,
+          removalDelay: 500,
+          mainClass: 'mfp-zoom-in'
+        });
+
+        if(Drupal.settings.popupEnabled && !$.cookie('clocktower_stream')) {
+          $('.open-popup-link').click();
+          $.cookie("clocktower_stream", 1, { expires : 1, path: '/' });
+        }
+      });
+    }
+  };
+
 
 })(jQuery);

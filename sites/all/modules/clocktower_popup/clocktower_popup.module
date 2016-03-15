@@ -1,0 +1,98 @@
+<?php
+
+function clocktower_popup_menu() {
+  $items = array();
+
+  $items['admin/config/clocktower-popup'] = array(
+    'title' => 'Clocktower Popup',
+    'description' => 'A form to mess around with.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('clocktower_popup_form'),
+    'access callback' => TRUE
+  );
+
+  return $items;
+}
+
+
+function clocktower_popup_form($form, &$form_state) {
+
+  $dateformat = 'Y-m-d H:i';
+  $timestamp = time();
+    
+  $dbv = $timestamp;
+  $value = NULL;
+      
+  if (empty($dbv)) {
+    $d = new DateTime('@'.$dbv);
+    $value = $d->format($dateformat);
+  } else {
+    $d = new DateTime();
+    $value = $d->format($dateformat);
+  }
+      
+  $form['start_date'] = array(
+    '#type' => 'date_popup',
+    '#date_timezone' => date_default_timezone(),
+    '#date_format' => $dateformat,
+    '#date_year_range' => '-3:+3',
+    '#title' => 'Start Date',
+    '#required' => TRUE,
+    '#default_value' => variable_get('clocktower_popup_start_date', $value),
+  );
+
+  $form['end_date'] = array(
+    '#type' => 'date_popup',
+    '#date_timezone' => date_default_timezone(),
+    '#date_format' => $dateformat,
+    '#date_year_range' => '-3:+3',
+    '#title' => 'End Date',
+    '#required' => TRUE,
+    '#default_value' => variable_get('clocktower_popup_end_date', $value),
+  );
+
+  $form['enabled'] = array(
+      '#type' => 'checkbox',
+      '#title' => 'Enabled',
+      '#return_value' => '1',
+      '#required' => FALSE,
+      '#default_value' => variable_get('clocktower_popup_enabled', 0),
+    );
+
+  $form['text'] = array(
+      '#type' => 'textarea',
+      '#title' => 'Popup Text',
+      '#resizable' => 'flase',
+      '#cols' => 10,
+      '#maxlength' => 128,
+      '#required' => TRUE,
+      '#default_value' => variable_get('clocktower_popup_text', ''),
+    );
+
+  $form['submit'] = array(
+      '#title' => '',
+      '#type' =>  'submit',
+      '#value' => t('submit'),
+      );
+      
+  return $form;
+}
+
+function clocktower_popup_form_submit($form, &$form_state){
+  drupal_set_message(t('Popup settings saved.'));
+  variable_set('clocktower_popup_text', $form_state['values']['text']);
+  variable_set('clocktower_popup_start_date', $form_state['values']['start_date']);
+  variable_set('clocktower_popup_end_date', $form_state['values']['end_date']);
+  variable_set('clocktower_popup_enabled', $form_state['values']['enabled']);
+}
+
+function clocktower_popup_preprocess_page(&$variables) {
+  $variables['clocktower_popup']['enabled'] = variable_get('clocktower_popup_enabled', 0);
+  $variables['clocktower_popup']['start_date'] = variable_get('clocktower_popup_start_date', 0);
+  $variables['clocktower_popup']['end_date'] = variable_get('clocktower_popup_end_date', 0);
+  $variables['clocktower_popup']['text'] = variable_get('clocktower_popup_text', '');
+
+  drupal_add_library('system', 'jquery.cookie');
+  drupal_add_js(array('popupEnabled' => $variables['clocktower_popup']['enabled']), 'setting');
+}
+?>

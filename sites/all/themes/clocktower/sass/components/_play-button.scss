@@ -1,0 +1,14 @@
+.play-button {
+  display: block;
+  width: 70px;
+  height: 70px;
+  background: $white url('../images/icons2x/triangle-white.png') no-repeat 68% 50%;
+  background-size: 56%;
+  border-radius: 50%;
+  border: 2px solid $black;
+  &:hover {
+    background: $blue url('../images/icons2x/triangle-white.png') no-repeat 68% 50%;
+    background-size: 56%;
+    border-radius: 50%;
+  }
+}
