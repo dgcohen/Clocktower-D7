@@ -176,8 +176,7 @@
 
   function get_file_path($node) {
     $file_name = $node->field_audio_path['und'][0]['value'];
-    $path = '/sites/default/files/audio/' . $file_name;
-    dpm($path);
+    $path = '/kunden/homepages/35/d617078498/htdocs/clocktower.org/Clocktower-D7/sites/default/files/audio' . $file_name;
     return $path;
   }
 
