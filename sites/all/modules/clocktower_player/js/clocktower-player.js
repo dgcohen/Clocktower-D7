@@ -5,6 +5,7 @@
     if (Drupal.settings && Drupal.settings.clocktowerplayer ) {
       var options = Drupal.settings.clocktowerplayer;
       clocktowerPlayer.file_path = options.file_path;
+      console.log(options.file_path);
       clocktowerPlayer.title = options.title;
   	}
   }
