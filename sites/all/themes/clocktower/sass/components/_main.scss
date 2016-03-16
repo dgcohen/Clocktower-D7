@@ -23,10 +23,10 @@ body {
 }
 
 #page {
-  margin-top: 64px;
+  margin-top: 107px;
   
   @include breakpoint($bp580) {
-    margin-top: 144px;
+    margin-top: 189px;
   }
 
   @include breakpoint($bp960) {

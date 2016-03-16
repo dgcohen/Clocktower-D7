@@ -1,7 +1,10 @@
 .social-links {
   float: left;
-  margin: 5px 28px 10px 0;
-  margin-bottom: 10px;
+  margin: -11px 28px 20px 0;
+
+  @include breakpoint($bp960) {
+    margin: 5px 28px 10px 0;
+  }
   a {
     display: block;
     width: 70px;

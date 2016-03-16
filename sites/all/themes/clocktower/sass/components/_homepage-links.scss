@@ -11,15 +11,21 @@
     float: none;
     width: 98%;
     margin: auto;
-    height: 284px;
+    height: 180px;
     margin-bottom: 2px;
     font-family: $fb;
-    letter-spacing: -.4px;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include breakpoint($bp580) {
+      height: 215px;
+
+    }
+
     @include breakpoint($bp960) {
       float: left;
       width: 49.8%;
+      height: 284px;
       margin-right: 0.4%;
       margin-left: 0;
       &:nth-child(even) {
@@ -55,15 +61,40 @@
       z-index: 200;
     }
     .title {
-      font-size: 34px;
-      top: 128px;
+      font-family: $fc;
+      font-size: 26px;
+      top: 50%;
+      -ms-transform: translateY(-50%) ;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+
+      @include breakpoint($bp580) {
+        font-size: 32px;
+      }
+
+      @include breakpoint($bp960) {
+        font-size: 38px;
+      }
     }
     .description {
       display: none;
-      font-size: 24px;
+      font-family: $fb;
+      font-size: 22px;
       padding: 40px;
-      top: 85px;
-      line-height: 30px;
+      top: 50%;
+      -ms-transform: translateY(-50%) ;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      line-height: 1.2;
+
+      @include breakpoint($bp580) {
+        font-size: 25px;
+      }
+
+      @include breakpoint($bp960) {
+        font-size: 30px;
+      }
+
     }
   }
 }

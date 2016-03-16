@@ -15,7 +15,7 @@
   Drupal.behaviors.mobileMenu = {
     attach: function (context, settings) {
       $('.menu-btn').click(function() {
-        $('.responsive-menu').toggle();
+        $('.responsive-menu').slideToggle();
       });
     }
   };
@@ -103,6 +103,21 @@
         if(Drupal.settings.popupEnabled && !$.cookie('clocktower_stream')) {
           $('.open-popup-link').click();
           $.cookie("clocktower_stream", 1, { expires : 1, path: '/' });
+        }
+      });
+    }
+  };
+
+  Drupal.behaviors.moveFirstImage = {
+    attach: function (context, settings) {
+      $nodeImage = $('.node-image');
+      $firstImage = $('.node-image .field-name-field-image .field-item:first-child');
+      $firstImage.clone().addClass('mobile-image').insertBefore('.node-body .content');
+      $( window ).resize(function() {
+        if ($(this).width() < 960) {
+          $nodeImage.insertAfter('.node-body .field-name-body');
+        } else {
+          $nodeImage.insertBefore('.social-links');
         }
       });
     }

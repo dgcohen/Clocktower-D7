@@ -2,7 +2,8 @@
   @include clearfix;
   padding: 20px 0;
   .radio-index-header {
-    width: 900px;
+    @include container;
+    max-width: 900px;
     margin: 0 auto;
     
     p {
