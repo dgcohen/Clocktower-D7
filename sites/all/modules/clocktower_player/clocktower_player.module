@@ -177,6 +177,7 @@
   function get_file_path($node) {
     $file_name = $node->field_audio_path['und'][0]['value'];
     $path = '/sites/default/files/audio/' . $file_name;
+    dpm($path);
     return $path;
   }
 
