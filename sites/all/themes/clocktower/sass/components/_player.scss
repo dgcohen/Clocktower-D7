@@ -21,6 +21,18 @@
     opacity: .2;
     z-index: 20;
   }
+
+  .close-button {
+    position: fixed;
+    z-index: 15000;
+    background: url('../images/icons2x/hamburger-closed.png') no-repeat;
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    top: 2%;
+    right: 2%;
+    cursor: pointer;
+  }
   .text-overlay {
     position: absolute;
     top: 0;
@@ -33,7 +45,7 @@
 }
 .page-player {
   .player-header {
-    position: absolute;
+    position: relative;
     z-index: 40;
     width: 100%;
     padding-top: 8px;
@@ -87,10 +99,84 @@
       }
     }
   }
+
+  .options-container {
+    position: absolute;
+    width: 90%;
+    max-width: 700px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 120px;
+    z-index: 1000;
+    a {
+      display: block;
+      width: 50%;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: $fc;
+      font-size: 25px;
+      letter-spacing: 0.02em;
+      color: $white;
+      float: left;
+      margin-bottom: 20px;
+
+      @include breakpoint($bp580) {
+        font-size: 32px;
+      }
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+  .channel-list {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+
+    a {
+      position: relative;
+      display: block;
+      height: 20%;
+      width: 100%;
+      font-size: 30px;
+      text-align: center;
+      border-bottom: 1px solid $medium-gray;
+      background: $white;
+      opacity: .95;
+
+      &:hover {
+        background: $medium-gray;
+        p {
+          color: $white;
+        }
+      }
+
+      &:last-child {
+        border: 0;
+      }
+
+      p {
+        position: absolute;
+        text-align: center;
+        text-transform: uppercase;
+        top: 50%;
+        width: 100%;
+        -ms-transform: translateY(-50%) ;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        color: $black;
+      }
+    }
+  }
   .jp-audio {
     &.jp-state-playing {
       .play-button {
-        background-position: 142% -4%;
+        background-position: 120% 0%;
       }
     }
   }
@@ -200,8 +286,8 @@
       background-color: $gray;
     }
     .play-button {
-      background-size: 134%;
-      background-position: -62% -4%;
+      background-size: 158%;
+      background-position: -30% 0%;
     }
     .previous-node,
     .next-node {

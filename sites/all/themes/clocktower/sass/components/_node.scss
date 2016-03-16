@@ -10,7 +10,6 @@
     margin: 0;
     .node-type {
       a {
-        float: left;
         margin-bottom: 13px;
         &.show {
           &:hover {
@@ -20,8 +19,7 @@
       }
     }
     .node-header-info {
-      float: left;
-      margin: 7px 3% 9px;
+      margin: 7px 0 9px;
       font-size: 18px;
       line-height: 24px;
       a {
@@ -49,7 +47,7 @@
     .node-text {
       @include clearfix;
       .node-content {
-        padding: 1.5%;
+        padding: 0 1.5%;
         h2 {
           font-family: $fc;
           font-size: 42px;

@@ -28,5 +28,13 @@
   		remainingDuration: true,
   		toggleDuration: true
   	});
+    $('.channels').click(function(event) {
+      event.preventDefault();
+      $('.channel-list').slideToggle();
+    });
+    $('.close-button').click(function(event) {
+      event.preventDefault();
+      $('.modal').slideToggle();
+    });
   });
 })(jQuery);

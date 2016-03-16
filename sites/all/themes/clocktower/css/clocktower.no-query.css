@@ -1627,33 +1627,31 @@ tr.selected td {
       clear: both; }
     /* line 12, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
     .node .node-header .node-type a {
-      float: left;
       margin-bottom: 13px; }
-      /* line 16, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+      /* line 15, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
       .node .node-header .node-type a.show:hover {
         color: #009ddc; }
-    /* line 22, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+    /* line 21, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
     .node .node-header .node-header-info {
-      float: left;
-      margin: 7px 3% 9px;
+      margin: 7px 0 9px;
       font-size: 18px;
       line-height: 24px; }
-      /* line 27, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+      /* line 25, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
       .node .node-header .node-header-info a {
         display: inline-block;
         font-family: "FranklinGothicBookCondensed", Helvetica, Arial, sans-serif;
         border-bottom: 1px solid #595959;
         padding-bottom: 2px;
         margin-bottom: 12px; }
-        /* line 33, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+        /* line 31, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
         .node .node-header .node-header-info a:hover {
           color: #009ddc;
           border-bottom: 1px solid #009ddc; }
-      /* line 39, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+      /* line 37, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
       .node .node-header .node-header-info .field-type-taxonomy-term-reference a {
         border: 0;
         text-transform: uppercase; }
-  /* line 46, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+  /* line 44, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
   .node .node-body {
     border-bottom: 1px solid #595959;
     padding-bottom: 20px; }
@@ -1662,10 +1660,10 @@ tr.selected td {
       content: "";
       display: table;
       clear: both; }
-    /* line 51, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+    /* line 49, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
     .node .node-body .node-text .node-content {
-      padding: 1.5%; }
-      /* line 53, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+      padding: 0 1.5%; }
+      /* line 51, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
       .node .node-body .node-text .node-content h2 {
         font-family: "FranklinGothicBookCondensed", Helvetica, Arial, sans-serif;
         font-size: 42px;
@@ -1673,17 +1671,17 @@ tr.selected td {
         line-height: 1.2;
         width: 100%; }
         @media (min-width: 960px) {
-          /* line 53, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+          /* line 51, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
           .node .node-body .node-text .node-content h2 {
             width: 43%; } }
-      /* line 64, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+      /* line 62, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
       .node .node-body .node-text .node-content .mobile-image {
         display: block; }
         @media (min-width: 960px) {
-          /* line 64, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+          /* line 62, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
           .node .node-body .node-text .node-content .mobile-image {
             display: none; } }
-      /* line 70, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+      /* line 68, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
       .node .node-body .node-text .node-content .credits {
         margin: 10px 0 17px;
         float: left; }
@@ -1692,7 +1690,7 @@ tr.selected td {
           content: "";
           display: table;
           clear: both; }
-        /* line 74, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+        /* line 72, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
         .node .node-body .node-text .node-content .credits .credit {
           margin-bottom: 10px; }
           /* line 2, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/base/_mixins.scss */
@@ -1700,21 +1698,21 @@ tr.selected td {
             content: "";
             display: table;
             clear: both; }
-          /* line 77, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+          /* line 75, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
           .node .node-body .node-text .node-content .credits .credit h4 {
             float: left;
             margin-right: 5px;
             font-family: "FranklinGothicBookCondensed", Helvetica, Arial, sans-serif;
             font-size: 19px;
             text-transform: uppercase; }
-          /* line 84, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+          /* line 82, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
           .node .node-body .node-text .node-content .credits .credit .field {
             float: left; }
-            /* line 86, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+            /* line 84, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
             .node .node-body .node-text .node-content .credits .credit .field .field-item {
               float: left;
               margin-right: 5px; }
-            /* line 90, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+            /* line 88, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
             .node .node-body .node-text .node-content .credits .credit .field a,
             .node .node-body .node-text .node-content .credits .credit .field p {
               display: inline-block;
@@ -1722,10 +1720,10 @@ tr.selected td {
               font-size: 19px;
               margin-bottom: 5px;
               text-transform: uppercase; }
-            /* line 98, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+            /* line 96, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
             .node .node-body .node-text .node-content .credits .credit .field a {
               border-bottom: 1px solid #595959; }
-      /* line 104, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+      /* line 102, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
       .node .node-body .node-text .node-content .content {
         clear: left;
         font-size: 16px;
@@ -1733,28 +1731,28 @@ tr.selected td {
         letter-spacing: -.01em;
         margin-top: 30px; }
         @media (min-width: 960px) {
-          /* line 104, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+          /* line 102, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
           .node .node-body .node-text .node-content .content {
             margin-top: 15px; } }
-        /* line 114, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+        /* line 112, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
         .node .node-body .node-text .node-content .content p {
           margin-bottom: 20px; }
-        /* line 117, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+        /* line 115, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
         .node .node-body .node-text .node-content .content a {
           text-decoration: underline; }
-        /* line 120, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+        /* line 118, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
         .node .node-body .node-text .node-content .content .tags {
           margin-top: 22px; }
-          /* line 122, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+          /* line 120, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
           .node .node-body .node-text .node-content .content .tags .field-item {
             display: inline-block;
             margin-right: 12px;
             margin-bottom: 12px; }
-          /* line 127, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+          /* line 125, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
           .node .node-body .node-text .node-content .content .tags .field-items,
           .node .node-body .node-text .node-content .content .tags .field {
             display: inline; }
-          /* line 131, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+          /* line 129, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
           .node .node-body .node-text .node-content .content .tags a {
             display: inline-block;
             padding: 3px 8px;
@@ -1765,14 +1763,14 @@ tr.selected td {
             font-size: 14px;
             font-weight: bold;
             letter-spacing: .025em; }
-            /* line 141, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+            /* line 139, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
             .node .node-body .node-text .node-content .content .tags a:before {
               content: "#"; }
-        /* line 147, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+        /* line 145, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
         .node .node-body .node-text .node-content .content .date-in-parts span {
           font-family: "FranklinGothicBook", Helvetica, Arial, sans-serif;
           font-size: 19px; }
-        /* line 152, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+        /* line 150, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
         .node .node-body .node-text .node-content .content .node-image {
           float: none;
           width: 100%;
@@ -1783,13 +1781,13 @@ tr.selected td {
             display: table;
             clear: both; }
           @media (min-width: 960px) {
-            /* line 152, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+            /* line 150, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
             .node .node-body .node-text .node-content .content .node-image {
               float: right;
               width: 55%;
               padding: 0 1.5% 25px;
               margin: 0 3%; } }
-          /* line 165, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+          /* line 163, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
           .node .node-body .node-text .node-content .content .node-image .field-name-field-image .field-item {
             position: relative;
             width: 32%;
@@ -1798,7 +1796,7 @@ tr.selected td {
             margin-bottom: 14px;
             margin-right: 2%;
             float: left; }
-            /* line 174, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+            /* line 172, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
             .node .node-body .node-text .node-content .content .node-image .field-name-field-image .field-item a img {
               width: 150%;
               height: auto;
@@ -1808,7 +1806,7 @@ tr.selected td {
               left: 0;
               right: 0;
               margin: auto; }
-            /* line 185, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+            /* line 183, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
             .node .node-body .node-text .node-content .content .node-image .field-name-field-image .field-item:first-child {
               display: none;
               width: 100%;
@@ -1816,18 +1814,18 @@ tr.selected td {
               float: none;
               margin-right: 0; }
               @media (min-width: 960px) {
-                /* line 185, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+                /* line 183, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
                 .node .node-body .node-text .node-content .content .node-image .field-name-field-image .field-item:first-child {
                   display: block; } }
-              /* line 195, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+              /* line 193, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
               .node .node-body .node-text .node-content .content .node-image .field-name-field-image .field-item:first-child img {
                 width: 100%;
                 height: auto;
                 position: static; }
-            /* line 201, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+            /* line 199, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
             .node .node-body .node-text .node-content .content .node-image .field-name-field-image .field-item:nth-child(3n+1) {
               margin-right: 0; }
-  /* line 211, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+  /* line 209, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
   .node .node-related {
     padding: 28px 2%; }
     /* line 2, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/base/_mixins.scss */
@@ -1835,11 +1833,11 @@ tr.selected td {
       content: "";
       display: table;
       clear: both; }
-    /* line 215, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+    /* line 213, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
     .node .node-related .title > p {
       font-size: 22px;
       text-transform: uppercase; }
-    /* line 219, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+    /* line 217, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
     .node .node-related .title > a {
       display: inline-block;
       font-family: "FranklinGothicBookCondensed", Helvetica, Arial, sans-serif;
@@ -1847,7 +1845,7 @@ tr.selected td {
       margin: 13px 0 30px;
       padding-bottom: 2px;
       border-bottom: 1px solid #595959; }
-    /* line 228, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
+    /* line 226, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_node.scss */
     .node .node-related .title.related p {
       font-family: "FranklinGothicBookCondensed", Helvetica, Arial, sans-serif;
       font-size: 35px;
@@ -1891,7 +1889,18 @@ tr.selected td {
     background: #000000;
     opacity: .2;
     z-index: 20; }
-  /* line 24, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+  /* line 25, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+  .player-container .close-button {
+    position: fixed;
+    z-index: 15000;
+    background: url("../images/icons2x/hamburger-closed.png") no-repeat;
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    top: 2%;
+    right: 2%;
+    cursor: pointer; }
+  /* line 36, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
   .player-container .text-overlay {
     position: absolute;
     top: 0;
@@ -1901,9 +1910,9 @@ tr.selected td {
     background-size: 100% 50%;
     opacity: .6; }
 
-/* line 35, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+/* line 47, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
 .page-player .player-header {
-  position: absolute;
+  position: relative;
   z-index: 40;
   width: 100%;
   padding-top: 8px; }
@@ -1912,7 +1921,7 @@ tr.selected td {
     content: "";
     display: table;
     clear: both; }
-  /* line 41, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+  /* line 53, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
   .page-player .player-header .logo {
     display: block;
     width: 120px;
@@ -1925,23 +1934,23 @@ tr.selected td {
     background: url("../images/player-logo.png") no-repeat;
     background-size: cover; }
     @media (min-width: 580px) {
-      /* line 41, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+      /* line 53, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
       .page-player .player-header .logo {
         width: 180px;
         height: 186px; } }
-  /* line 57, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+  /* line 69, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
   .page-player .player-header .show-details {
     width: 50%;
     float: right;
     margin-right: 6%;
     margin-top: 15px; }
     @media (min-width: 580px) {
-      /* line 57, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+      /* line 69, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
       .page-player .player-header .show-details {
         width: 290px;
         float: left;
         margin-left: 10%; } }
-    /* line 67, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+    /* line 79, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
     .page-player .player-header .show-details h2 {
       font-family: "FranklinGothicBookCondensed", Helvetica, Arial, sans-serif;
       font-size: 17px;
@@ -1949,28 +1958,99 @@ tr.selected td {
       color: #ffffff;
       letter-spacing: .02em; }
       @media (min-width: 400px) {
-        /* line 67, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+        /* line 79, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
         .page-player .player-header .show-details h2 {
           font-size: 21px; } }
       @media (min-width: 580px) {
-        /* line 67, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+        /* line 79, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
         .page-player .player-header .show-details h2 {
           font-size: 25px; } }
-      /* line 79, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+      /* line 91, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
       .page-player .player-header .show-details h2 span {
         font-weight: bold;
         margin-right: 6px;
         color: #ffffff; }
         @media (min-width: 580px) {
-          /* line 79, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+          /* line 91, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
           .page-player .player-header .show-details h2 span {
             margin-right: 15px; } }
 
-/* line 92, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
-.page-player .jp-audio.jp-state-playing .play-button {
-  background-position: 142% -4%; }
+/* line 103, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+.page-player .options-container {
+  position: absolute;
+  width: 90%;
+  max-width: 700px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 120px;
+  z-index: 1000; }
+  /* line 112, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+  .page-player .options-container a {
+    display: block;
+    width: 50%;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "FranklinGothicBookCondensed", Helvetica, Arial, sans-serif;
+    font-size: 25px;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    float: left;
+    margin-bottom: 20px; }
+    @media (min-width: 580px) {
+      /* line 112, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+      .page-player .options-container a {
+        font-size: 32px; } }
+    /* line 127, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+    .page-player .options-container a:hover {
+      color: #009ddc; }
 
-/* line 97, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+/* line 132, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+.page-player .channel-list {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000; }
+  /* line 141, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+  .page-player .channel-list a {
+    position: relative;
+    display: block;
+    height: 20%;
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+    border-bottom: 1px solid #595959;
+    background: #ffffff;
+    opacity: .95; }
+    /* line 152, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+    .page-player .channel-list a:hover {
+      background: #595959; }
+      /* line 154, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+      .page-player .channel-list a:hover p {
+        color: #ffffff; }
+    /* line 159, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+    .page-player .channel-list a:last-child {
+      border: 0; }
+    /* line 163, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+    .page-player .channel-list a p {
+      position: absolute;
+      text-align: center;
+      text-transform: uppercase;
+      top: 50%;
+      width: 100%;
+      -ms-transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      color: #000000; }
+
+/* line 178, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+.page-player .jp-audio.jp-state-playing .play-button {
+  background-position: 120% 0%; }
+
+/* line 183, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
 .page-player .controls-container {
   position: fixed;
   bottom: 0;
@@ -1978,79 +2058,79 @@ tr.selected td {
   right: 0;
   z-index: 1000; }
 
-/* line 105, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+/* line 191, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
 .page-player .jp-audio .jp-volume-controls {
   right: 2%;
   top: 2px;
   left: auto;
   width: auto; }
-  /* line 110, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+  /* line 196, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
   .page-player .jp-audio .jp-volume-controls button,
   .page-player .jp-audio .jp-volume-controls .jp-volume-bar {
     margin: 0;
     position: static;
     float: left;
     margin-left: 7px; }
-  /* line 117, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+  /* line 203, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
   .page-player .jp-audio .jp-volume-controls .jp-volume-bar {
     background: #000000;
     border: 1px solid #ffffff;
     height: 7px;
     width: 65px;
     margin-top: 4px; }
-    /* line 123, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+    /* line 209, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
     .page-player .jp-audio .jp-volume-controls .jp-volume-bar .jp-volume-bar-value {
       height: 7px;
       background: #ffffff; }
-  /* line 128, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+  /* line 214, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
   .page-player .jp-audio .jp-volume-controls .jp-mute {
     background: url("../images/icons2x/player-icons.png") no-repeat;
     background-size: 58px;
     background-position: -4px -79px; }
-  /* line 133, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+  /* line 219, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
   .page-player .jp-audio .jp-volume-controls .jp-volume-max {
     width: 22px;
     background: url("../images/icons2x/player-icons.png") no-repeat;
     background-size: 58px;
     background-position: -34px -79px; }
 
-/* line 140, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+/* line 226, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
 .page-player .jp-audio .jp-progress {
   height: 25px;
   border-top: 1px solid #000000;
   border-bottom: 1px solid #000000; }
-  /* line 144, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+  /* line 230, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
   .page-player .jp-audio .jp-progress .jp-seek-bar {
     background: #f4f4f4; }
-  /* line 147, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+  /* line 233, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
   .page-player .jp-audio .jp-progress .jp-play-bar {
     background: #009ddc; }
 
-/* line 151, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+/* line 237, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
 .page-player .jp-audio .jp-time-holder {
   margin: 0 0 0 2%;
   width: 100px !important;
   font-size: 26px;
   font-family: "FranklinGothicBookCondensed", Helvetica, Arial, sans-serif; }
   @media (min-width: 580px) {
-    /* line 151, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+    /* line 237, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
     .page-player .jp-audio .jp-time-holder {
       margin: auto !important; } }
-  /* line 159, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+  /* line 245, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
   .page-player .jp-audio .jp-time-holder div {
     width: auto;
     color: #ffffff; }
-  /* line 164, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+  /* line 250, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
   .page-player .jp-audio .jp-time-holder .jp-duration:before {
     content: "/";
     margin-right: 3px; }
 
-/* line 171, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+/* line 257, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
 .page-player .player-controls {
   padding: 7px 0;
   background: #f4f4f4; }
 
-/* line 175, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+/* line 261, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
 .page-player .player-buttons {
   width: 209px;
   margin: auto; }
@@ -2059,7 +2139,7 @@ tr.selected td {
     content: "";
     display: table;
     clear: both; }
-  /* line 179, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+  /* line 265, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
   .page-player .player-buttons a,
   .page-player .player-buttons p {
     display: block;
@@ -2073,41 +2153,41 @@ tr.selected td {
     background: #f4f4f4 url("../images/icons2x/player-icons.png") no-repeat;
     border-radius: 50%;
     margin-right: 10px; }
-  /* line 194, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+  /* line 280, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
   .page-player .player-buttons a:hover {
     background-color: #009ddc; }
-  /* line 198, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+  /* line 284, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
   .page-player .player-buttons p {
     background: url("../images/icons2x/player-icons-gray.png") no-repeat;
     background-color: #f8f8f8; }
-  /* line 202, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+  /* line 288, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
   .page-player .player-buttons .play-button {
-    background-size: 134%;
-    background-position: -62% -4%; }
-  /* line 206, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+    background-size: 158%;
+    background-position: -30% 0%; }
+  /* line 292, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
   .page-player .player-buttons .previous-node,
   .page-player .player-buttons .next-node {
     width: 58px;
     height: 54px;
     background-size: 130%; }
-  /* line 212, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+  /* line 298, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
   .page-player .player-buttons .previous-node {
     background-position: 168% 50%; }
-  /* line 215, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+  /* line 301, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
   .page-player .player-buttons .next-node {
     background-position: -72% 50%;
     margin-right: 0; }
 
-/* line 220, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+/* line 306, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
 .page-player .jp-progress {
   width: 100% !important; }
 
-/* line 223, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+/* line 309, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
 .page-player .jp-progress,
 .page-player .jp-time-holder {
   position: static; }
 
-/* line 227, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+/* line 313, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
 .page-player .jp-audio,
 .page-player .jp-audio-stream,
 .page-player .jp-video,
@@ -2119,7 +2199,7 @@ tr.selected td {
   margin: 0;
   width: auto !important; }
 
-/* line 238, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
+/* line 324, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
 .page-player .jp-details,
 .page-player .jp-stop,
 .page-player .jp-repeat,

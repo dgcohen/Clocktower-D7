@@ -11,6 +11,18 @@
       <?php endif; ?>
     </div>
   </div>
+  <div class="options-container">
+    <a href="#" class="more-info">More Info</a>
+    <a href="#" class="channels">Channels</a>
+    <a href="#" class="subscribe">Subscribe</a>
+    <a href="#" class="share">Share</a>
+  </div>
+  <div class="channel-list modal">
+    <div class="close-button"></div>
+    <?php foreach($channel_list as $channel) { ?>
+    <a href="/player/<?php print $channel->nid ?>/0"><p><?php print $channel->title ?></p></a>
+    <?php }; ?>
+  </div>
   <div class="controls-container">
     <div id="jquery_jplayer_1" class="jp-jplayer"></div>
     <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">

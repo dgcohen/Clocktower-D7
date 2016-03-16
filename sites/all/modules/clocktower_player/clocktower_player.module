@@ -35,6 +35,18 @@
     drupal_add_css(drupal_get_path('module', 'clocktower_player') . '/css/jplayer.blue.monday.css');
     $series_title = array_key_exists('series_title', $show_data) ? $show_data['series_title'] : '';
     $channel_title = array_key_exists('channel_title', $show_data) ? $show_data['channel_title'] : '';
+
+    // Get channel list.
+    $nids = db_select('node', 'n')
+        ->fields('n', array('nid'))
+        ->fields('n', array('type'))
+        ->condition('n.type', 'channel')
+        ->execute()
+        ->fetchCol(); // returns an indexed array
+
+    // Now return the node objects.
+    $channels = node_load_multiple($nids);
+
     $page_elements = array(
       'title' => $show_data['title'],
       'series' => $series_title,
@@ -43,6 +55,7 @@
       'previous_show_id' => $show_data['previous_show_id'],
       'next_show_id' => $show_data['next_show_id'],
       'background_image_src' => $show_data['background_image_src'],
+      'channel_list' => $channels,
     );
     return theme('clocktower_player', $page_elements);
   }
@@ -89,8 +102,12 @@
     $show_data['next_show_id'] = adjacent_shows($show, 'series')[1];
     $image_display = field_info_instance('node', 'field_image', 'show')['display'];
     $image_style = $image_display['teaser']['settings']['image_style'];
-    $image_path = $image_path = $show->field_image['und'][0]['uri'];
-    $show_data['background_image_src'] = image_style_url($image_style, $image_path);
+    if (!empty($show->field_image)) {
+      $image_path = $show->field_image[LANGUAGE_NONE][0]['uri'];
+      $show_data['background_image_src'] = image_style_url($image_style, $image_path);
+    } else {
+      $show_data['background_image_src'] = '';
+    }
 
     return $show_data;
   }
