@@ -176,7 +176,7 @@
 
   function get_file_path($node) {
     $file_name = $node->field_audio_path['und'][0]['value'];
-    $path = variable_get('file_public_path', conf_path() . '/files') . '/audio/' . $file_name;
+    $path = variable_get('file_public_path', conf_path() . '/files') . '/audio/mp3/' . $file_name;
     return $path;
   }
 
