@@ -64,11 +64,13 @@
           @include breakpoint($bp960) {
             display: none;
           }
+          img {
+            width: 100%;
+          }
         }
         .credits {
           margin: 10px 0 17px;
           @include clearfix;
-          float: left;
           .credit {
             @include clearfix;
             margin-bottom: 10px;
