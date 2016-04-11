@@ -25,7 +25,12 @@
       $('.node-image .field-name-field-image').magnificPopup({
         delegate: 'a',
         type: 'image',
-        gallery:{enabled:true}
+        gallery:{enabled:true},
+        image: {
+           titleSrc: function(item) {
+           return item.el.parents('.field-item').find('.image-title').html();
+          }
+        },
       });
     }
   };

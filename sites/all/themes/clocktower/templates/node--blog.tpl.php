@@ -37,7 +37,8 @@
       hide($content['comments']);
       hide($content['links']);
     ?>
-    <?php print truncate_utf8(render($content['body']), 350, TRUE, TRUE); ?>
+
+    <?php print render($content['body']); ?>
     <?php print render($content['links']); ?>
 
     <?php print render($content['comments']); ?>
@@ -81,6 +82,7 @@
               <a class="twitter" href="twitter.com"></a>
             </div>
             <?php print render($content['body']); ?>
+            <?php print render($content['field_media_embed']); ?>
             <?php if ($submitted): ?>
               <div class="date-in-parts">
                 <span class="label">Posted</span>
@@ -110,13 +112,13 @@
         </div>
       </div>
     </div>
+    <div class="node-related">
       <?php if(isset($field_related_to) && !empty($field_related_to)): ?>
         <div class="title item related">
           <p>Related</p>
           <?php print views_embed_view('related_to', 'default', $node->nid); ?>
         </div>
       <?php endif; ?>
-
     </div>
   </article>
 
