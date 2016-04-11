@@ -7,8 +7,8 @@
   }
   a {
     display: block;
-    width: 63px;
-    height: 53px;
+    width: 64px;
+    height: 55px;
     margin: 10px auto 15px;
     &:last-child {
       margin-bottom: 0;
@@ -33,7 +33,7 @@
       background-image: url('../images/icons2x/icon-facebook.png');
       background-repeat: no-repeat;
       background-size: 30px;
-      background-position: center 8px;
+      background-position: center 11px;
       &:hover {
         background-color: darken($facebook-blue, 10%);
       }
@@ -43,7 +43,7 @@
       background-image: url('../images/icons2x/icon-twitter.png');
       background-repeat: no-repeat;
       background-size: 18px;
-      background-position: center 16px;
+      background-position: center 20px;
       &:hover {
         background-color: darken($twitter-green, 10%);
       }

@@ -69,21 +69,27 @@
 
           <div class="credits">
             <?php if(isset($field_partner_venue) && !empty($field_partner_venue)): ?>
-              <div class="credit partner-venue">
+              <div class="credit partner">
                 <?php print render($content['field_partner_venue']); ?>
               </div>
-            <?php endif ?>
-            <?php if(isset($field_venue) && !empty($field_venue)): ?>
-              <div class="credit venue">
-                <?php print render($content['field_venue']); ?>
-              </div>
             <?php endif; ?>
-            <?php if (isset($field_curators) && !empty($field_curators)): ?>
-              <div class="credit curator">
+            <?php if(isset($field_curators) && !empty($field_curators)): ?>
+              <div class="credit">
                 <h4>Curated by</h4>
                 <?php print render($content['field_curators']); ?>
               </div>
-            <?php endif ?>
+            <?php endif; ?>
+            <?php if(isset($field_venue) && !empty($field_venue)): ?>
+              <div class="credit">
+                <h4>At</h4>
+                <?php print render($content['field_venue']); ?>
+              </div>
+            <?php endif; ?>
+            <?php if(isset($field_map_link) && !empty($field_map_link)): ?>
+              <div class="credit">
+                <a href="<?php print $content['field_map_link']['#items'][0]['value']; ?>" target="_blank">Map link</a>
+              </div>
+            <?php endif; ?>
           </div>
           
           <div class="content"<?php print $content_attributes; ?>>
@@ -95,6 +101,15 @@
               <a class="twitter" href="twitter.com"></a>
             </div>
             <?php print render($content['body']); ?>
+            <?php if(isset($field_long_description) && !empty($field_long_description)): ?>
+              <?php print render($content['field_long_description']); ?>
+            <?php endif; ?>
+            <?php if(isset($field_media_embed) && !empty($field_media_embed)): ?>
+              <?php print render($content['field_media_embed']); ?>
+            <?php endif; ?>
+            <?php if(isset($field_support) && !empty($field_support)): ?>
+              <?php print render($content['field_support']); ?>
+            <?php endif; ?>
             <?php if ($submitted): ?>
               <div class="date-in-parts">
                 <span class="label">Posted</span>

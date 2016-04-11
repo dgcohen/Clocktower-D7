@@ -137,6 +137,12 @@
           a {
             text-decoration: underline;
           }
+          em {
+            font-style: italic;
+          }
+          strong {
+            font-weight: bold;
+          }
           .tags {
             margin-top: 22px;
             .field-item {
@@ -181,8 +187,8 @@
             @include breakpoint($bp960) {
               float: right;
               width: 55%;
-              padding: 0 1.5% 25px;
-              margin: 0 3%;
+              padding: 0 0 25px 1.5%;
+              margin: 0 0 0 3%;
             }
             .field-name-field-image {
               .field-item {
@@ -220,14 +226,19 @@
                     height: auto;
                     position: static;
                   }
+                  .image-title {
+                    display: block;
+                  }
                 }
                 &:nth-child(3n+1) {
                   margin-right: 0;
                 }
               }
               .image-title {
+                display: none;
                 font-size: 13px;
-                margin-bottom: 10px;
+                margin-bottom: 16px;
+                text-align: right;
               }
             }
           }
@@ -314,7 +325,8 @@
       }
     }
   }
-  &.node-event {
+  &.node-event,
+  &.node-exhibition {
     .node-type,
     .node-title {
       a {
