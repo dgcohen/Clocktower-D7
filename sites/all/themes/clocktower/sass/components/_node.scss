@@ -104,7 +104,8 @@
               }
             }
             a,
-            p {
+            p,
+            div {
               display: inline-block;
               font-family: $fc;
               font-size: 19px;
@@ -294,7 +295,8 @@
     }
   }
 
-  &.node-blog {
+  &.node-blog,
+  &.node-partner {
     .node-type,
     .node-title {
       a {
@@ -319,7 +321,7 @@
     .credit {
       a {
         &:hover {
-          color: $red;
+          color: $yellow;
           border-bottom: 1px solid $yellow !important;
         }
       }
