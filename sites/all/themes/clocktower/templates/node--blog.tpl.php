@@ -82,7 +82,9 @@
               <a class="twitter" href="twitter.com"></a>
             </div>
             <?php print render($content['body']); ?>
-            <?php print render($content['field_media_embed']); ?>
+            <?php if(isset($field_media_embed) && !empty($field_media_embed)): ?>
+              <?php print render($content['field_media_embed']); ?>
+            <?php endif; ?>
             <?php if ($submitted): ?>
               <div class="date-in-parts">
                 <span class="label">Posted</span>
