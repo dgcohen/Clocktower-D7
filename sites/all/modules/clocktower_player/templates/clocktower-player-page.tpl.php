@@ -29,7 +29,7 @@
   <div class="embed modal">
     <div class="close-button"></div>
     <h3>Embed this show</h3>
-    <textarea id="embed-code"><iframe width="400" height="512" src="http://<?php print $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>" frameborder="0"></iframe></textarea>
+    <textarea id="embed-code"><iframe width="400" height="512" src="http://<?php print $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; ?>/?autoplay=0" frameborder="0"></iframe></textarea>
     <p>Copy and paste the code above to embed this show on your website.</p>
   </div>
   <div class="controls-container">
