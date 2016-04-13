@@ -1,21 +1,21 @@
 .social-links {
   float: left;
-  margin: -11px 28px 20px 0;
+  margin: -11px 22px 20px 0;
 
   @include breakpoint($bp960) {
-    margin: 5px 22px 10px 0;
+    margin: 5px 18px 10px 0;
   }
   a {
     display: block;
-    width: 64px;
-    height: 55px;
+    width: 65px;
+    height: 59px;
     margin: 10px auto 15px;
     &:last-child {
       margin-bottom: 0;
     }
     &.play-button {
-      width: 70px;
-      height: 70px;
+      width: 82px;
+      height: 82px;
       background: $white url('../images/icons2x/triangle-white.png') no-repeat 68% 50%;
       background-size: 56%;
       border-radius: 50%;
@@ -32,7 +32,7 @@
       background-color: $facebook-blue;
       background-image: url('../images/icons2x/icon-facebook.png');
       background-repeat: no-repeat;
-      background-size: 30px;
+      background-size: 34px;
       background-position: center 11px;
       &:hover {
         background-color: darken($facebook-blue, 10%);
@@ -42,7 +42,7 @@
       background-color: $twitter-green;
       background-image: url('../images/icons2x/icon-twitter.png');
       background-repeat: no-repeat;
-      background-size: 18px;
+      background-size: 23px;
       background-position: center 20px;
       &:hover {
         background-color: darken($twitter-green, 10%);

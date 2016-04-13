@@ -1,5 +1,5 @@
 body {
-  font-family: $fb;
+  font-family: $ta;
   background: $gray;
 }
 
@@ -14,10 +14,10 @@ body {
   color: $white;
   background: $black;
   padding: 10px 24px 8px;
-  font-family: $fc;
+  font-family: $fb;
   text-align: center;
-  text-transform: uppercase;
   font-size: 18px;
+  text-transform: uppercase;
   margin-bottom: 16px;
   letter-spacing: .03em;
 }

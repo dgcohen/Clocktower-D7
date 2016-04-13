@@ -6,8 +6,8 @@
   }
   .node-header {
     @include clearfix;
-    padding: 5px 1.5%;
     margin: 0;
+    margin-bottom: 32px;
     .node-type {
       a {
         margin-bottom: 13px;
@@ -28,13 +28,18 @@
       line-height: 24px;
       a {
         display: inline-block;
-        font-family: $fc;
+        font-family: $ta;
         border-bottom: 1px solid $medium-gray;
         padding-bottom: 2px;
+        margin-top: 10px;
         &:hover {
           color: $blue;
           border-bottom: 1px solid $blue;
         }
+      }
+      .date-display-range {
+        display: inline;
+        margin-top: 10px;
       }
       .field-type-taxonomy-term-reference {
         a {
@@ -53,12 +58,13 @@
         padding: 0 1.5%;
         h2 {
           font-size: 30px;
-          font-family: $fc;
-          padding: 11px 0;
+          font-family: $fbc;
           line-height: 1.2;
+          margin-bottom: 10px;
           width: 100%;
           @include breakpoint($bp580) {
             font-size: 35px;
+            margin-bottom: 10px;
           }
 
           @include breakpoint($bp960) {
@@ -88,13 +94,13 @@
           margin: 10px 0 17px;
           @include clearfix;
           .credit {
+            margin-bottom: 12px;
             @include clearfix;
-            margin-bottom: 10px;
             h4 {
               float: left;
               margin-right: 5px;
-              font-family: $fc;
-              font-size: 19px;
+              font-family: $fbc;
+              font-size: 17px;
               text-transform: uppercase;
             }
             .field {
@@ -108,9 +114,8 @@
             p,
             div {
               display: inline-block;
-              font-family: $fc;
-              font-size: 19px;
-              margin-bottom: 5px;
+              font-family: $fbc;
+              font-size: 17px;
               text-transform: uppercase;
             }
             a {
@@ -129,6 +134,7 @@
           line-height: 1.5;
           letter-spacing: -.01em;
           margin-top: 30px;
+          font-family: $ta;
 
           @include breakpoint($bp960) {
             margin-top: 15px;
@@ -144,6 +150,16 @@
           }
           strong {
             font-weight: bold;
+          }
+          .aired {
+            p {
+              float: left;
+              margin-right: 7px;
+            }
+            p,
+            div {
+              font-weight: bold;
+            } 
           }
           .tags {
             margin-top: 22px;
@@ -162,7 +178,7 @@
               border: 1px solid $dark-gray;
               text-decoration: none;
               text-transform: uppercase;
-              font-family: $fb;
+              font-family: $fbc;
               font-size: 14px;
               font-weight: bold;
               letter-spacing: .025em;
@@ -176,7 +192,7 @@
               margin-right: 12px;
             }
             span {
-              font-family: $fb;
+              font-family: $ta;
               font-size: 19px;
             }
           }
@@ -190,7 +206,7 @@
               float: right;
               width: 55%;
               padding: 0 0 25px 1.5%;
-              margin: 0 0 0 3%;
+              margin: 0 0 0 1.5%;
             }
             .field-name-field-image {
               .field-item {
@@ -263,7 +279,8 @@
             }
           }
           .field-name-field-support {
-            font-size: 14px;
+            font-size: 13px;
+            margin: 12px 0;
           }
         }
       }
@@ -276,10 +293,11 @@
       > p {
         font-size: 22px;
         text-transform: uppercase;
+        font-family: $ta;
       }
       > a {
         display: inline-block;
-        font-family: $fc;
+        font-family: $fbc;
         font-size: 44px;
         margin: 13px 0 30px;
         padding-bottom: 2px;
@@ -287,8 +305,8 @@
       }
       &.related {
         > p {
-          font-family: $fc;
-          font-size: 35px;
+          font-family: $fbc;
+          font-size: 44px;
           margin: 13px 0 30px;
           padding-bottom: 2px;
         }

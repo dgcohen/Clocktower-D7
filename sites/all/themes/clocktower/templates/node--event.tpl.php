@@ -107,14 +107,7 @@
             <?php if(isset($field_support) && !empty($field_support)): ?>
               <?php print render($content['field_support']); ?>
             <?php endif; ?>
-            <?php if ($submitted): ?>
-              <div class="date-in-parts">
-                <span class="label">Posted</span>
-                <span class="month"><?php echo date("F", $node->created); ?></span>
-                <span class="day"><?php  echo date("j", $node->created); ?></span>
-                <span class="year"><?php echo date("Y", $node->created); ?></span>
-              </div>   
-            <?php endif; ?>
+            
             <div class="tags">
               <?php if(array_key_exists('field_artist', $content)): ?>
                 <?php print render($content['field_artist']); ?>

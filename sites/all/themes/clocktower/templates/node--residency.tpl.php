@@ -79,28 +79,6 @@
           <?php endif; ?>
 
           <div class="credits">
-            <?php if(isset($field_host)): ?>
-              <div class="credit">
-                <h4>Hosted by</h4>
-                <?php print render($content['field_host']); ?>
-              </div>
-            <?php endif; ?>
-            <?php if(isset($field_producer)): ?>
-              <div class="credit">
-                <h4>Produced by</h4>
-                <?php print render($content['field_producer']); ?>
-              </div>
-            <?php endif; ?>
-            <?php if(isset($field_partner_venue)): ?>
-              <div class="credit partner-venue">
-                <?php print render($content['field_partner_venue']); ?>
-              </div>
-            <?php endif ?>
-            <?php if(isset($field_venue)): ?>
-              <div class="credit venue">
-                <?php print render($content['field_venue']); ?>
-              </div>
-            <?php endif; ?>
             <?php if (isset($field_curators)): ?>
               <div class="credit curator">
                 <h4>Curated by</h4>
@@ -120,6 +98,12 @@
               <a class="twitter" href="twitter.com"></a>
             </div>
             <?php print render($content['body']); ?>
+            <?php if(isset($field_media_embed) && !empty($field_media_embed)): ?>
+              <?php print render($content['field_media_embed']); ?>
+            <?php endif; ?>
+            <?php if(isset($field_support) && !empty($field_support)): ?>
+              <?php print render($content['field_support']); ?>
+            <?php endif; ?>
             <?php if ($submitted): ?>
               <div class="date-in-parts">
                 <span class="label">Posted</span>
@@ -150,24 +134,14 @@
       </div>
     </div>
     <div class="node-related">
-      <?php if($node->type == "show" && $field_series): ?>
-        <div class="title item">
-          <p>Other Episodes From</p>
-          <?php print render($content['field_series'][0]); ?>
-          <?php print views_embed_view('also_in_this_series', 'default', $field_series[0]['nid'], $node->nid); ?>
-        </div>
-      <?php elseif($node->type == "series" && $field_included_shows): ?>
-        <div class="title item related">
-          <p>Also in this Series</p>
-          <?php print views_embed_view('included_shows', 'default', $node->nid); ?>
-        </div>
-      <?php elseif(isset($field_related_to)): ?>
-        <div class="title item related">
-          <p>Related</p>
-          <?php print views_embed_view('related_to', 'default', $node->nid); ?>
+      <?php if(isset($field_related_to) && !empty($field_related_to)): ?>
+        <div class="node-related">
+          <div class="title item related">
+            <p>Related</p>
+            <?php print views_embed_view('related_to', 'default', $node->nid); ?>
+          </div>
         </div>
       <?php endif; ?>
-
     </div>
   </article>
 

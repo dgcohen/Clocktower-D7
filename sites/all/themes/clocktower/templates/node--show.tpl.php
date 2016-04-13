@@ -88,22 +88,6 @@
                 <?php print render($content['field_producer']); ?>
               </div>
             <?php endif; ?>
-            <?php if(isset($field_partner_venue) && !empty($field_partner_venue)): ?>
-              <div class="credit partner-venue">
-                <?php print render($content['field_partner_venue']); ?>
-              </div>
-            <?php endif ?>
-            <?php if(isset($field_venue) && !empty($field_venue)): ?>
-              <div class="credit venue">
-                <?php print render($content['field_venue']); ?>
-              </div>
-            <?php endif; ?>
-            <?php if (isset($field_curators) && !empty($field_curators)): ?>
-              <div class="credit curator">
-                <h4>Curated by</h4>
-                <?php print render($content['field_curators']); ?>
-              </div>
-            <?php endif ?>
           </div>
           
           <div class="content"<?php print $content_attributes; ?>>
@@ -111,23 +95,23 @@
               <?php print render($content['field_image']); ?>
             </div>
             <div class="social-links">
-              <?php if($node->type == "show"): ?>
-                <a class="play-button" href="#" onclick="window.open('/player/<?php print $field_series[0]['nid'] ?>/<?php print $node->nid ?>', 'newwindow', 'width=460, height=510'); return false;"></a>
-              <?php elseif($node->type == "series" || $node->type == "channel"): ?>
-                <a class="play-button" href="#" onclick="window.open('/player/<?php print $node->nid ?>/0', 'newwindow', 'width=460, height=510'); return false;"></a>
-              <?php endif; ?>
+              <a class="play-button" href="#" onclick="window.open('/player/<?php print $field_series[0]['nid'] ?>/<?php print $node->nid ?>', 'newwindow', 'width=460, height=510'); return false;"></a>
               <a class="facebook" href="facebook.com"></a>
               <a class="twitter" href="twitter.com"></a>
             </div>
             <?php print render($content['body']); ?>
-            <?php if ($submitted): ?>
-              <div class="date-in-parts">
-                <span class="label">Posted</span>
-                <span class="month"><?php echo date("F", $node->created); ?></span>
-                <span class="day"><?php  echo date("j", $node->created); ?></span>
-                <span class="year"><?php echo date("Y", $node->created); ?></span>
-              </div>   
-            <?php endif; ?>
+            <div class="aired">
+              <p>Originally aired: </p>
+              <?php print render($content['field_aired_date']); ?>
+              <?php if(isset($field_media_embed) && !empty($field_media_embed)): ?>
+                <?php print render($content['field_media_embed']); ?>
+              <?php endif; ?>
+              <?php if(isset($field_support) && !empty($field_support)): ?>
+                <?php print render($content['field_support']); ?>
+              <?php endif; ?>
+              <?php dpm($content); ?>
+            </div>
+
             <div class="tags">
               <?php if(array_key_exists('field_artist', $content)): ?>
                 <?php print render($content['field_artist']); ?>

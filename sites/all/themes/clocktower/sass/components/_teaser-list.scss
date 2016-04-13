@@ -41,14 +41,14 @@
     background-position: 50% 30% !important;
   }
   .node-title {
-    font-family: $fc;
+    font-family: $fbc;
     font-size: 26px;
     margin: 17px 5% 13px;
     line-height: 29px;
   }
   .field-name-body {
     margin: 0 5% 7px;
-    font-family: $fb;
+    font-family: $ta;
     font-size: 16px;
     line-height: 23px;
     text-transform: none;
@@ -67,12 +67,12 @@
       right: 15px;
       display: block;
       width: 110px;
-      font-family: $fc;
+      font-family: $fbc;
       font-size: 18px;
       border: 1px solid $dark-gray;
       background: $white;
       color: $black;
-      padding: 8px 0 4px;
+      padding: 5px 0;
       text-transform: uppercase;
       text-align: center;
       &:hover {
