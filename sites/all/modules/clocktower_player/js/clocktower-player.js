@@ -5,8 +5,8 @@
     if (Drupal.settings && Drupal.settings.clocktowerplayer ) {
       var options = Drupal.settings.clocktowerplayer;
       clocktowerPlayer.file_path = options.file_path;
-      console.log(options.file_path);
       clocktowerPlayer.title = options.title;
+      clocktowerPlayer.autoplay = options.autoplay;
   	}
   }
   $( document ).ready(function() {
@@ -16,7 +16,9 @@
   				title: clocktowerPlayer.title,
   				mp3: clocktowerPlayer.file_path,
   			});
-        $('.jp-play').click();
+        if(!!parseInt(clocktowerPlayer.autoplay)) {
+          $('.jp-play').click();
+        }
         $('.play-button').on('click', function() {
           $('.jp-play').click();
         })
@@ -31,11 +33,17 @@
   	});
     $('.channels').click(function(event) {
       event.preventDefault();
-      $('.channel-list').slideToggle();
+      $('.channel-list').show();
+    });
+    $('.share').click(function(event) {
+      event.preventDefault();
+      $('.embed').show();
+      var embedCode = $('#embed-code');
+      embedCode.select();
     });
     $('.close-button').click(function(event) {
       event.preventDefault();
-      $('.modal').slideToggle();
+      $('.modal').hide();
     });
   });
 })(jQuery);

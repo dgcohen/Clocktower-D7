@@ -23,6 +23,12 @@
     <a href="/player/<?php print $channel->nid ?>/0"><p><?php print $channel->title ?></p></a>
     <?php }; ?>
   </div>
+  <div class="embed modal">
+    <div class="close-button"></div>
+    <h3>Embed this show</h3>
+    <textarea id="embed-code"><iframe width="400" height="512" src="http://<?php print $_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI]; ?>" frameborder="0"></iframe></textarea>
+    <p>Copy and paste the code above to embed this show on your website.</p>
+  </div>
   <div class="controls-container">
     <div id="jquery_jplayer_1" class="jp-jplayer"></div>
     <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">

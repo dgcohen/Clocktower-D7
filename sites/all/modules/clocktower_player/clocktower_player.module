@@ -29,7 +29,9 @@
       $show_data = get_archive_info($station, $show);
     }
     drupal_add_js(drupal_get_path('module', 'clocktower_player') . '/js/clocktower-player.js');
-    $settings = array('clocktowerplayer' => array('file_path' => $show_data['file_path']));
+    $params = drupal_get_query_parameters();
+    $autoplay = isset($params['autoplay']) ? $params['autoplay'] : '0';
+    $settings = array('clocktowerplayer' => array('file_path' => $show_data['file_path'], 'autoplay' => $autoplay));
     drupal_add_js($settings, 'setting');
     drupal_add_js('sites/all/libraries/jplayer/jquery.jplayer.min.js');
     drupal_add_css(drupal_get_path('module', 'clocktower_player') . '/css/jplayer.blue.monday.css');

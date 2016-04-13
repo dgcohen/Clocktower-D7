@@ -107,19 +107,19 @@
     left: 0;
     right: 0;
     margin: auto;
-    bottom: 120px;
+    bottom: 125px;
     z-index: 1000;
     a {
       display: block;
       width: 50%;
       text-align: center;
       text-transform: uppercase;
-      font-family: $fc;
+      font-family: $fbc;
       font-size: 25px;
       letter-spacing: 0.02em;
       color: $white;
       float: left;
-      margin-bottom: 20px;
+      margin-bottom: 28px;
 
       @include breakpoint($bp580) {
         font-size: 32px;
@@ -127,6 +127,43 @@
       &:hover {
         color: $blue;
       }
+    }
+  }
+  .embed {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background: $white;
+    opacity: .95;
+    padding: 15px 4.5%;
+
+    h3 {
+      font-family: $fbc;
+      font-size: 32px;
+      margin: 26px 0 21px;
+    }
+
+    textarea {
+      font-family: $ta;
+      font-size: 16px;
+      opacity: 1;
+      resize: none;
+      width: 83%;
+      word-wrap: break-word;
+      border: 1px solid $medium-gray;
+      padding: 6px 13px;
+      margin-bottom: 21px;
+      height: 109px;
+      line-height: 1.2;
+    }
+
+    p {
+      font-family: $fbc;
+      font-size: 19px;
     }
   }
   .channel-list {
@@ -148,6 +185,7 @@
       border-bottom: 1px solid $medium-gray;
       background: $white;
       opacity: .95;
+      font-family: $fbc;
 
       @include breakpoint(440px) {
         font-size: 30px;
