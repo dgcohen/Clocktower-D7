@@ -144,13 +144,15 @@
     .close-button {
       width: 15px;
       height: 15px;
-      right: 7.5%;
-      top: 5.5%;
+      right: 7px;
+      top: 7px;
+      position: absolute;
     }
 
     .body {
       width: 90%;
       margin: auto;
+      position: relative;
       font-family: $ta;
       font-size: 15px;
       background: $white;

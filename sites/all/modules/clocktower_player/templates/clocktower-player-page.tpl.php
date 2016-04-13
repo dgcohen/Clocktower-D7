@@ -24,8 +24,7 @@
     <?php }; ?>
   </div>
   <div class="info modal">
-    <div class="close-button"></div>
-    <div class="body"><?php print($body); ?></div>
+    <div class="body"><div class="close-button"></div><?php print($body); ?></div>
   </div>
   <div class="embed modal">
     <div class="close-button"></div>
