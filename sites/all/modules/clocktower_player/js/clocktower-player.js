@@ -16,6 +16,7 @@
   				title: clocktowerPlayer.title,
   				mp3: clocktowerPlayer.file_path,
   			});
+
         if(!!parseInt(clocktowerPlayer.autoplay)) {
           $('.jp-play').click();
         }
@@ -33,17 +34,21 @@
   	});
     $('.channels').click(function(event) {
       event.preventDefault();
-      $('.channel-list').show();
+      $('.channel-list').slideDown();
     });
     $('.share').click(function(event) {
       event.preventDefault();
-      $('.embed').show();
+      $('.embed').slideDown();
       var embedCode = $('#embed-code');
       embedCode.select();
     });
+    $('.more-info').click(function(event) {
+      event.preventDefault();
+      $('.info').slideDown();
+    });
     $('.close-button').click(function(event) {
       event.preventDefault();
-      $('.modal').hide();
+      $('.modal').slideUp();
     });
   });
 })(jQuery);
