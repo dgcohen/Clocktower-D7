@@ -27,7 +27,8 @@
     <div class="header-links">
       <div class="nav-buttons">
         <?php $nids = db_query('SELECT nid FROM {node} WHERE type =  :type', array(':type' => 'channel'))->fetchCol(); ?>
-        <a class="play-button" href="#" onclick="window.open('/player/<?php print array_rand($nids); ?>/0', 'newwindow', 'width=460, height=510'); return false;"><p>Listen Now</p></a>
+        <?php $index = array_rand($nids); ?>
+        <a class="play-button" href="#" onclick="window.open('/player/<?php print array_rand($nids[$index]); ?>/0', 'newwindow', 'width=460, height=510'); return false;"><p>Listen Now</p></a>
         <div class="donate-subscribe">
           <a href='#' class="donate-button">Donate</a>
           <a href='#' class="donate-button">Subscribe</a>
