@@ -26,7 +26,12 @@
     <?php endif; ?>
     <div class="header-links">
       <div class="nav-buttons">
-        <a class="play-button" href="#" onclick="window.open('/player/12771/0', 'newwindow', 'width=460, height=510'); return false;"><p>Listen Now</p></a>
+        <?php $result = db_query("SELECT nid FROM node WHERE type = %s", 'channel'); ?>
+        <?php $nids = array(); ?>
+        <?php while ($obj = db_fetch_object ($result)) { ?>
+          <?php $nids[] = $obj->nid; ?>
+        <?php } ?>
+        <a class="play-button" href="#" onclick="window.open('/player/<?php print array_rand($nids); ?>/0', 'newwindow', 'width=460, height=510'); return false;"><p>Listen Now</p></a>
         <div class="donate-subscribe">
           <a href='#' class="donate-button">Donate</a>
           <a href='#' class="donate-button">Subscribe</a>

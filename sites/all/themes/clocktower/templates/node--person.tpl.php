@@ -37,9 +37,11 @@
       hide($content['comments']);
       hide($content['links']);
     ?>
-    <?php print truncate_utf8(render($content['body']), 350, TRUE, TRUE); ?>
+
+    <?php print render($content['body']); ?>
     <?php print render($content['links']); ?>
 
+    <?php print render($content['comments']); ?>
     <?php print render($content['comments']); ?>
 
   </article>
@@ -47,7 +49,7 @@
   <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
     <div class="node-header">
       <div class="node-type">
-        <a href="/people" class="label">Person</a> 
+        <a href="/people" class="label">Person</a>
       </div>
       <div class="node-header-info">
         <?php if(isset($field_host_type) && !empty($field_host_type)): ?>
@@ -68,7 +70,7 @@
           <?php if ($unpublished): ?>
             <mark class="unpublished"><?php print t('Unpublished'); ?></mark>
           <?php endif; ?>
-          
+
           <div class="content"<?php print $content_attributes; ?>>
             <div class="node-image">
               <?php print render($content['field_image']); ?>
@@ -89,7 +91,7 @@
                 <span class="month"><?php echo date("F", $node->created); ?></span>
                 <span class="day"><?php  echo date("j", $node->created); ?></span>
                 <span class="year"><?php echo date("Y", $node->created); ?></span>
-              </div>   
+              </div>
             <?php endif; ?>
             <div class="tags">
               <?php if(array_key_exists('field_artist', $content)): ?>

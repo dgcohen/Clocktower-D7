@@ -32,16 +32,8 @@
       </header>
     <?php endif; ?>
 
-    <?php
-      // We hide the comments and links now so that we can render them later.
-      hide($content['comments']);
-      hide($content['links']);
-    ?>
-
     <?php print render($content['body']); ?>
     <?php print render($content['links']); ?>
-
-    <?php print render($content['comments']); ?>
 
   </article>
 <?php else: ?>
@@ -91,7 +83,7 @@
                 <span class="month"><?php echo date("F", $node->created); ?></span>
                 <span class="day"><?php  echo date("j", $node->created); ?></span>
                 <span class="year"><?php echo date("Y", $node->created); ?></span>
-              </div>   
+              </div>
             <?php endif; ?>
             <div class="tags">
               <?php if(array_key_exists('field_artist', $content)): ?>

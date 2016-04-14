@@ -37,7 +37,8 @@
       hide($content['comments']);
       hide($content['links']);
     ?>
-    <?php print truncate_utf8(render($content['body']), 350, TRUE, TRUE); ?>
+
+    <?php print render($content['body']); ?>
     <?php print render($content['links']); ?>
 
     <?php print render($content['comments']); ?>
@@ -89,7 +90,7 @@
               </div>
             <?php endif; ?>
           </div>
-          
+
           <div class="content"<?php print $content_attributes; ?>>
             <div class="node-image">
               <?php print render($content['field_image']); ?>
