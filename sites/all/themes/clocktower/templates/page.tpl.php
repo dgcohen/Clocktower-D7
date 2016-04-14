@@ -26,7 +26,7 @@
     <?php endif; ?>
     <div class="header-links">
       <div class="nav-buttons">
-        <?php $result = db_query("SELECT nid FROM node WHERE type = %s", 'channel'); ?>
+        <?php $result = db_query("SELECT nid FROM node WHERE type = %s", array(':nodeType'=>'channel')); ?>
         <?php $nids = array(); ?>
         <?php while ($obj = db_fetch_object ($result)) { ?>
           <?php $nids[] = $obj->nid; ?>
