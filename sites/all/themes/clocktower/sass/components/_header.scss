@@ -68,8 +68,8 @@
       .play-button {
         float: left;
         position: relative;
-        width: 74px;
-        height: 74px;
+        width: 64px;
+        height: 64px;
 
         @include breakpoint($bp580) {
           width: 81px;

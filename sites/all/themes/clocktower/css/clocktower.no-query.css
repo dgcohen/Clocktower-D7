@@ -2180,7 +2180,7 @@ tr.selected td {
     background: #ffffff;
     padding: 25px;
     line-height: 1.4;
-    height: 90%;
+    height: 85%;
     max-height: 90%;
     overflow-y: scroll; }
     /* line 165, /Users/diegocohen/Sites/clocktower2/sites/all/themes/clocktower/sass/components/_player.scss */
